@@ -1,0 +1,514 @@
+[
+  {
+    "id": "gram-1",
+    "type": "fill-blank",
+    "topic": "articles",
+    "topicLabel": "Definite Articles",
+    "level": "A1",
+    "prompt": "Das ist _____ Tisch. (masculine)",
+    "options": [
+      "der",
+      "die",
+      "das",
+      "den"
+    ],
+    "correctAnswer": "der",
+    "explanation": "'Tisch' is a masculine noun in the Nominative case (subject of 'sein'), so the correct definite article is 'der'."
+  },
+  {
+    "id": "gram-2",
+    "type": "fill-blank",
+    "topic": "articles",
+    "topicLabel": "Indefinite Articles (Akkusativ)",
+    "prompt": "Ich habe _____ Hund. (masculine)",
+    "options": [
+      "ein",
+      "einen",
+      "eine",
+      "einem"
+    ],
+    "correctAnswer": "einen",
+    "explanation": "'Hund' is masculine. Because it is the direct object of 'haben', it takes the Akkusativ case, changing 'ein' to 'einen'.",
+    "level": "A1"
+  },
+  {
+    "id": "gram-3",
+    "type": "fill-blank",
+    "topic": "articles",
+    "topicLabel": "Definite Articles (Feminine)",
+    "prompt": "Wo ist _____ Katze? (feminine)",
+    "options": [
+      "der",
+      "die",
+      "das",
+      "den"
+    ],
+    "correctAnswer": "die",
+    "explanation": "'Katze' is feminine (die Katze). In the Nominativ case, feminine nouns use 'die'.",
+    "level": "A1"
+  },
+  {
+    "id": "gram-4",
+    "type": "fill-blank",
+    "topic": "articles",
+    "topicLabel": "Indefinite Articles (Neuter)",
+    "prompt": "Sie liest _____ Buch. (neuter)",
+    "options": [
+      "ein",
+      "einen",
+      "eine",
+      "eines"
+    ],
+    "correctAnswer": "ein",
+    "explanation": "'Buch' is neuter (das Buch). In the Akkusativ case, neuter indefinite articles remain 'ein'.",
+    "level": "A1"
+  },
+  {
+    "id": "gram-5",
+    "type": "fill-blank",
+    "topic": "articles",
+    "topicLabel": "Negative Articles (kein/keine)",
+    "prompt": "Ich trinke _____ Kaffee. (masculine, negative)",
+    "options": [
+      "kein",
+      "keinen",
+      "keine",
+      "keinem"
+    ],
+    "correctAnswer": "keinen",
+    "explanation": "'Kaffee' is masculine. In the Akkusativ case as direct object, the negative article adds '-en' to become 'keinen'.",
+    "level": "A1"
+  },
+  {
+    "id": "gram-6",
+    "type": "fill-blank",
+    "topic": "articles",
+    "topicLabel": "Possessive Articles (Dativ)",
+    "prompt": "Ich helfe _____ Mutter. (feminine)",
+    "options": [
+      "meine",
+      "meiner",
+      "meinen",
+      "meinem"
+    ],
+    "correctAnswer": "meiner",
+    "explanation": "The verb 'helfen' always governs the Dativ case. In Dativ feminine, 'meine' shifts to 'meiner'.",
+    "level": "A1"
+  },
+  {
+    "id": "gram-7",
+    "type": "fill-blank",
+    "topic": "verb-conjugation",
+    "topicLabel": "Regular Verb Conjugation",
+    "level": "A1",
+    "prompt": "Du _____ gern Musik. (hören)",
+    "options": [
+      "höre",
+      "hörst",
+      "hört",
+      "hören"
+    ],
+    "correctAnswer": "hörst",
+    "explanation": "With the 2nd person singular pronoun 'du', regular verbs take the ending '-st' (du hörst)."
+  },
+  {
+    "id": "gram-8",
+    "type": "fill-blank",
+    "topic": "verb-conjugation",
+    "topicLabel": "Irregular Verb 'sein'",
+    "level": "A1",
+    "prompt": "Wir _____ Studenten in Berlin. (sein)",
+    "options": [
+      "bin",
+      "bist",
+      "ist",
+      "sind"
+    ],
+    "correctAnswer": "sind",
+    "explanation": "The 1st person plural 'wir' conjugates with 'sind' (wir sind)."
+  },
+  {
+    "id": "gram-9",
+    "type": "fill-blank",
+    "topic": "verb-conjugation",
+    "topicLabel": "Irregular Verb 'haben'",
+    "level": "A1",
+    "prompt": "Er _____ heute keine Zeit. (haben)",
+    "options": [
+      "habe",
+      "hast",
+      "hat",
+      "haben"
+    ],
+    "correctAnswer": "hat",
+    "explanation": "With 3rd person singular 'er/sie/es', the verb 'haben' conjugates to 'hat'."
+  },
+  {
+    "id": "gram-10",
+    "type": "fill-blank",
+    "topic": "verb-conjugation",
+    "topicLabel": "Vowel Change Verb (e -> i)",
+    "level": "A1",
+    "prompt": "Was _____ du zum Frühstück? (essen)",
+    "options": [
+      "esst",
+      "isst",
+      "esse",
+      "essen"
+    ],
+    "correctAnswer": "isst",
+    "explanation": "'Essen' is a strong stem-changing verb: the stem vowel 'e' changes to 'i' with du (du isst)."
+  },
+  {
+    "id": "gram-11",
+    "type": "fill-blank",
+    "topic": "verb-conjugation",
+    "topicLabel": "Modal Verb 'können'",
+    "level": "A1",
+    "prompt": "Ich _____ gut Deutsch sprechen. (können)",
+    "options": [
+      "kann",
+      "kannst",
+      "könnt",
+      "können"
+    ],
+    "correctAnswer": "kann",
+    "explanation": "Modal verbs drop their umlaut and have no ending for 1st person singular 'ich' (ich kann, er kann)."
+  },
+  {
+    "id": "gram-12",
+    "type": "fill-blank",
+    "topic": "verb-conjugation",
+    "topicLabel": "Separable Verbs (aufstehen)",
+    "level": "A1",
+    "prompt": "Lukas _____ jeden Tag um 7 Uhr auf.",
+    "options": [
+      "stehe",
+      "stehst",
+      "steht",
+      "stehen"
+    ],
+    "correctAnswer": "steht",
+    "explanation": "'Aufstehen' is separable: the stem 'steht' agrees with 3rd person singular 'Lukas', while 'auf' moves to the sentence end."
+  },
+  {
+    "id": "gram-13",
+    "type": "fill-blank",
+    "topic": "adjective-endings",
+    "topicLabel": "Adjective Endings with Indefinite Article (Masculine)",
+    "level": "A1",
+    "prompt": "Das ist ein _____ Tisch. (neu)",
+    "options": [
+      "neuer",
+      "neues",
+      "neue",
+      "neuen"
+    ],
+    "correctAnswer": "neuer",
+    "explanation": "After 'ein' in the Nominativ masculine, the adjective must show the gender ending '-er' (ein neuer Tisch)."
+  },
+  {
+    "id": "gram-14",
+    "type": "fill-blank",
+    "topic": "adjective-endings",
+    "topicLabel": "Adjective Endings with Indefinite Article (Neuter)",
+    "level": "A1",
+    "prompt": "Wir haben ein _____ Haus. (groß)",
+    "options": [
+      "großer",
+      "großes",
+      "große",
+      "großen"
+    ],
+    "correctAnswer": "großes",
+    "explanation": "After 'ein' in Nominativ/Akkusativ neuter, the adjective takes the neuter marker '-es' (ein großes Haus)."
+  },
+  {
+    "id": "gram-15",
+    "type": "fill-blank",
+    "topic": "adjective-endings",
+    "topicLabel": "Adjective Endings with Indefinite Article (Feminine)",
+    "level": "A1",
+    "prompt": "Sie kauft eine _____ Tasche. (schön)",
+    "options": [
+      "schöner",
+      "schönes",
+      "schöne",
+      "schönen"
+    ],
+    "correctAnswer": "schöne",
+    "explanation": "After 'eine' (feminine), adjectives take the ending '-e' in Nominativ and Akkusativ (eine schöne Tasche)."
+  },
+  {
+    "id": "gram-16",
+    "type": "fill-blank",
+    "topic": "adjective-endings",
+    "topicLabel": "Adjective Endings with Definite Article (Nominativ)",
+    "level": "A1",
+    "prompt": "Der _____ Kaffee schmeckt gut. (heiß)",
+    "options": [
+      "heiße",
+      "heißer",
+      "heißen",
+      "heißes"
+    ],
+    "correctAnswer": "heiße",
+    "explanation": "After the definite article 'der' in the Nominativ singular, adjectives take the weak ending '-e' (der heiße Kaffee)."
+  },
+  {
+    "id": "gram-17",
+    "type": "fill-blank",
+    "topic": "adjective-endings",
+    "topicLabel": "Adjective Endings with Akkusativ Masculine",
+    "level": "A1",
+    "prompt": "Ich nehme den _____ Tee. (schwarz)",
+    "options": [
+      "schwarzer",
+      "schwarze",
+      "schwarzen",
+      "schwarzes"
+    ],
+    "correctAnswer": "schwarzen",
+    "explanation": "In Akkusativ masculine with 'den', adjectives always take '-en' (den schwarzen Tee)."
+  },
+  {
+    "id": "gram-18",
+    "type": "multiple-choice",
+    "topic": "cases",
+    "topicLabel": "Identify the Case",
+    "level": "A1",
+    "prompt": "Which case is 'den Kuchen' in: 'Er isst den Kuchen'?",
+    "options": [
+      "Nominativ",
+      "Akkusativ",
+      "Dativ",
+      "Genitiv"
+    ],
+    "correctAnswer": "Akkusativ",
+    "explanation": "'Den Kuchen' is the direct object receiving the action of eating ('essen'), which requires the Akkusativ case."
+  },
+  {
+    "id": "gram-19",
+    "type": "multiple-choice",
+    "topic": "cases",
+    "topicLabel": "Identify the Case (Subject)",
+    "level": "A1",
+    "prompt": "Which case is 'Die Frau' in: 'Die Frau liest eine Zeitung'?",
+    "options": [
+      "Nominativ",
+      "Akkusativ",
+      "Dativ",
+      "Genitiv"
+    ],
+    "correctAnswer": "Nominativ",
+    "explanation": "'Die Frau' is the subject performing the action ('Wer liest?'), which is always Nominativ."
+  },
+  {
+    "id": "gram-20",
+    "type": "multiple-choice",
+    "topic": "cases",
+    "topicLabel": "Select Correct Pronoun (Dativ)",
+    "level": "A1",
+    "prompt": "Which pronoun correctly completes: 'Wie geht es _____?' (to you, informal)",
+    "options": [
+      "du",
+      "dich",
+      "dir",
+      "dein"
+    ],
+    "correctAnswer": "dir",
+    "explanation": "The idiom 'Wie geht es...?' requires the Dativ case. The Dativ of 'du' is 'dir'."
+  },
+  {
+    "id": "gram-21",
+    "type": "multiple-choice",
+    "topic": "cases",
+    "topicLabel": "Prepositions with Dativ",
+    "level": "A1",
+    "prompt": "Complete with the correct article: 'Ich fahre mit _____ Bus.' (der Bus)",
+    "options": [
+      "der",
+      "den",
+      "dem",
+      "das"
+    ],
+    "correctAnswer": "dem",
+    "explanation": "The preposition 'mit' ALWAYS takes the Dativ case. Masculine 'der Bus' turns into 'dem Bus'."
+  },
+  {
+    "id": "gram-22",
+    "type": "multiple-choice",
+    "topic": "cases",
+    "topicLabel": "Prepositions with Akkusativ",
+    "level": "A1",
+    "prompt": "Complete: 'Das Geschenk ist für _____ Vater.' (der Vater)",
+    "options": [
+      "der",
+      "den",
+      "dem",
+      "des"
+    ],
+    "correctAnswer": "den",
+    "explanation": "The preposition 'für' ALWAYS requires the Akkusativ case. Masculine 'der' becomes 'den'."
+  },
+  {
+    "id": "gram-23",
+    "type": "multiple-choice",
+    "topic": "cases",
+    "topicLabel": "Dativ Indirect Object",
+    "level": "A1",
+    "prompt": "Select the correct form: 'Ich gebe _____ Kind einen Apfel.' (das Kind)",
+    "options": [
+      "das",
+      "den",
+      "dem",
+      "des"
+    ],
+    "correctAnswer": "dem",
+    "explanation": "'Kind' is the recipient (indirect object) in Dativ. Neuter 'das' becomes 'dem' in the Dativ case."
+  },
+  {
+    "id": "gram-24",
+    "type": "multiple-choice",
+    "topic": "cases",
+    "topicLabel": "Direct vs Indirect Object Case",
+    "level": "A1",
+    "prompt": "In 'Er schenkt der Mutter eine Blume', what case is 'eine Blume'?",
+    "options": [
+      "Nominativ",
+      "Akkusativ",
+      "Dativ",
+      "Genitiv"
+    ],
+    "correctAnswer": "Akkusativ",
+    "explanation": "'Der Mutter' is Dativ (recipient), while 'eine Blume' is the direct object (the thing given), so it is Akkusativ."
+  },
+  {
+    "id": "gram-25",
+    "type": "sentence-order",
+    "topic": "sentence-order",
+    "topicLabel": "Verb Second (V2) Rule",
+    "level": "A1",
+    "prompt": "Reorder the words to form a correct German main clause (Verb must be position 2):",
+    "words": [
+      "trinke",
+      "Ich",
+      "morgens",
+      "Kaffee"
+    ],
+    "correctOrder": [
+      "Ich",
+      "trinke",
+      "morgens",
+      "Kaffee"
+    ],
+    "explanation": "In standard German main statements, the conjugated verb ('trinke') must occupy the second position."
+  },
+  {
+    "id": "gram-26",
+    "type": "sentence-order",
+    "topic": "sentence-order",
+    "topicLabel": "Time Element in Position 1 (Inversion)",
+    "level": "A1",
+    "prompt": "Reorder the words starting with the time element (Verb remains in position 2):",
+    "words": [
+      "spiele",
+      "Heute",
+      "Fußball",
+      "ich"
+    ],
+    "correctOrder": [
+      "Heute",
+      "spiele",
+      "ich",
+      "Fußball"
+    ],
+    "explanation": "When an element like 'Heute' is placed first for emphasis, the verb stays in position 2 and the subject inverts to position 3."
+  },
+  {
+    "id": "gram-27",
+    "type": "sentence-order",
+    "topic": "sentence-order",
+    "topicLabel": "Separable Verb Word Order",
+    "level": "A1",
+    "prompt": "Reorder the words with the separable verb 'aufstehen':",
+    "words": [
+      "stehe",
+      "Ich",
+      "7 Uhr",
+      "um",
+      "auf"
+    ],
+    "correctOrder": [
+      "Ich",
+      "stehe",
+      "um",
+      "7 Uhr",
+      "auf"
+    ],
+    "explanation": "With separable verbs, the conjugated verb root ('stehe') is in position 2, and the prefix ('auf') is sent to the very end of the clause."
+  },
+  {
+    "id": "gram-28",
+    "type": "sentence-order",
+    "topic": "sentence-order",
+    "topicLabel": "Modal Verb Bracket (Satzklammer)",
+    "level": "A1",
+    "prompt": "Reorder the sentence with modal verb 'können' and infinitive:",
+    "words": [
+      "kann",
+      "Er",
+      "gut",
+      "schwimmen"
+    ],
+    "correctOrder": [
+      "Er",
+      "kann",
+      "gut",
+      "schwimmen"
+    ],
+    "explanation": "Modal verbs conjugate in position 2 ('kann'), while the main action verb ('schwimmen') goes to the very end in the infinitive."
+  },
+  {
+    "id": "gram-29",
+    "type": "sentence-order",
+    "topic": "sentence-order",
+    "topicLabel": "Yes/No Question Word Order (V1)",
+    "level": "A1",
+    "prompt": "Form a Yes/No question (Verb in position 1):",
+    "words": [
+      "du",
+      "Kommst",
+      "heute",
+      "Abend?"
+    ],
+    "correctOrder": [
+      "Kommst",
+      "du",
+      "heute",
+      "Abend?"
+    ],
+    "explanation": "In German Yes/No questions, the conjugated verb ('Kommst') starts in the first position, followed by the subject ('du')."
+  },
+  {
+    "id": "gram-30",
+    "type": "sentence-order",
+    "topic": "sentence-order",
+    "topicLabel": "W-Question Word Order (W-Wort + Verb)",
+    "level": "A1",
+    "prompt": "Form an information question with 'Wann':",
+    "words": [
+      "Wann",
+      "der",
+      "Zug?",
+      "fährt"
+    ],
+    "correctOrder": [
+      "Wann",
+      "fährt",
+      "der",
+      "Zug?"
+    ],
+    "explanation": "In questions with question words (W-Fragen), the question word comes first ('Wann'), the verb is second ('fährt'), followed by the subject ('der Zug')."
+  }
+]
