@@ -6,7 +6,7 @@ import {
 import { GRAMMAR_CONTRASTS } from "../src/data/grammarContrasts";
 import { analyzeNounGender } from "../src/data/nounGenderRules";
 import { getAllUnitsOrdered } from "../src/data/curriculum";
-import { getISOWeekString } from "../src/context/ProgressContext";
+import { getISOWeekString } from "../src/utils/dateUtils";
 
 describe("Pedagogical Features: Placement Test, Roadmap Gating, Readiness & Contrasts", () => {
   // -------------------------------------------------------------

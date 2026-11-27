@@ -27,6 +27,7 @@ import { getReadingTextsByLanguage } from "../data/multilingual/readingCatalog";
 import { getPlacementQuestionsByLanguage } from "../data/multilingual/placementCatalog";
 import { getDrillConfigByLanguage } from "../data/multilingual/drillCatalog";
 import { getExamInstitutionsByLanguage, getExamByLanguage } from "../data/multilingual/examCatalog";
+import { getISOWeekString } from "../utils/dateUtils";
 import {
   getDb,
   runMigrations,
@@ -40,15 +41,6 @@ import {
 } from "../storage/db";
 
 const ProgressContext = createContext();
-
-export function getISOWeekString(date = new Date()) {
-  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
-  const dayNum = d.getUTCDay() || 7;
-  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-  const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
-  return `${d.getUTCFullYear()}-W${weekNo}`;
-}
 
 const TARGET_WORDS_BY_LEVEL = {
   A1: 600,
@@ -95,6 +87,32 @@ function getInitialStudyMinutes() {
   return result;
 }
 
+// Synchronously hydrates state in 0ms to guarantee instant page renders without blank screen lag
+function getStoredProgressSync(userId, lang) {
+  try {
+    const key = `languagepath_sync_progress_${userId || "guest"}_${lang || "de"}`;
+    const raw = typeof window !== "undefined" && window.localStorage ? localStorage.getItem(key) : null;
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && typeof parsed === "object") {
+        return {
+          ...INITIAL_PROGRESS,
+          ...parsed,
+          srsCards: parsed.srsCards || {},
+          streakFreeze: {
+            ...INITIAL_PROGRESS.streakFreeze,
+            ...(parsed.streakFreeze || {})
+          },
+          unlockedOverrides: parsed.unlockedOverrides || {},
+          unitProgress: parsed.unitProgress || {},
+          completedLessons: parsed.completedLessons || []
+        };
+      }
+    }
+  } catch {}
+  return INITIAL_PROGRESS;
+}
+
 export function ProgressProvider({ children }) {
   const auth = useAuth();
   const activeTargetLanguage = auth?.activeTargetLanguage || "de";
@@ -102,7 +120,7 @@ export function ProgressProvider({ children }) {
   const userId = user?.id || "guest";
   const updateLanguageProgress = auth?.updateLanguageProgress;
 
-  const [progress, setProgress] = useState(INITIAL_PROGRESS);
+  const [progress, setProgress] = useState(() => getStoredProgressSync(userId, activeTargetLanguage));
   const [customCards, setCustomCards] = useState([]);
   const [recentErrors, setRecentErrors] = useState([]);
   const [isDbLoaded, setIsDbLoaded] = useState(false);
@@ -167,6 +185,11 @@ export function ProgressProvider({ children }) {
       // Clean out the objectStore key if attached
       delete mergedProgress.key;
 
+      try {
+        const key = `languagepath_sync_progress_${userId || "guest"}_${activeTargetLanguage || "de"}`;
+        localStorage.setItem(key, JSON.stringify(mergedProgress));
+      } catch {}
+
       setProgress(mergedProgress);
       setCustomCards(Array.isArray(storedCustomCards) ? storedCustomCards : []);
       setRecentErrors(Array.isArray(storedErrors) ? storedErrors : []);
@@ -200,6 +223,11 @@ export function ProgressProvider({ children }) {
   const persistProgress = useCallback(async (newProgress) => {
     try {
       const { srsCards: _, ...cleanProgress } = newProgress;
+
+      try {
+        const key = `languagepath_sync_progress_${userId || "guest"}_${activeTargetLanguage || "de"}`;
+        localStorage.setItem(key, JSON.stringify(newProgress));
+      } catch {}
 
       // Persist to userProgress store for this user and language
       if (userId && userId !== "guest") {

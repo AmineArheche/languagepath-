@@ -5,9 +5,19 @@ import { useProgress } from "../../context/ProgressContext";
 
 export function BottomNav({ currentPage, onNavigate }) {
   const { t } = useTranslation("ui");
-  const { allFlashcards, getDueCards, getWeakSpots } = useProgress();
+  const { allFlashcards, getDueCards, getWeakSpots, activeTargetLanguage } = useProgress();
   const dueCount = getDueCards(allFlashcards).length;
   const mistakeCount = getWeakSpots().reduce((acc, s) => acc + s.mistakes, 0);
+
+  const examShortLabels = {
+    de: "Goethe",
+    en: "IELTS/TOEFL",
+    es: "DELE",
+    fr: "DELF",
+    ar: "CIMA",
+    it: "CELI"
+  };
+  const activeExamShort = examShortLabels[activeTargetLanguage] || "Exams";
 
   const navItems = [
     { id: "dashboard", label: "Stats", icon: BarChart3 },
@@ -36,7 +46,9 @@ export function BottomNav({ currentPage, onNavigate }) {
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = currentPage === item.id;
-          const translatedLabel = t(`nav.${item.id}`, { defaultValue: item.label });
+          const translatedLabel = item.id === "exam"
+            ? activeExamShort
+            : t(`nav.${item.id}`, { defaultValue: item.label });
 
           return (
             <button

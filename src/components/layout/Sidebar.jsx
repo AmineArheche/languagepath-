@@ -138,18 +138,16 @@ export function Sidebar({ currentPage, onNavigate }) {
               data-nav={item.id}
               data-testid={`nav-${item.id}`}
               onClick={() => onNavigate(item.id)}
-              className={`w-full flex items-center gap-3.5 px-3.5 py-2.5 rounded-2xl text-start transition-all duration-200 ${
-                isActive
-                  ? "bg-amber-500 text-white font-semibold shadow-md shadow-amber-500/20"
-                  : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-slate-100"
-              }`}
+              className={`w-full flex items-center gap-3.5 px-3.5 py-2.5 rounded-2xl text-start transition-all duration-200 ${isActive
+                ? "bg-amber-500 text-white font-semibold shadow-md shadow-amber-500/20"
+                : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-slate-100"
+                }`}
             >
               <div
-                className={`p-2 rounded-xl shrink-0 ${
-                  isActive
-                    ? "bg-white/20 text-white"
-                    : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
-                }`}
+                className={`p-2 rounded-xl shrink-0 ${isActive
+                  ? "bg-white/20 text-white"
+                  : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
+                  }`}
               >
                 <Icon className="w-4 h-4" />
               </div>
@@ -161,20 +159,18 @@ export function Sidebar({ currentPage, onNavigate }) {
                   </span>
                   {item.badge && (
                     <span
-                      className={`text-[10px] font-extrabold px-1.5 py-0.2 rounded-full ${
-                        isActive
-                          ? "bg-white text-amber-600"
-                          : "bg-amber-100 text-amber-800 dark:bg-amber-950/80 dark:text-amber-300"
-                      }`}
+                      className={`text-[10px] font-extrabold px-1.5 py-0.2 rounded-full ${isActive
+                        ? "bg-white text-amber-600"
+                        : "bg-amber-100 text-amber-800 dark:bg-amber-950/80 dark:text-amber-300"
+                        }`}
                     >
                       {item.badge}
                     </span>
                   )}
                 </div>
                 <div
-                  className={`text-[11px] truncate ${
-                    isActive ? "text-amber-100" : "text-slate-400 dark:text-slate-500"
-                  }`}
+                  className={`text-[11px] truncate ${isActive ? "text-amber-100" : "text-slate-400 dark:text-slate-500"
+                    }`}
                 >
                   {translatedDesc}
                 </div>

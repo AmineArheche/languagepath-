@@ -180,7 +180,7 @@ test.describe("DeutschPath Smoke Suite", () => {
     const writingNav = page.locator("[data-testid='nav-writing']").first();
     await writingNav.click();
 
-    await expect(page.locator("text=Writing Studio")).toBeVisible({ timeout: 10000 });
+    await expect(page.locator("main").locator("text=Writing Studio").first()).toBeVisible({ timeout: 10000 });
 
     // Fill in German composition
     const textarea = page.locator("textarea").first();

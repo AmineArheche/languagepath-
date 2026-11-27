@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
 import { AuthProvider } from "./context/AuthContext";
 import { ProgressProvider } from "./context/ProgressContext";
@@ -6,6 +6,7 @@ import { ExerciseProvider } from "./context/ExerciseContext";
 import { ContextTutor } from "./components/tutor/ContextTutor";
 import { PwaUpdatePrompt } from "./components/common/PwaUpdatePrompt";
 import { AuthModal } from "./components/auth/AuthModal";
+import { ErrorBoundary } from "./components/common/ErrorBoundary";
 import {
   TryOneExerciseModal,
   ONBOARDING_STORAGE_KEYS
@@ -14,34 +15,21 @@ import { Navbar } from "./components/layout/Navbar";
 import { Sidebar } from "./components/layout/Sidebar";
 import { BottomNav } from "./components/layout/BottomNav";
 
-// Code-split pages for instant initial load and smaller bundle chunks
-const DashboardPage = lazy(() => import("./pages/DashboardPage").then(m => ({ default: m.DashboardPage })));
-const RoadmapPage = lazy(() => import("./pages/RoadmapPage").then(m => ({ default: m.RoadmapPage })));
-const ExamPrepPage = lazy(() => import("./pages/ExamPrepPage").then(m => ({ default: m.ExamPrepPage })));
-const ReadingPage = lazy(() => import("./pages/ReadingPage").then(m => ({ default: m.ReadingPage })));
-const LessonPage = lazy(() => import("./pages/LessonPage").then(m => ({ default: m.LessonPage })));
-const PracticePage = lazy(() => import("./pages/PracticePage").then(m => ({ default: m.PracticePage })));
-const GrammarPage = lazy(() => import("./pages/GrammarPage").then(m => ({ default: m.GrammarPage })));
-const ConversationPage = lazy(() => import("./pages/ConversationPage").then(m => ({ default: m.ConversationPage })));
-const WritingPage = lazy(() => import("./pages/WritingPage").then(m => ({ default: m.WritingPage })));
-const SpeakingStudioPage = lazy(() => import("./pages/SpeakingStudioPage").then(m => ({ default: m.SpeakingStudioPage })));
-const DictionaryPage = lazy(() => import("./pages/DictionaryPage").then(m => ({ default: m.DictionaryPage })));
-const SettingsPage = lazy(() => import("./pages/SettingsPage").then(m => ({ default: m.SettingsPage })));
-const ProfilePage = lazy(() => import("./pages/ProfilePage").then(m => ({ default: m.ProfilePage })));
-const GenderDrill = lazy(() => import("./components/quiz/GenderDrill").then(m => ({ default: m.GenderDrill })));
-
-function PageLoadingSkeleton() {
-  return (
-    <div className="p-6 max-w-4xl mx-auto space-y-4 animate-pulse">
-      <div className="h-8 bg-slate-200 dark:bg-slate-800 rounded-xl w-1/3"></div>
-      <div className="h-32 bg-slate-200 dark:bg-slate-800 rounded-2xl w-full"></div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="h-24 bg-slate-200 dark:bg-slate-800 rounded-2xl"></div>
-        <div className="h-24 bg-slate-200 dark:bg-slate-800 rounded-2xl"></div>
-      </div>
-    </div>
-  );
-}
+// Direct resilient imports for instantaneous 0ms page transitions
+import { DashboardPage } from "./pages/DashboardPage";
+import { RoadmapPage } from "./pages/RoadmapPage";
+import { ExamPrepPage } from "./pages/ExamPrepPage";
+import { ReadingPage } from "./pages/ReadingPage";
+import { LessonPage } from "./pages/LessonPage";
+import { PracticePage } from "./pages/PracticePage";
+import { GrammarPage } from "./pages/GrammarPage";
+import { ConversationPage } from "./pages/ConversationPage";
+import { WritingPage } from "./pages/WritingPage";
+import { SpeakingStudioPage } from "./pages/SpeakingStudioPage";
+import { DictionaryPage } from "./pages/DictionaryPage";
+import { SettingsPage } from "./pages/SettingsPage";
+import { ProfilePage } from "./pages/ProfilePage";
+import { GenderDrill } from "./components/quiz/GenderDrill";
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState("roadmap");
@@ -83,7 +71,7 @@ function AppContent() {
 
         {/* Dynamic Page Views */}
         <main className="flex-1 pb-24 md:pb-8 overflow-y-auto">
-          <Suspense fallback={<PageLoadingSkeleton />}>
+          <ErrorBoundary onNavigate={handleNavigate}>
             {currentPage === "dashboard" && (
               <DashboardPage onNavigate={handleNavigate} />
             )}
@@ -132,7 +120,7 @@ function AppContent() {
             {currentPage === "profile" && <ProfilePage onNavigate={handleNavigate} />}
 
             {currentPage === "settings" && <SettingsPage />}
-          </Suspense>
+          </ErrorBoundary>
         </main>
       </div>
 
@@ -160,14 +148,16 @@ function AppContent() {
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <AuthProvider>
-        <ProgressProvider>
-          <ExerciseProvider>
-            <AppContent />
-          </ExerciseProvider>
-        </ProgressProvider>
-      </AuthProvider>
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <AuthProvider>
+          <ProgressProvider>
+            <ExerciseProvider>
+              <AppContent />
+            </ExerciseProvider>
+          </ProgressProvider>
+        </AuthProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }

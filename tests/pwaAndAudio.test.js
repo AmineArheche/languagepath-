@@ -38,8 +38,8 @@ describe("PWA Installation & Offline Shell Precaching", () => {
     expect(fs.existsSync(manifestPath)).toBe(true);
 
     const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
-    expect(manifest.name).toContain("DeutschPath");
-    expect(manifest.short_name).toBe("DeutschPath");
+    expect(manifest.name).toMatch(/LanguagePath|DeutschPath/);
+    expect(manifest.short_name).toMatch(/LanguagePath|DeutschPath/);
     expect(manifest.display).toBe("standalone");
     expect(manifest.start_url).toBe("/");
     expect(manifest.theme_color).toBe("#f59e0b");
@@ -97,7 +97,7 @@ describe("PWA Installation & Offline Shell Precaching", () => {
     expect(response.status).toBe(200);
     const body = await response.text();
     expect(body).toContain('<div id="root"></div>');
-    expect(body).toContain("DeutschPath");
+    expect(body).toMatch(/LanguagePath|DeutschPath/);
   });
 });
 
