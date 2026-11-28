@@ -84,30 +84,31 @@ export function getScenarioById(id) {
 }
 
 /**
- * Builds the customized system prompt for the German tutor
+ * Builds the customized system prompt for the AI tutor
  */
-export function buildSystemPrompt(level, scenario, nativeLanguage = null) {
+export function buildSystemPrompt(level, scenario, nativeLanguage = null, targetLanguage = "German") {
   const lang = nativeLanguage || getLearnerNativeLanguageName();
-  return `You are "Lukas", an encouraging, patient, and highly skilled native German AI tutor for the DeutschPath app.
-Your mission is to help the user practice spoken German through realistic, immersive roleplay.
+  const target = targetLanguage || "German";
+  return `You are an encouraging, patient, and highly skilled native ${target} AI tutor for the LanguagePath app.
+Your mission is to help the user practice spoken ${target} through realistic, immersive roleplay.
 
 RULES:
 1. Target CEFR Level: ${level}.
    - For A1: Use very short, simple sentences (3 to 6 words each). Basic present tense, high-frequency vocabulary. Speak politely. Avoid complex subordinate clauses.
-   - For A2: Short sentences, simple compound sentences (und, aber, weil), past tense (Perfekt).
-   - For B1: Conversational fluency, subordinate clauses (weil, dass, obwohl, wenn), modal verbs, expressing opinions.
-   - For B2: Natural native nuance, idiomatic expressions, Konjunktiv II, formal debate/professional vocabulary.
+   - For A2: Short sentences, simple compound sentences, past tense.
+   - For B1: Conversational fluency, subordinate clauses, modal verbs, expressing opinions.
+   - For B2: Natural native nuance, idiomatic expressions, complex structures, formal debate/professional vocabulary.
 2. The Scenario: "${scenario.title}"
    - Roleplay character: ${scenario.character}
    - Scenario Context: ${scenario.description}
-   - You MUST stay strictly in character. If the scenario is 'café', you are the waiter; if 'doctor', you are the physician; if 'job interview', you are the interviewer; if 'train station', you are the DB service clerk; if 'free chat', you are a friendly German partner.
+   - You MUST stay strictly in character.
 3. Language of replies:
-   - Your tutor reply ("tutorReply") MUST BE 100% IN GERMAN at level ${level}. Never reply in another language in "tutorReply".
+   - Your tutor reply ("tutorReply") MUST BE 100% IN ${target.toUpperCase()} at level ${level}. Never reply in another language in "tutorReply".
 4. User sentence correction:
-   - Analyze the user's latest message for grammar, spelling, word choice, and article/case mistakes.
+   - Analyze the user's latest message for grammar, spelling, word choice, and agreement mistakes.
    - If there are errors:
-     - "corrected": provide the corrected version in natural standard German.
-     - "explanation": provide a clear, friendly, ONE-LINE explanation in ${lang} explaining WHY it was corrected (e.g. why the case or article was chosen).
+     - "corrected": provide the corrected version in natural standard ${target}.
+     - "explanation": provide a clear, friendly, ONE-LINE explanation in ${lang} explaining WHY it was corrected.
      - "hasErrors": true
    - If the user's sentence has NO mistakes:
      - "corrected": user's sentence
@@ -119,11 +120,11 @@ RULES:
 RESPONSE FORMAT:
 You MUST ALWAYS respond with a single valid JSON object with this exact structure:
 {
-  "tutorReply": "German reply strictly at level ${level}",
+  "tutorReply": "${target} reply strictly at level ${level}",
   "translation": "Translation in ${lang} of your reply",
   "correction": {
     "original": "The user's original message",
-    "corrected": "The corrected German sentence",
+    "corrected": "The corrected ${target} sentence",
     "explanation": "One line friendly explanation in ${lang} of the correction or confirmation of perfection",
     "hasErrors": true
   }
@@ -156,7 +157,8 @@ export async function sendTutorMessage({
   level,
   scenario,
   conversationHistory,
-  userMessage
+  userMessage,
+  targetLanguage = "German"
 }) {
   const activeKey =
     apiKey ||
@@ -165,11 +167,11 @@ export async function sendTutorMessage({
 
   // If no API key is provided, use simulated smart tutor fallback
   if (!activeKey || activeKey.trim() === "" || activeKey.includes("your_")) {
-    return generateSimulatedTutorResponse(level, scenario, userMessage);
+    return generateSimulatedTutorResponse(level, scenario, userMessage, targetLanguage);
   }
 
   const activeModel = getActiveGeminiModel(modelName);
-  const systemPrompt = buildSystemPrompt(level, scenario);
+  const systemPrompt = buildSystemPrompt(level, scenario, null, targetLanguage);
 
   // Format history for Gemini API
   const contents = [];
@@ -188,7 +190,7 @@ export async function sendTutorMessage({
     role: "user",
     parts: [
       {
-        text: `User message: "${userMessage}".\nRemember to stay in character for "${scenario.title}" at level ${level}. Reply ONLY in JSON format.`
+        text: `User message: "${userMessage}".\nRemember to stay in character for "${scenario.title}" at level ${level} in ${targetLanguage}. Reply ONLY in JSON format.`
       }
     ]
   });
@@ -221,7 +223,7 @@ export async function sendTutorMessage({
         warnMessage = "Gemini API rate limit exceeded (HTTP 429). Quota exhausted. Using offline fallback.";
       }
       console.warn(warnMessage);
-      const fallback = generateSimulatedTutorResponse(level, scenario, userMessage);
+      const fallback = generateSimulatedTutorResponse(level, scenario, userMessage, targetLanguage);
       return {
         ...fallback,
         apiWarning: warnMessage
@@ -237,7 +239,7 @@ export async function sendTutorMessage({
     const parsed = JSON.parse(cleanJson);
 
     return {
-      tutorReply: parsed.tutorReply || "Ich verstehe. Erzählen Sie mir mehr!",
+      tutorReply: parsed.tutorReply || "I understand. Tell me more!",
       translation: parsed.translation || "I understand. Tell me more!",
       correction: parsed.correction || {
         original: userMessage,
@@ -248,15 +250,21 @@ export async function sendTutorMessage({
     };
   } catch (err) {
     console.warn("Fetch or parse exception, using fallback:", err);
-    return generateSimulatedTutorResponse(level, scenario, userMessage);
+    return generateSimulatedTutorResponse(level, scenario, userMessage, targetLanguage);
   }
 }
 
 /**
  * Smart simulated tutor response engine when offline or no API key is supplied
  */
-function generateSimulatedTutorResponse(level, scenario, userMessage) {
+function generateSimulatedTutorResponse(level, scenario, userMessage, targetLanguage = "German") {
   const msgLower = userMessage.toLowerCase().trim();
+  const langKey = (targetLanguage || "de").toLowerCase();
+  const isSpanish = langKey.includes("es") || langKey.includes("span");
+  const isFrench = langKey.includes("fr");
+  const isEnglish = langKey.includes("en");
+  const isItalian = langKey.includes("it");
+  const isArabic = langKey.includes("ar");
 
   // Basic grammatical checks for simulated corrections
   let correction = {
@@ -266,7 +274,91 @@ function generateSimulatedTutorResponse(level, scenario, userMessage) {
     hasErrors: false
   };
 
-  // Check 1: "ich will ein kaffee" -> "ich möchte einen kaffee"
+  if (isSpanish) {
+    correction.explanation = "¡Perfecto! Tu frase es gramaticalmente correcta y natural.";
+    const replies = {
+      cafe: {
+        tutorReply: level === "A1" ? "¡Con mucho gusto! ¿Desea también un trozo de pastel?" : "¡Con mucho gusto! Hoy tenemos tarta casera y café especial recién tostado. ¿Le apetece probarlo?",
+        translation: level === "A1" ? "With pleasure! Would you also like some cake?" : "With pleasure! Today we have homemade pie and freshly roasted specialty coffee. Would you like to try it?"
+      },
+      interview: {
+        tutorReply: level === "A1" ? "Muchas gracias. ¿Qué idiomas habla usted?" : "Excelente. Su perfil es muy interesante y encaja con nuestro equipo. ¿Cómo suele gestionar el estrés?",
+        translation: level === "A1" ? "Thank you very much. What languages do you speak?" : "Excellent. Your profile is very interesting and fits our team well. How do you usually handle stress?"
+      },
+      doctor: {
+        tutorReply: level === "A1" ? "¿Dónde le duele exactamente? Tome estas pastillas." : "Comprendo sus síntomas. Descanse un par de días, beba suficiente agua y tome este medicamento.",
+        translation: level === "A1" ? "Where does it hurt exactly? Take these pills." : "I understand your symptoms. Rest for a couple of days, drink enough water and take this medication."
+      },
+      station: {
+        tutorReply: level === "A1" ? "El próximo tren sale a las 14:00 por la vía 4." : "El tren de alta velocidad sale a las 14:15 por el andén 4. ¿Desea reservar un asiento de ventanilla?",
+        translation: level === "A1" ? "The next train departs at 2:00 PM on track 4." : "The high-speed train departs at 2:15 PM from platform 4. Would you like to reserve a window seat?"
+      },
+      free: {
+        tutorReply: level === "A1" ? "¡Qué bien! El fin de semana me gusta pasear por la ciudad. ¿Y a ti?" : "¡Qué interesante! Me gusta mucho la lectura y el deporte al aire libre. ¿Cuáles son tus pasatiempos favoritos?",
+        translation: level === "A1" ? "That's great! On the weekend I like to take a walk around the city. And you?" : "How interesting! I really enjoy reading and outdoor sports. What are your favorite hobbies?"
+      }
+    };
+    const rep = replies[scenario?.id] || replies.free;
+    return { tutorReply: rep.tutorReply, translation: rep.translation, correction };
+  }
+
+  if (isFrench) {
+    correction.explanation = "Parfait ! Votre phrase est grammaticalement correcte et naturelle.";
+    const replies = {
+      cafe: {
+        tutorReply: level === "A1" ? "Très bien ! Désirez-vous aussi une pâtisserie ?" : "Avec plaisir ! Nous avons une délicieuse tarte aux pommes aujourd'hui. Souhaitez-vous une part ?",
+        translation: level === "A1" ? "Very good! Would you also like a pastry?" : "With pleasure! Today we have fresh apple tart. Would you like a slice?"
+      },
+      interview: {
+        tutorReply: level === "A1" ? "Merci beaucoup. Quelles langues parlez-vous ?" : "C'est très intéressant ! Pouvez-vous me décrire une expérience professionnelle marquante ?",
+        translation: level === "A1" ? "Thank you very much. What languages do you speak?" : "That is very interesting! Can you describe a significant professional experience?"
+      },
+      doctor: {
+        tutorReply: level === "A1" ? "Où avez-vous mal ? Prenez ces comprimés avec un grand verre d'eau." : "Je comprends vos symptômes. Reposez-vous bien et prenez ce traitement pendant trois jours.",
+        translation: level === "A1" ? "Where does it hurt? Take these tablets with a tall glass of water." : "I understand your symptoms. Rest well and take this treatment for three days."
+      },
+      station: {
+        tutorReply: level === "A1" ? "Le prochain train part à 14h voie 4. Le billet coûte 24 euros." : "Le TGV partira voie 4 à 14h15. Souhaitez-vous réserver une place en première ou seconde classe ?",
+        translation: level === "A1" ? "The next train leaves at 2 PM on track 4. The ticket costs 24 euros." : "The high-speed train departs from track 4 at 2:15 PM. Would you like to reserve first or second class?"
+      },
+      free: {
+        tutorReply: level === "A1" ? "C'est super ! Le week-end, j'aime me promener au parc. Et toi ?" : "C'est passionnant ! J'aime beaucoup voyager et cuisiner. Quelles sont vos activités préférées ?",
+        translation: level === "A1" ? "That's great! On weekends, I like to take a walk in the park. And you?" : "That's fascinating! I love traveling and cooking. What are your favorite activities?"
+      }
+    };
+    const rep = replies[scenario?.id] || replies.free;
+    return { tutorReply: rep.tutorReply, translation: rep.translation, correction };
+  }
+
+  if (isEnglish) {
+    correction.explanation = "Perfect! Your sentence is grammatically correct and natural.";
+    const replies = {
+      cafe: {
+        tutorReply: level === "A1" ? "Certainly! Would you also like some cake with that?" : "With pleasure! We have fresh apple pie and specialty brew today. Would you like a slice?",
+        translation: level === "A1" ? "Certainly! Would you also like some cake with that?" : "With pleasure! We have fresh apple pie and specialty brew today. Would you like a slice?"
+      },
+      interview: {
+        tutorReply: level === "A1" ? "Thank you very much. What other languages do you speak?" : "Thank you for sharing. That aligns well with our values. How do you approach tight project deadlines?",
+        translation: level === "A1" ? "Thank you very much. What other languages do you speak?" : "Thank you for sharing. That aligns well with our values. How do you approach tight project deadlines?"
+      },
+      doctor: {
+        tutorReply: level === "A1" ? "Where does it hurt? Drink plenty of fluids and take these pills." : "I understand your symptoms. I will prescribe a mild medicine. Please rest for three days.",
+        translation: level === "A1" ? "Where does it hurt? Drink plenty of fluids and take these pills." : "I understand your symptoms. I will prescribe a mild medicine. Please rest for three days."
+      },
+      station: {
+        tutorReply: level === "A1" ? "The next train departs at 2:00 PM from platform 4." : "The express train departs on schedule at 2:15 PM from track 4. Would you like a reserved seat?",
+        translation: level === "A1" ? "The next train departs at 2:00 PM from platform 4." : "The express train departs on schedule at 2:15 PM from track 4. Would you like a reserved seat?"
+      },
+      free: {
+        tutorReply: level === "A1" ? "That is nice! On the weekend I enjoy taking walks in the park. How about you?" : "That sounds fascinating! I love exploring new outdoor trails and reading. What do you enjoy most?",
+        translation: level === "A1" ? "That is nice! On the weekend I enjoy taking walks in the park. How about you?" : "That sounds fascinating! I love exploring new outdoor trails and reading. What do you enjoy most?"
+      }
+    };
+    const rep = replies[scenario?.id] || replies.free;
+    return { tutorReply: rep.tutorReply, translation: rep.translation, correction };
+  }
+
+  // Default German checks & replies
   if (msgLower.includes("ich will") && msgLower.includes("kaffee")) {
     correction = {
       original: userMessage,
@@ -304,7 +396,7 @@ function generateSimulatedTutorResponse(level, scenario, userMessage) {
     };
   }
 
-  // Simulated Scenario Replies
+  // Simulated German Scenario Replies
   const replies = {
     cafe: {
       tutorReply:
@@ -358,7 +450,7 @@ function generateSimulatedTutorResponse(level, scenario, userMessage) {
     }
   };
 
-  const replyData = replies[scenario.id] || replies.free;
+  const replyData = replies[scenario?.id] || replies.free;
 
   return {
     tutorReply: replyData.tutorReply,

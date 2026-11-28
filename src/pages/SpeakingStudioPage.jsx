@@ -25,6 +25,16 @@ import { Button } from "../components/common/Button";
 import { Card } from "../components/common/Card";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { useSpeech } from "../hooks/useSpeech";
+import { useProgress } from "../context/ProgressContext";
+
+const LANG_BCP47 = {
+  de: "de-DE",
+  es: "es-ES",
+  fr: "fr-FR",
+  en: "en-US",
+  it: "it-IT",
+  ar: "ar-SA"
+};
 
 const LEVELS = ["A1", "A2", "B1", "B2"];
 
@@ -70,8 +80,93 @@ const ORAL_REDEMITTEL = {
   ]
 };
 
+const ORAL_REDEMITTEL_BY_LANG = {
+  de: ORAL_REDEMITTEL,
+  es: {
+    A1: [
+      { de: "Hola, me llamo... Soy de...", en: "Hello, my name is... I am from..." },
+      { de: "¿Podría repetir eso, por favor?", en: "Could you please repeat that?" },
+      { de: "Disculpe, ¿cuánto cuesta esto?", en: "Excuse me, how much does this cost?" },
+      { de: "¿Podría ayudarme, por favor?", en: "Could you please help me?" }
+    ],
+    A2: [
+      { de: "El fin de semana pasado hice...", en: "Last weekend I did..." },
+      { de: "¿Qué te parece si el sábado...?", en: "How about if we... on Saturday?" },
+      { de: "¡Es una buena idea! ¿Qué opinas?", en: "That's a good idea! What do you think?" },
+      { de: "En mi opinión...", en: "In my opinion..." }
+    ],
+    B1: [
+      { de: "El tema de mi presentación de hoy es...", en: "The topic of my presentation today is..." },
+      { de: "Por un lado esto tiene ventajas, pero por otro...", en: "On the one hand this has advantages, but on the other..." },
+      { de: "En mi país de origen la situación es...", en: "In my home country the situation is..." },
+      { de: "En resumen, me gustaría destacar que...", en: "In summary I would like to highlight that..." }
+    ],
+    B2: [
+      { de: "Es indiscutible que...", en: "It is indisputable that..." },
+      { de: "Un aspecto decisivo en esto es...", en: "A decisive aspect here is..." },
+      { de: "Desde una perspectiva práctica conviene...", en: "From a practical perspective it is advisable..." },
+      { de: "De ello se puede concluir que...", en: "From this one can conclude that..." }
+    ]
+  },
+  fr: {
+    A1: [
+      { de: "Bonjour, je m'appelle... Je viens de...", en: "Hello, my name is... I come from..." },
+      { de: "Pourriez-vous répéter, s'il vous plaît ?", en: "Could you please repeat that?" },
+      { de: "Pardon, combien cela coûte-t-il ?", en: "Excuse me, how much does this cost?" },
+      { de: "Pourriez-vous m'aider, s'il vous plaît ?", en: "Could you please help me?" }
+    ],
+    A2: [
+      { de: "Le week-end dernier, j'ai fait...", en: "Last weekend I did..." },
+      { de: "Et si on allait... samedi ?", en: "How about if we... on Saturday?" },
+      { de: "C'est une très bonne idée ! Qu'en penses-tu ?", en: "That's a great idea! What do you think?" },
+      { de: "À mon avis...", en: "In my opinion..." }
+    ],
+    B1: [
+      { de: "Le sujet de ma présentation aujourd'hui est...", en: "The topic of my presentation today is..." },
+      { de: "D'un côté cela présente des avantages, mais d'un autre...", en: "On the one hand this presents advantages, but on the other..." },
+      { de: "Dans mon pays d'origine, la situation est...", en: "In my home country the situation is..." },
+      { de: "En conclusion, je tiens à souligner que...", en: "In conclusion I would like to emphasize that..." }
+    ],
+    B2: [
+      { de: "Il est indéniable que...", en: "It cannot be denied that..." },
+      { de: "Un élément déterminant réside dans...", en: "A decisive aspect lies in..." },
+      { de: "D'un point de vue stratégique, il convient de...", en: "From a strategic point of view it is appropriate to..." },
+      { de: "On peut en tirer la conclusion que...", en: "One can draw the conclusion that..." }
+    ]
+  },
+  en: {
+    A1: [
+      { de: "Hello, my name is... I come from...", en: "Hello, my name is... I come from..." },
+      { de: "Could you please repeat that?", en: "Could you please repeat that?" },
+      { de: "Excuse me, how much does this cost?", en: "Excuse me, how much does this cost?" },
+      { de: "Could you please help me?", en: "Could you please help me?" }
+    ],
+    A2: [
+      { de: "Last weekend I visited...", en: "Last weekend I visited..." },
+      { de: "How about we meet on Saturday?", en: "How about we meet on Saturday?" },
+      { de: "That sounds like a great plan!", en: "That sounds like a great plan!" },
+      { de: "In my personal opinion...", en: "In my personal opinion..." }
+    ],
+    B1: [
+      { de: "The focus of my presentation today is...", en: "The focus of my presentation today is..." },
+      { de: "While there are clear benefits, there are also drawbacks...", en: "While there are clear benefits, there are also drawbacks..." },
+      { de: "In my experience, the general trend shows...", en: "In my experience, the general trend shows..." },
+      { de: "To sum up my main points...", en: "To sum up my main points..." }
+    ],
+    B2: [
+      { de: "It is widely recognized that...", en: "It is widely recognized that..." },
+      { de: "A paramount factor in this discussion is...", en: "A paramount factor in this discussion is..." },
+      { de: "From a systemic perspective, one must consider...", en: "From a systemic perspective, one must consider..." },
+      { de: "Consequently, the evidence strongly suggests that...", en: "Consequently, the evidence strongly suggests that..." }
+    ]
+  }
+};
+
 export function SpeakingStudioPage({ onNavigate }) {
-  const { speak } = useSpeech({ lang: "de-DE", rate: 0.95 });
+  const { activeTargetLanguage, activeCurriculum } = useProgress?.() || {};
+  const speechLang = LANG_BCP47[activeTargetLanguage] || "de-DE";
+  const langName = activeCurriculum?.name || activeCurriculum?.languageName || "German";
+  const { speak } = useSpeech({ lang: speechLang, rate: 0.95 });
 
   const [selectedLevel, setSelectedLevel] = useLocalStorage("deutschpath_speaking_level", "A1");
   const [selectedRubric, setSelectedRubric] = useLocalStorage("deutschpath_speaking_rubric", "goethe");
@@ -157,7 +252,10 @@ export function SpeakingStudioPage({ onNavigate }) {
     }
   };
 
-  const redemittelList = ORAL_REDEMITTEL[selectedLevel] || ORAL_REDEMITTEL.A1;
+  const redemittelList =
+    ORAL_REDEMITTEL_BY_LANG[activeTargetLanguage]?.[selectedLevel] ||
+    ORAL_REDEMITTEL[selectedLevel] ||
+    ORAL_REDEMITTEL.A1;
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto space-y-8 animate-in fade-in duration-300">
@@ -168,9 +266,9 @@ export function SpeakingStudioPage({ onNavigate }) {
             <Mic className="w-3.5 h-3.5" />
             <span>Oral Exam &amp; Shadowing Studio</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight">Speaking Studio</h1>
+          <h1 className="text-2xl sm:text-3xl font-black tracking-tight">{langName} Speaking Studio</h1>
           <p className="text-xs sm:text-sm text-rose-50 max-w-xl leading-relaxed">
-            Practice realistic CEFR oral exam formats. Real-time German speech transcription, local acoustic metrics (WPM, pause gaps, fillers, Nebensätze verb-end accuracy), official exam rubrics, and 0.75x shadowing drills.
+            Practice realistic CEFR oral exam formats. Real-time {langName} speech transcription, local acoustic metrics (WPM, pause gaps, fillers), official exam rubrics, and 0.75x shadowing drills.
           </p>
         </div>
 
@@ -186,7 +284,7 @@ export function SpeakingStudioPage({ onNavigate }) {
             </span>
           </div>
           <p className="text-[11px] text-rose-100 leading-snug">
-            Processed locally via browser Web Speech API (de-DE). Optional Gemini audio fallback requires explicit consent.
+            Processed locally via browser Web Speech API ({speechLang}). Optional Gemini audio fallback requires explicit consent.
           </p>
         </div>
       </div>

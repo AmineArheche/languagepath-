@@ -229,10 +229,6 @@ export function LessonPage({ lessonId, onBack, onCompleteLesson }) {
           onComplete={handleQuizSuccess}
         />
       )}
-          xpReward={lesson.xp}
-          onComplete={handleQuizSuccess}
-        />
-      )}
     </div>
   );
 }

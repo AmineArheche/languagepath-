@@ -455,8 +455,9 @@ export function normalizeGermanAnswer(input) {
  * @returns {{ isCorrect: boolean, headwordCorrect: boolean, articleMissing: boolean, expected: string }}
  */
 export function checkCardAnswer(userInput, card) {
+  const rawWord = card.word || card.german || "";
   const normUser = normalizeGermanAnswer(userInput);
-  const normHeadword = normalizeGermanAnswer(card.german);
+  const normHeadword = normalizeGermanAnswer(rawWord);
   const normArticle = card.article ? normalizeGermanAnswer(card.article) : "";
   const expectedFull = normArticle ? `${normArticle} ${normHeadword}` : normHeadword;
 
@@ -470,12 +471,12 @@ export function checkCardAnswer(userInput, card) {
     isCorrect,
     headwordCorrect: isExactWithArticle || isHeadwordOnly,
     articleMissing,
-    expected: card.article ? `${card.article} ${card.german}` : card.german
+    expected: card.article ? `${card.article} ${rawWord}` : rawWord
   };
 }
 
 /**
- * Generates a cloze-deleted German sentence from exampleDe and headword.
+ * Generates a cloze-deleted sentence from example sentence and headword.
  *
  * @param {string} exampleDe
  * @param {string} headword
@@ -486,9 +487,8 @@ export function createClozeSentence(exampleDe, headword) {
     return { clozeText: exampleDe || "", targetWord: headword || "" };
   }
 
-  const cleanHeadword = headword.trim().replace(/^(der|die|das)\s+/i, "");
-  // Match word boundary with optional inflection endings (e.g. Tische, Tischen)
-  const regex = new RegExp(`\\b${cleanHeadword}[a-zäöüß]*\\b`, "gi");
+  const cleanHeadword = headword.trim().replace(/^(der|die|das|el|la|los|las|le|un|une|the|a|an)\s+/i, "");
+  const regex = new RegExp(`\\b${cleanHeadword}[a-zäöüßéèêëàâôîïûùçñ]*\\b`, "gi");
 
   let matchFound = false;
   const clozeText = exampleDe.replace(regex, () => {

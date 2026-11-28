@@ -33,6 +33,15 @@ import { playSound } from "../../utils/soundEffects";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useProgress } from "../../context/ProgressContext";
 
+const LANG_BCP47 = {
+  de: "de-DE",
+  es: "es-ES",
+  fr: "fr-FR",
+  en: "en-US",
+  it: "it-IT",
+  ar: "ar-SA"
+};
+
 /**
  * Interactive ExamModuleSprechen
  *
@@ -52,8 +61,9 @@ export function ExamModuleSprechen({
   level = "A1",
   rubricInstitution = "goethe"
 }) {
-  const { speak, stop, isSpeaking } = useSpeech({ lang: "de-DE", rate: 0.95 });
   const progressContext = useProgress?.();
+  const speechLang = LANG_BCP47[progressContext?.activeTargetLanguage] || "de-DE";
+  const { speak, stop, isSpeaking } = useSpeech({ lang: speechLang, rate: 0.95 });
   const recordError = progressContext?.recordError;
   const [cloudConsent, setCloudConsent] = useLocalStorage("deutschpath_cloud_audio_consent", false);
   const [geminiApiKey] = useLocalStorage("deutschpath_gemini_api_key", "");
@@ -170,7 +180,7 @@ export function ExamModuleSprechen({
     if (SpeechRec) {
       try {
         const recognition = new SpeechRec();
-        recognition.lang = "de-DE";
+        recognition.lang = speechLang;
         recognition.continuous = true;
         recognition.interimResults = true;
 

@@ -60,6 +60,11 @@ export function FlashcardItem({
     setIsEditingMnemonic(false);
   };
 
+  const headword = card.word || card.german || "";
+  const translation = card.translation || card.english || "";
+  const exampleSentence = card.example || card.exampleDe || "";
+  const exampleTranslation = card.englishSentence || card.exampleEn || "";
+
   const article = card.article?.toLowerCase();
 
   // Gender color styling (WCAG AAA compliant text tokens)
@@ -87,6 +92,54 @@ export function FlashcardItem({
       badgeClass: "bg-emerald-800 text-white shadow-sm shadow-emerald-500/20",
       glowColor: "from-emerald-500/15 via-transparent to-transparent",
       accentText: "text-emerald-800 dark:text-emerald-300"
+    },
+    el: {
+      tag: "m.",
+      borderFront: "border-blue-400 dark:border-blue-600 shadow-blue-500/10",
+      borderBack: "border-blue-400 dark:border-blue-600",
+      badgeClass: "bg-blue-700 text-white shadow-sm shadow-blue-500/20",
+      glowColor: "from-blue-500/15 via-transparent to-transparent",
+      accentText: "text-blue-700 dark:text-blue-300"
+    },
+    la: {
+      tag: "f.",
+      borderFront: "border-rose-400 dark:border-rose-600 shadow-rose-500/10",
+      borderBack: "border-rose-400 dark:border-rose-600",
+      badgeClass: "bg-rose-700 text-white shadow-sm shadow-rose-500/20",
+      glowColor: "from-rose-500/15 via-transparent to-transparent",
+      accentText: "text-red-700 dark:text-red-300"
+    },
+    le: {
+      tag: "m.",
+      borderFront: "border-blue-400 dark:border-blue-600 shadow-blue-500/10",
+      borderBack: "border-blue-400 dark:border-blue-600",
+      badgeClass: "bg-blue-700 text-white shadow-sm shadow-blue-500/20",
+      glowColor: "from-blue-500/15 via-transparent to-transparent",
+      accentText: "text-blue-700 dark:text-blue-300"
+    },
+    the: {
+      tag: "def.",
+      borderFront: "border-amber-400 dark:border-amber-600 shadow-amber-500/10",
+      borderBack: "border-amber-400 dark:border-amber-600",
+      badgeClass: "bg-amber-700 text-white shadow-sm shadow-amber-500/20",
+      glowColor: "from-amber-500/10 via-transparent to-transparent",
+      accentText: "text-amber-700 dark:text-amber-300"
+    },
+    a: {
+      tag: "indef.",
+      borderFront: "border-indigo-400 dark:border-indigo-600 shadow-indigo-500/10",
+      borderBack: "border-indigo-400 dark:border-indigo-600",
+      badgeClass: "bg-indigo-700 text-white shadow-sm shadow-indigo-500/20",
+      glowColor: "from-indigo-500/15 via-transparent to-transparent",
+      accentText: "text-indigo-700 dark:text-indigo-300"
+    },
+    an: {
+      tag: "indef.",
+      borderFront: "border-violet-400 dark:border-violet-600 shadow-violet-500/10",
+      borderBack: "border-violet-400 dark:border-violet-600",
+      badgeClass: "bg-violet-700 text-white shadow-sm shadow-violet-500/20",
+      glowColor: "from-violet-500/15 via-transparent to-transparent",
+      accentText: "text-violet-700 dark:text-violet-300"
     }
   }[article] || {
     tag: "expr.",
@@ -103,7 +156,7 @@ export function FlashcardItem({
   const isLeech = sm2Record?.isLeech || (sm2Record?.lapses || 0) >= 8;
 
   // Cloze data
-  const cloze = createClozeSentence(card.exampleDe, card.german);
+  const cloze = createClozeSentence(exampleSentence, headword);
 
   // Dynamic swipe styling
   const swipeGlow =
@@ -215,7 +268,7 @@ export function FlashcardItem({
                 )}
 
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-2">
-                  {card.german}
+                  {headword}
                 </h2>
 
                 {card.plural && card.plural !== "-" && (
@@ -226,7 +279,7 @@ export function FlashcardItem({
 
                 <div className="mt-4 flex justify-center" onClick={(e) => e.stopPropagation()}>
                   <AudioButton
-                    text={`${card.article ? card.article + " " : ""}${card.german}`}
+                    text={`${card.article ? card.article + " " : ""}${headword}`}
                     size="lg"
                   />
                 </div>
@@ -237,10 +290,10 @@ export function FlashcardItem({
             {cardMode === "typing" && (
               <div onClick={(e) => e.stopPropagation()} className="w-full max-w-sm mx-auto space-y-3">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                  Type in German with article:
+                  Type in target language:
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
-                  "{card.english}"
+                  "{translation}"
                 </h3>
 
                 <form onSubmit={handleCheckTypedAnswer} className="space-y-2 pt-2">
@@ -248,12 +301,12 @@ export function FlashcardItem({
                     type="text"
                     value={typedInput}
                     onChange={(e) => setTypedInput(e.target.value)}
-                    placeholder={card.article ? "e.g. der Tisch (or der tisch)..." : "e.g. bitte..."}
+                    placeholder={card.article ? `e.g. ${card.article} ${headword}...` : `e.g. ${headword}...`}
                     className="w-full px-4 py-3 rounded-2xl border-2 border-slate-700 bg-slate-800 text-white font-bold text-center focus:outline-none focus:ring-4 focus:ring-amber-500/20 focus:border-amber-500"
                     autoFocus
                   />
                   <div className="text-[10px] text-slate-400">
-                    Umlaut alternatives (<kbd className="font-mono">ae</kbd>, <kbd className="font-mono">oe</kbd>, <kbd className="font-mono">ue</kbd>, <kbd className="font-mono">ss</kbd>) accepted!
+                    Accents and alternative spellings accepted!
                   </div>
                   <button
                     type="submit"
@@ -277,7 +330,7 @@ export function FlashcardItem({
                     {cloze.clozeText}
                   </p>
                   <p className="text-xs text-slate-400 mt-2 italic">
-                    Meaning: "{card.english}"
+                    Meaning: "{translation}"
                   </p>
                 </div>
 
@@ -297,12 +350,12 @@ export function FlashcardItem({
             {cardMode === "listen" && (
               <div onClick={(e) => e.stopPropagation()} className="w-full max-w-sm mx-auto space-y-3">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                  Listen & Transcribe in German:
+                  Listen & Transcribe:
                 </div>
 
                 <div className="py-2 flex justify-center">
                   <AudioButton
-                    text={`${card.article ? card.article + " " : ""}${card.german}`}
+                    text={`${card.article ? card.article + " " : ""}${headword}`}
                     size="lg"
                   />
                 </div>
@@ -352,7 +405,7 @@ export function FlashcardItem({
                 </span>
               )}
               <span className="text-sm font-bold text-slate-300">
-                {card.german}
+                {headword}
               </span>
               {card.plural && card.plural !== "-" && (
                 <span className="text-xs text-slate-400">({card.plural})</span>
@@ -361,7 +414,7 @@ export function FlashcardItem({
 
             <div onClick={(e) => e.stopPropagation()}>
               <AudioButton
-                text={`${card.article ? card.article + " " : ""}${card.german}`}
+                text={`${card.article ? card.article + " " : ""}${headword}`}
                 size="md"
               />
             </div>
@@ -396,24 +449,24 @@ export function FlashcardItem({
           {/* Center Meaning & Example */}
           <div className="my-auto py-2 text-center">
             <div className="text-[11px] uppercase font-extrabold text-amber-400 tracking-wider mb-1">
-              English Meaning
+              Meaning & Translation
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-white mb-3">
-              {card.english}
+              {translation}
             </h3>
 
             {/* Example sentence with audio */}
-            {card.exampleDe && (
+            {exampleSentence && (
               <div className="mt-2 p-3.5 rounded-2xl bg-white/5 border border-white/10 text-left">
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-[11px] font-bold text-amber-300">Beispiel (Example):</span>
+                  <span className="text-[11px] font-bold text-amber-300">Example:</span>
                   <div onClick={(e) => e.stopPropagation()}>
-                    <AudioButton text={card.exampleDe} size="sm" />
+                    <AudioButton text={exampleSentence} size="sm" />
                   </div>
                 </div>
-                <p className="text-sm font-semibold text-slate-100">{card.exampleDe}</p>
-                {card.exampleEn && (
-                  <p className="text-xs text-slate-400 mt-1 italic">{card.exampleEn}</p>
+                <p className="text-sm font-semibold text-slate-100">{exampleSentence}</p>
+                {exampleTranslation && (
+                  <p className="text-xs text-slate-400 mt-1 italic">{exampleTranslation}</p>
                 )}
               </div>
             )}

@@ -111,7 +111,7 @@ test.describe("DeutschPath Smoke Suite", () => {
     const readingNav = page.locator("[data-testid='nav-reading']").first();
     await readingNav.click();
 
-    await expect(page.locator("text=Graded German Reading (A1 – B2)")).toBeVisible({ timeout: 10000 });
+    await expect(page.locator("text=/Graded .* Reading/")).toBeVisible({ timeout: 10000 });
 
     // Select the first reading text card
     const firstArticleCard = page.locator("[data-testid='reading-card']").first();

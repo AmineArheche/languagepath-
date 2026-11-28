@@ -26,16 +26,56 @@ import { Button } from "../components/common/Button";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { useProgress } from "../context/ProgressContext";
 
-const QUICK_PROMPTS = {
-  cafe: ["Ich möchte einen Kaffee, bitte.", "Haben Sie Kuchen?", "Die Rechnung, bitte!"],
-  interview: ["Mein Name ist David.", "Ich habe fünf Jahre Erfahrung.", "Ich lerne gern neue Dinge."],
-  doctor: ["Mein Kopf tut sehr weh.", "Seit zwei Tagen habe ich Fieber.", "Welche Tabletten soll ich nehmen?"],
-  station: ["Wann fährt der nächste Zug nach Berlin?", "Auf welchem Gleis?", "Eine Fahrkarte, bitte."],
-  free: ["Hallo! Wie geht es dir?", "Das Wetter ist heute sehr schön.", "Ich lerne Deutsch mit DeutschPath!"]
+export const QUICK_PROMPTS_BY_LANG = {
+  de: {
+    cafe: ["Ich möchte einen Kaffee, bitte.", "Haben Sie Kuchen?", "Die Rechnung, bitte!"],
+    interview: ["Mein Name ist David.", "Ich habe fünf Jahre Erfahrung.", "Ich lerne gern neue Dinge."],
+    doctor: ["Mein Kopf tut sehr weh.", "Seit zwei Tagen habe ich Fieber.", "Welche Tabletten soll ich nehmen?"],
+    station: ["Wann fährt der nächste Zug nach Berlin?", "Auf welchem Gleis?", "Eine Fahrkarte, bitte."],
+    free: ["Hallo! Wie geht es dir?", "Das Wetter ist heute sehr schön.", "Ich lerne Deutsch mit LanguagePath!"]
+  },
+  es: {
+    cafe: ["Quisiera un café, por favor.", "¿Tiene pasteles?", "¡La cuenta, por favor!"],
+    interview: ["Me llamo David.", "Tengo cinco años de experiencia.", "Me encanta aprender cosas nuevas."],
+    doctor: ["Me duele mucho la cabeza.", "Tengo fiebre desde hace dos días.", "¿Qué pastillas debo tomar?"],
+    station: ["¿Cuándo sale el próximo tren a Madrid?", "¿En qué vía?", "Un billete, por favor."],
+    free: ["¡Hola! ¿Cómo estás?", "El tiempo está muy bonito hoy.", "¡Estoy aprendiendo español con LanguagePath!"]
+  },
+  fr: {
+    cafe: ["Je voudrais un café, s'il vous plaît.", "Avez-vous des gâteaux ?", "L'addition, s'il vous plaît !"],
+    interview: ["Je m'appelle David.", "J'ai cinq ans d'expérience.", "J'aime apprendre de nouvelles choses."],
+    doctor: ["J'ai très mal à la tête.", "J'ai de la fièvre depuis deux jours.", "Quels médicaments dois-je prendre ?"],
+    station: ["Quand part le prochain train pour Paris ?", "Sur quelle voie ?", "Un billet, s'il vous plaît."],
+    free: ["Bonjour ! Comment ça va ?", "Il fait très beau aujourd'hui.", "J'apprends le français avec LanguagePath !"]
+  },
+  en: {
+    cafe: ["I would like a coffee, please.", "Do you have any pastries?", "Check, please!"],
+    interview: ["My name is David.", "I have five years of experience.", "I enjoy learning new things."],
+    doctor: ["I have a severe headache.", "I have had a fever for two days.", "What medicine should I take?"],
+    station: ["When does the next train to London depart?", "Which platform?", "One ticket, please."],
+    free: ["Hello! How are you doing today?", "The weather is lovely today.", "I am practicing English with LanguagePath!"]
+  },
+  it: {
+    cafe: ["Vorrei un caffè, per favore.", "Avete dei dolci?", "Il conto, per favore!"],
+    interview: ["Mi chiamo David.", "Ho cinque anni di esperienza.", "Mi piace imparare cose nuove."],
+    doctor: ["Ho un forte mal di testa.", "Ho la febbre da due giorni.", "Quali medicinali dovrei prendere?"],
+    station: ["Quando parte il prossimo treno per Roma?", "Su quale binario?", "Un biglietto, per favore."],
+    free: ["Ciao! Come stai?", "Il tempo è bellissimo oggi.", "Sto imparando l'italiano con LanguagePath!"]
+  },
+  ar: {
+    cafe: ["أريد قهوة من فضلك.", "هل لديكم حلوى؟", "الحساب من فضلك!"],
+    interview: ["اسمي ديفيد.", "لدي خمس سنوات من الخبرة.", "أحب تعلم أشياء جديدة."],
+    doctor: ["رأسي يؤلمني بشدة.", "لدي حمى منذ يومين.", "ما هي الأدوية التي يجب أن أتناولها؟"],
+    station: ["متى يغادر القطار القادم إلى القاهرة؟", "على أي رصiff؟", "تذكرة واحدة من فضلك."],
+    free: ["مرحبا! كيف حالك؟", "الطقس جميل جدا اليوم.", "أنا أتعلم اللغة مع LanguagePath!"]
+  }
 };
 
+export const QUICK_PROMPTS = QUICK_PROMPTS_BY_LANG.de;
+
 export function ConversationPage() {
-  const { checkAndUpdateStreak, recordError } = useProgress();
+  const { checkAndUpdateStreak, recordError, activeTargetLanguage, activeCurriculum } = useProgress();
+  const langName = activeCurriculum?.name || activeCurriculum?.languageName || "German";
   const [level, setLevel] = useLocalStorage("deutschpath_tutor_level", "A1");
   const [scenarioId, setScenarioId] = useLocalStorage("deutschpath_tutor_scenario", "cafe");
   const [apiKey, setApiKey] = useLocalStorage("deutschpath_gemini_api_key", "");
@@ -50,14 +90,21 @@ export function ConversationPage() {
 
   // Conversation history: [{ id, sender: 'tutor'|'user', text, translation, correction }]
   const [history, setHistory] = useLocalStorage(
-    `deutschpath_chat_${scenarioId}_${level}`,
+    `deutschpath_chat_${activeTargetLanguage || "de"}_${scenarioId}_${level}`,
     []
   );
 
   // Initialize initial greeting if history is empty
   useEffect(() => {
     if (history.length === 0) {
-      const initialGreeting = scenario.initialGreetings[level] || scenario.initialGreetings.A1;
+      const initialGreeting =
+        (typeof scenario.initialGreetings?.[activeTargetLanguage] === "object"
+          ? scenario.initialGreetings[activeTargetLanguage][level]
+          : null) ||
+        scenario.initialGreetings?.[level] ||
+        scenario.initialGreetings?.A1 ||
+        "Hello! Welcome. How can I help you today?";
+
       setHistory([
         {
           id: `msg-${Date.now()}`,
@@ -67,7 +114,7 @@ export function ConversationPage() {
         }
       ]);
     }
-  }, [scenarioId, level]);
+  }, [scenarioId, level, activeTargetLanguage]);
 
   // Scroll to bottom on new message
   useEffect(() => {
@@ -100,7 +147,8 @@ export function ConversationPage() {
         level,
         scenario,
         conversationHistory: history,
-        userMessage: textToSend
+        userMessage: textToSend,
+        targetLanguage: langName
       });
 
       if (response.apiWarning) {
@@ -193,7 +241,8 @@ export function ConversationPage() {
     setLevel(newLvl);
   };
 
-  const currentQuickPrompts = QUICK_PROMPTS[scenario.id] || QUICK_PROMPTS.free;
+  const quickPromptsMap = QUICK_PROMPTS_BY_LANG[activeTargetLanguage] || QUICK_PROMPTS_BY_LANG.de;
+  const currentQuickPrompts = quickPromptsMap[scenario.id] || quickPromptsMap.free || QUICK_PROMPTS_BY_LANG.de.free;
   const lastTutorMessage = [...history].reverse().find((m) => m.sender === "tutor");
 
   return (
@@ -202,13 +251,13 @@ export function ConversationPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-            <span>AI German Tutor</span>
+            <span>AI {langName} Tutor</span>
             <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300">
               Interactive Conversation
             </span>
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Real-time German roleplay with instant grammar corrections and English explanations.
+            Real-time {langName} roleplay with instant grammar corrections and explanations.
           </p>
         </div>
 
@@ -257,7 +306,7 @@ export function ConversationPage() {
           </div>
 
           <div className="text-[11px] font-semibold text-slate-400">
-            Replies strictly in German
+            Replies strictly in {langName}
           </div>
         </div>
 
@@ -275,7 +324,7 @@ export function ConversationPage() {
           {isLoading && (
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-400 animate-pulse py-2 px-3">
               <Bot className="w-4 h-4 text-amber-500" />
-              <span>{scenario.character} schreibt auf Deutsch...</span>
+              <span>{scenario.character} is typing in {langName}...</span>
             </div>
           )}
 
@@ -327,7 +376,7 @@ export function ConversationPage() {
             type="text"
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
-            placeholder={`Antworte auf Deutsch (${level}: "${currentQuickPrompts[0]}")...`}
+            placeholder={`Reply in ${langName} (${level}: "${currentQuickPrompts[0]}")...`}
             className="flex-1 px-4 py-3 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
 
