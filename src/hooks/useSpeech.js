@@ -98,6 +98,67 @@ export function getRankedGermanVoices(voices = []) {
     .sort((a, b) => b.score - a.score);
 }
 
+/**
+ * Ranks any voice based on target language match and neural synthesis engine
+ */
+export function rankVoiceForLanguage(voice, targetLang = "de-DE") {
+  if (!voice) return 0;
+  let score = 0;
+  const name = (voice.name || "").toLowerCase();
+  const vLang = (voice.lang || "").toLowerCase().replace("_", "-");
+  const target = targetLang.toLowerCase().replace("_", "-");
+  const prefix = target.split("-")[0];
+
+  if (vLang === target) {
+    score += 40;
+  } else if (vLang.startsWith(prefix)) {
+    score += 25;
+  } else {
+    return 0;
+  }
+
+  if (name.includes("google") || name.includes("neural") || name.includes("natural")) {
+    score += 50;
+  } else if (name.includes("online") || name.includes("microsoft") || name.includes("apple")) {
+    score += 40;
+  } else if (name.includes("premium") || name.includes("enhanced")) {
+    score += 35;
+  }
+
+  if (voice.default) score += 10;
+  if (voice.localService) score += 5;
+
+  return score;
+}
+
+/**
+ * Returns ranked voices for any target language (e.g. es-ES, en-US, fr-FR, de-DE)
+ */
+export function getRankedVoicesForLanguage(voices = [], targetLang = "de-DE") {
+  if (targetLang.toLowerCase().startsWith("de")) {
+    return getRankedGermanVoices(voices);
+  }
+
+  const prefix = targetLang.toLowerCase().split("-")[0];
+  const matching = (voices || []).filter((v) => {
+    const l = (v.lang || "").toLowerCase().replace("_", "-");
+    return l.startsWith(prefix);
+  });
+
+  if (matching.length === 0) return [];
+
+  return matching
+    .map((v) => ({
+      voice: v,
+      name: v.name,
+      lang: v.lang,
+      score: rankVoiceForLanguage(v, targetLang),
+      isNeural: /google|natural|neural|online|microsoft|apple/i.test(v.name),
+      isDefault: Boolean(v.default)
+    }))
+    .sort((a, b) => b.score - a.score);
+}
+
 export function useSpeech({
   lang = "de-DE",
   rate: defaultRate = 0.95,
@@ -112,38 +173,44 @@ export function useSpeech({
 
   const currentAudioRef = useRef(null);
 
-  // Load and rank voices
+  // Load and rank voices according to target language
   const refreshVoices = useCallback(() => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
 
     const rawVoices = window.speechSynthesis.getVoices();
     if (!rawVoices || rawVoices.length === 0) return;
 
-    const ranked = getRankedGermanVoices(rawVoices);
-    setAvailableVoices(ranked);
-    setHasGermanVoice(ranked.length > 0);
+    const ranked = getRankedVoicesForLanguage(rawVoices, lang);
+    const rankedGerman = getRankedGermanVoices(rawVoices);
+    const pool = ranked.length > 0 ? ranked : rankedGerman;
+
+    setAvailableVoices(pool);
+    setHasGermanVoice(rankedGerman.length > 0);
+
+    const prefix = (lang || "de").toLowerCase().split("-")[0];
+    const storageKey = `languagepath_preferred_voice_${prefix}`;
 
     // Retrieve saved user preference
     let preferredName = null;
     try {
-      preferredName = localStorage.getItem(PREFERRED_VOICE_STORAGE_KEY);
+      preferredName = localStorage.getItem(storageKey) || localStorage.getItem(PREFERRED_VOICE_STORAGE_KEY);
     } catch {
       // ignore
     }
 
     let chosen = null;
     if (preferredName) {
-      const match = ranked.find((r) => r.name === preferredName || r.voice.voiceURI === preferredName);
+      const match = pool.find((r) => r.name === preferredName || r.voice.voiceURI === preferredName);
       if (match) chosen = match.voice;
     }
 
     // Default to the top-ranked voice
-    if (!chosen && ranked.length > 0) {
-      chosen = ranked[0].voice;
+    if (!chosen && pool.length > 0) {
+      chosen = pool[0].voice;
     }
 
     setGermanVoice(chosen);
-  }, []);
+  }, [lang]);
 
   useEffect(() => {
     if (typeof window !== "undefined" && "speechSynthesis" in window) {

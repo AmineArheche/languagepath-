@@ -26,7 +26,7 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 const LEVELS = ["A1", "A2", "B1", "B2"];
 
 export function ReadingPage() {
-  const { getReadingScore, progress, readingTexts: ctxReadingTexts } = useProgress();
+  const { getReadingScore, progress, readingTexts: ctxReadingTexts, activeCurriculum, activeTargetLanguage } = useProgress();
   const readingTextsData = ctxReadingTexts && ctxReadingTexts.length > 0 ? ctxReadingTexts : fallbackReadingTextsData;
   const { registerExerciseContext, clearExerciseContext } = useExercise();
   const [selectedLevel, setSelectedLevel] = useLocalStorage("deutschpath_reading_level", "A1");
@@ -36,7 +36,7 @@ export function ReadingPage() {
   // Filter texts by selected level
   const textsInLevel = useMemo(() => {
     return readingTextsData.filter((t) => t.level === selectedLevel);
-  }, [selectedLevel]);
+  }, [readingTextsData, selectedLevel]);
 
   // Active text object if one is selected
   const activeText = useMemo(() => {
@@ -176,13 +176,13 @@ export function ReadingPage() {
             <div className="relative z-10 max-w-2xl space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-black uppercase tracking-wider">
                 <BookOpen className="w-3.5 h-3.5" />
-                Graded German Reading (A1 – B2)
+                Graded {activeCurriculum?.languageName || "Language"} Reading (A1 – B2)
               </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight">
-                Leseecke (Reading Library)
+                {activeCurriculum?.languageName || "Reading"} Library
               </h1>
               <p className="text-sm sm:text-base text-amber-100 font-medium leading-relaxed">
-                Immerse yourself in authentic German texts curated for your level.
+                Immerse yourself in authentic {activeCurriculum?.languageName || "target language"} texts curated for your level.
                 Tap any word for instant meaning and add it to your flashcards,
                 listen with native TTS, and test your understanding with comprehension quizzes.
               </p>
@@ -191,7 +191,7 @@ export function ReadingPage() {
               <div className="pt-2 flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-2xl bg-black/20 backdrop-blur-sm text-xs font-bold text-white">
                   <BookOpen className="w-4 h-4 text-amber-200" />
-                  <span>12 Graded Texts</span>
+                  <span>{totalTexts} Graded Texts</span>
                 </div>
                 <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-2xl bg-black/20 backdrop-blur-sm text-xs font-bold text-white">
                   <CheckCircle2 className="w-4 h-4 text-emerald-300" />
@@ -199,7 +199,7 @@ export function ReadingPage() {
                 </div>
                 <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-2xl bg-black/20 backdrop-blur-sm text-xs font-bold text-white">
                   <Volume2 className="w-4 h-4 text-amber-200" />
-                  <span>Native de-DE Audio</span>
+                  <span>Native {(activeTargetLanguage || "de").toUpperCase()} Audio</span>
                 </div>
               </div>
             </div>

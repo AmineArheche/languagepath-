@@ -5,6 +5,8 @@ import { fileURLToPath } from "url";
 import {
   rankGermanVoice,
   getRankedGermanVoices,
+  rankVoiceForLanguage,
+  getRankedVoicesForLanguage,
   PREFERRED_VOICE_STORAGE_KEY,
   GERMAN_VOICE_SETUP_GUIDE
 } from "../src/hooks/useSpeech";
@@ -137,6 +139,22 @@ describe("Audio: German Voice Detection & Ranking Engine", () => {
     const scoreB = rankGermanVoice(voiceB);
 
     expect(scoreA).toBeGreaterThan(scoreB);
+  });
+
+  it("should rank Spanish, English, and French voices appropriately for active target language", () => {
+    const multiVoices = [
+      { name: "Google Español", lang: "es-ES", default: true },
+      { name: "Microsoft Helena - Spanish", lang: "es-ES", default: false },
+      { name: "Google US English", lang: "en-US", default: true },
+      { name: "Microsoft Stefan - German", lang: "de-DE", default: false }
+    ];
+    const spanishRanked = getRankedVoicesForLanguage(multiVoices, "es-ES");
+    expect(spanishRanked).toHaveLength(2);
+    expect(spanishRanked[0].name).toBe("Google Español");
+
+    const englishRanked = getRankedVoicesForLanguage(multiVoices, "en-US");
+    expect(englishRanked).toHaveLength(1);
+    expect(englishRanked[0].name).toBe("Google US English");
   });
 });
 
