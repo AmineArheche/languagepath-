@@ -263,4 +263,92 @@ test.describe("DeutschPath Smoke Suite", () => {
     // Restore online status
     await page.context().setOffline(false);
   });
+
+  test("7. Full page routing & ErrorBoundary resilience across all 13 sidebar destinations", async ({ page }) => {
+    // Listen for uncaught exceptions in browser
+    const uncaughtErrors = [];
+    page.on("pageerror", (err) => uncaughtErrors.push(err.message));
+
+    await page.addInitScript(() => {
+      localStorage.setItem("deutschpath_onboarded", "true");
+    });
+
+    await page.goto("/");
+    await page.waitForLoadState("networkidle");
+
+    const destinations = [
+      "dashboard",
+      "roadmap",
+      "exam",
+      "reading",
+      "writing",
+      "speaking",
+      "conversation",
+      "practice",
+      "grammar",
+      "gender",
+      "dictionary",
+      "profile",
+      "settings"
+    ];
+
+    for (const navId of destinations) {
+      const btn = page.locator(`[data-testid='nav-${navId}']`).first();
+      await expect(btn).toBeVisible({ timeout: 5000 });
+      await btn.click();
+      await page.waitForTimeout(300);
+
+      // Verify ErrorBoundary did not catch any uncaught errors
+      const errorBoundaryHeading = page.locator("text=Oups ! Un problème est survenu");
+      await expect(errorBoundaryHeading).not.toBeVisible();
+    }
+
+    expect(uncaughtErrors).toEqual([]);
+  });
+
+  test("8. Spanish target language navigation & zero error boundary resilience", async ({ page }) => {
+    const uncaughtErrors = [];
+    page.on("pageerror", (err) => uncaughtErrors.push(err.message));
+
+    await page.addInitScript(() => {
+      localStorage.setItem("deutschpath_onboarded", "true");
+      // Pre-set user activeTargetLanguage to 'es'
+      const user = {
+        name: "Amine",
+        email: "aminearheche@gmail.com",
+        activeTargetLanguage: "es",
+        enrolledLanguages: ["de", "es", "fr"]
+      };
+      localStorage.setItem("deutschpath_user", JSON.stringify(user));
+    });
+
+    await page.goto("/");
+    await page.waitForLoadState("networkidle");
+
+    // Navigate to Dashboard in Spanish mode
+    await page.locator("[data-testid='nav-dashboard']").first().click();
+    await page.waitForTimeout(400);
+
+    // Verify ErrorBoundary did not trigger
+    await expect(page.locator("text=Oups ! Un problème est survenu")).not.toBeVisible();
+    await expect(page.locator("text=topics.reduce is not a function")).not.toBeVisible();
+
+    // Navigate to Roadmap in Spanish mode
+    await page.locator("[data-testid='nav-roadmap']").first().click();
+    await page.waitForTimeout(400);
+    await expect(page.locator("text=Oups ! Un problème est survenu")).not.toBeVisible();
+    await expect(page.locator("text=progress.completedLessons?.includes is not a function")).not.toBeVisible();
+
+    // Navigate to Exam in Spanish mode (Preparación DELE)
+    await page.locator("[data-testid='nav-exam']").first().click();
+    await page.waitForTimeout(400);
+    await expect(page.locator("text=Oups ! Un problème est survenu")).not.toBeVisible();
+
+    // Navigate to Grammar in Spanish mode
+    await page.locator("[data-testid='nav-grammar']").first().click();
+    await page.waitForTimeout(400);
+    await expect(page.locator("text=Oups ! Un problème est survenu")).not.toBeVisible();
+
+    expect(uncaughtErrors).toEqual([]);
+  });
 });
