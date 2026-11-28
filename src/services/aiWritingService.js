@@ -313,9 +313,17 @@ export function getActiveGeminiModel(customModel) {
 /**
  * Builds system prompt for Gemini conforming strictly to the requested schema and CEFR rubrics.
  */
-export function buildWritingSystemPrompt(level, taskTitle, taskPrompt, requiredPoints = [], rubricInstitution = "goethe") {
+export function buildWritingSystemPrompt(
+  level,
+  taskTitle,
+  taskPrompt,
+  requiredPoints = [],
+  rubricInstitution = "goethe",
+  targetLanguage = "German"
+) {
   const higherLevel = getHigherLevel(level);
   const rubric = getRubric(rubricInstitution, level);
+  const target = targetLanguage || "German";
 
   const criteriaInstructions = rubric.criteria
     .map(
@@ -328,13 +336,14 @@ export function buildWritingSystemPrompt(level, taskTitle, taskPrompt, requiredP
     ? requiredPoints.map((pt, i) => `${i + 1}. "${pt}"`).join("\n")
     : "1. Address all key aspects of the prompt.";
 
-  return `You are an expert CEFR German language examiner certified in ${rubric.institution} (${rubric.examName}) scoring.
+  return `You are an expert CEFR ${target} language examiner certified in ${rubric.institution} (${rubric.examName}) scoring.
 Evaluate the student's written text for CEFR Level ${level} using the official examination criteria.
 
 TASK SPECIFICATION:
 - Task: "${taskTitle}"
 - Prompt: "${taskPrompt}"
 - Target Level: ${level}
+- Target Language: ${target}
 - Rubric: ${rubric.moduleName} (Total Max Points: ${rubric.maxPoints})
 - Required Task Points (Leitpunkte):
 ${requiredPointsList}
@@ -359,15 +368,15 @@ CRITICAL INSTRUCTIONS:
    - Sum of the scores across all criteria (scale 0.0 to ${rubric.maxPoints}).
    - Always mark "estimateOnly": true (AI scores are estimates only).
 4. MISTAKES & ERROR TAXONOMY:
-   Extract and classify each mistake into the DeutschPath error taxonomy:
+   Extract and classify each mistake into the error taxonomy:
    - "type": "grammar" | "vocabulary" | "spelling" | "word order"
    - "category": "case" | "verb-position" | "conjugation" | "tense" | "preposition" | "word-order" | "connector" | "spelling" | "vocabulary" | "article-gender"
-   - "subcategory": specific sub-rule (e.g. "V2", "verb-end", "akkusativ", "dative", "TeKaMoLo", "capitalization")
+   - "subcategory": specific sub-rule
    - "original": exact error from the text
-   - "corrected": corrected German word/phrase
+   - "corrected": corrected ${target} word/phrase
    - "explanation": concise explanation in English of why it is wrong and how to fix it
 5. CORRECTED TEXT:
-   Provide the full, fluent German text with all mistakes corrected while maintaining the student's original tone.
+   Provide the full, fluent ${target} text with all mistakes corrected while maintaining the student's original tone.
 6. MODEL ANSWER (CEFR+1):
    Provide a model answer to the same task written strictly at Level ${higherLevel} with an English translation.
 
@@ -382,15 +391,15 @@ OUTPUT SCHEMA (Must be valid JSON matching this exact structure):
   "overall": 21.5,
   "estimateOnly": true,
   "feedback": "Encouraging overall feedback in English...",
-  "correctedText": "Full corrected German text...",
+  "correctedText": "Full corrected ${target} text...",
   "mistakes": [
     {
       "type": "grammar",
       "category": "case",
-      "subcategory": "akkusativ",
-      "original": "ich habe ein Hund",
-      "corrected": "ich habe einen Hund",
-      "explanation": "'Hund' is masculine accusative after 'haben', requiring 'einen'."
+      "subcategory": "agreement",
+      "original": "incorrect phrase",
+      "corrected": "corrected phrase",
+      "explanation": "concise explanation"
     }
   ],
   "modelAnswer": {
@@ -714,7 +723,8 @@ export async function evaluateWriting({
   requiredPoints = [],
   targetWords = "30 - 50 words",
   userText = "",
-  rubricInstitution = "goethe"
+  rubricInstitution = "goethe",
+  targetLanguage = "German"
 }) {
   const activeKey =
     apiKey ||
@@ -735,7 +745,14 @@ export async function evaluateWriting({
   }
 
   const activeModel = getActiveGeminiModel(modelName);
-  const systemPrompt = buildWritingSystemPrompt(level, taskTitle, taskPrompt, requiredPoints, rubricInstitution);
+  const systemPrompt = buildWritingSystemPrompt(
+    level,
+    taskTitle,
+    taskPrompt,
+    requiredPoints,
+    rubricInstitution,
+    targetLanguage
+  );
 
   try {
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(activeModel)}:generateContent?key=${activeKey}`;

@@ -63,7 +63,8 @@ export function ExamPrepPage() {
     getWeakSpots,
     getExamInstitutions,
     getExamConfig,
-    activeTargetLanguage
+    activeTargetLanguage,
+    activeCurriculum
   } = useProgress();
 
   const institutions = useMemo(() => {
@@ -470,12 +471,10 @@ export function ExamPrepPage() {
 
             <div className="max-w-2xl space-y-2">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight">
-                Official German Exam Preparation
+                Official {activeCurriculum?.name || "Language"} Exam Preparation
               </h1>
               <p className="text-sm sm:text-base text-indigo-100 font-medium leading-relaxed">
-                Realistic timed mock exams and per-module drills for <strong>Goethe-Zertifikat</strong>,{" "}
-                <strong>telc Deutsch</strong> (with Sprachbausteine), <strong>ÖSD</strong>,{" "}
-                <strong>DTZ</strong> (A2-B1 combined), and <strong>TestDaF</strong> (TDN 3–5).
+                Realistic timed mock exams and per-module drills for <strong>{activeCurriculum?.exam || "Official Certifications"}</strong> and accredited CEFR certifications.
               </p>
             </div>
 

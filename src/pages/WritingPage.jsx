@@ -33,7 +33,8 @@ import { useExercise } from "../context/ExerciseContext";
 import { playSound } from "../utils/soundEffects";
 
 export function WritingPage() {
-  const { checkAndUpdateStreak, recordError } = useProgress();
+  const { checkAndUpdateStreak, recordError, activeTargetLanguage, activeCurriculum } = useProgress();
+  const langName = activeCurriculum?.name || activeCurriculum?.languageName || "German";
   const exerciseState = useExercise();
   const registerExerciseContext = exerciseState?.registerExerciseContext;
   const clearExerciseContext = exerciseState?.clearExerciseContext;
@@ -127,7 +128,8 @@ export function WritingPage() {
         requiredPoints: selectedTask.requiredPoints || [],
         targetWords: selectedTask.targetWords || "30 - 50 words",
         userText,
-        rubricInstitution
+        rubricInstitution,
+        targetLanguage: langName
       });
 
       setEvaluationResult(result);
@@ -216,10 +218,10 @@ export function WritingPage() {
         <div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center gap-2">
             <PenTool className="w-6 h-6 text-amber-500" />
-            <span>German Writing Studio</span>
+            <span>{langName} Writing Studio</span>
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Write authentic German emails and essays. Get corrections with diffs, mistake breakdowns, scoring, and higher-level model answers.
+            Write authentic {langName} compositions, emails and essays. Get corrections with diffs, mistake breakdowns, scoring, and higher-level model answers.
           </p>
         </div>
 
