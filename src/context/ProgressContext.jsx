@@ -690,6 +690,40 @@ export function ProgressProvider({ children }) {
   }, [progress.grammarStats]);
 
   /**
+   * Returns per-topic accuracy array for grammar dashboard widgets
+   */
+  const getGrammarTopicStats = useCallback(() => {
+    const stats = progress.grammarStats || {};
+    const exercises = allGrammarExercises || [];
+    const exerciseTopics = Array.from(new Set(exercises.map((e) => e.topic).filter(Boolean)));
+    const recordedKeys = Object.keys(stats);
+    const combinedKeys = Array.from(new Set([...exerciseTopics, ...recordedKeys]));
+
+    if (combinedKeys.length === 0) {
+      return [
+        { key: "articles", label: "Articles & Determiners", attempts: 0, correct: 0, accuracy: 100 },
+        { key: "tenses", label: "Verb Conjugation", attempts: 0, correct: 0, accuracy: 100 },
+        { key: "prepositions", label: "Prepositions & Cases", attempts: 0, correct: 0, accuracy: 100 }
+      ];
+    }
+
+    return combinedKeys.map((key) => {
+      const s = stats[key] || {};
+      const attempts = s.attempts || 0;
+      const correct = s.correct || 0;
+      const accuracy = attempts > 0 ? Math.round((correct / attempts) * 100) : 100;
+      return {
+        key,
+        label: s.topicLabel || key,
+        attempts,
+        correct,
+        accuracy,
+        lastPracticed: s.lastPracticed || null
+      };
+    });
+  }, [progress.grammarStats, allGrammarExercises]);
+
+  /**
    * Calculates comprehensive Unit Mastery (0 - 100) combining:
    * 1. Lesson Completion (40% weight)
    * 2. Exercise Accuracy (30% weight)
@@ -1341,6 +1375,7 @@ export function ProgressProvider({ children }) {
         recordExamResult,
         getWordsLearnedCount,
         getGrammarAccuracyStats,
+        getGrammarTopicStats,
         getRecentStudyDays,
         calculateLevelReadiness,
         getCardStats,

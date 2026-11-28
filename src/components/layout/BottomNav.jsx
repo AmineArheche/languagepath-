@@ -6,8 +6,11 @@ import { useProgress } from "../../context/ProgressContext";
 export function BottomNav({ currentPage, onNavigate }) {
   const { t } = useTranslation("ui");
   const { allFlashcards, getDueCards, getWeakSpots, activeTargetLanguage } = useProgress();
-  const dueCount = getDueCards(allFlashcards).length;
-  const mistakeCount = getWeakSpots().reduce((acc, s) => acc + s.mistakes, 0);
+  const dueCount = getDueCards ? getDueCards(allFlashcards).length : 0;
+  const weakSpotsList = getWeakSpots ? getWeakSpots() : [];
+  const mistakeCount = Array.isArray(weakSpotsList)
+    ? weakSpotsList.reduce((acc, s) => acc + (s.mistakes || 0), 0)
+    : 0;
 
   const examShortLabels = {
     de: "Goethe",

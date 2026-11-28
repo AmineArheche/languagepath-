@@ -13,8 +13,9 @@ export function GrammarPage() {
   const [isDrillingWeakSpots, setIsDrillingWeakSpots] = useState(false);
   const [customDrillExercises, setCustomDrillExercises] = useState(null);
 
-  const weakSpots = getWeakSpots();
-  const mistakeCount = weakSpots.reduce((acc, s) => acc + s.mistakes, 0);
+  const rawWeakSpots = getWeakSpots ? getWeakSpots() : [];
+  const weakSpots = Array.isArray(rawWeakSpots) ? rawWeakSpots : [];
+  const mistakeCount = weakSpots.reduce((acc, s) => acc + (s.mistakes || 0), 0);
 
   // Interleaving generator: mixes diverse topics in round-robin sequence
   const interleavedExercises = useMemo(() => {

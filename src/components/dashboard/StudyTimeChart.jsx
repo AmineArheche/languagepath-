@@ -8,12 +8,13 @@ export function StudyTimeChart() {
   const [daysCount, setDaysCount] = useState(7); // 7 or 14 days
   const [hoveredDay, setHoveredDay] = useState(null);
 
-  const studyDays = getRecentStudyDays(daysCount);
+  const rawStudyDays = getRecentStudyDays ? getRecentStudyDays(daysCount) : [];
+  const studyDays = Array.isArray(rawStudyDays) ? rawStudyDays : [];
 
   // Compute stats
-  const totalMinutes = studyDays.reduce((acc, d) => acc + d.minutes, 0);
+  const totalMinutes = studyDays.reduce((acc, d) => acc + (d.minutes || 0), 0);
   const avgMinutes = Math.round(totalMinutes / (studyDays.length || 1));
-  const maxMinutes = Math.max(...studyDays.map((d) => d.minutes), 60);
+  const maxMinutes = Math.max(...studyDays.map((d) => d.minutes || 0), 60);
 
   const totalHours = (totalMinutes / 60).toFixed(1);
 

@@ -4,14 +4,15 @@ import { useProgress } from "../../context/ProgressContext";
 import { Button } from "../common/Button";
 
 export function GrammarAccuracyList({ onNavigateToGrammar }) {
-  const { getGrammarAccuracyStats, getWeakSpots } = useProgress();
-  const topics = getGrammarAccuracyStats();
-  const weakSpots = getWeakSpots();
+  const { getGrammarTopicStats, getWeakSpots } = useProgress();
+  const rawTopics = getGrammarTopicStats ? getGrammarTopicStats() : [];
+  const topics = Array.isArray(rawTopics) ? rawTopics : [];
+  const weakSpots = getWeakSpots ? getWeakSpots() : [];
 
-  const totalAttempts = topics.reduce((acc, t) => acc + t.attempts, 0);
-  const avgAccuracy = Math.round(
-    topics.reduce((acc, t) => acc + t.accuracy, 0) / (topics.length || 1)
-  );
+  const totalAttempts = topics.reduce((acc, t) => acc + (t.attempts || 0), 0);
+  const avgAccuracy = topics.length > 0
+    ? Math.round(topics.reduce((acc, t) => acc + (t.accuracy || 0), 0) / topics.length)
+    : 100;
 
   return (
     <div className="p-5 sm:p-6 rounded-3xl bg-slate-900 border border-slate-800 text-slate-100 shadow-sm space-y-5">

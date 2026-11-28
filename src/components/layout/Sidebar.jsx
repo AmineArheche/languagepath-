@@ -37,8 +37,11 @@ export function Sidebar({ currentPage, onNavigate }) {
   const completedUnits = orderedUnits.filter((u) => getUnitStatus(u.id) === "completed").length;
   const progressPercent = Math.round((completedUnits / (totalUnits || 1)) * 100);
 
-  const dueCount = getDueCards(allFlashcards).length;
-  const mistakeCount = getWeakSpots().reduce((acc, s) => acc + s.mistakes, 0);
+  const dueCount = getDueCards ? getDueCards(allFlashcards).length : 0;
+  const weakSpotsList = getWeakSpots ? getWeakSpots() : [];
+  const mistakeCount = Array.isArray(weakSpotsList)
+    ? weakSpotsList.reduce((acc, s) => acc + (s.mistakes || 0), 0)
+    : 0;
 
   const examLabels = {
     de: { label: "Goethe Exam Prep", desc: "Goethe & telc (A1–B2)" },
