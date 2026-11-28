@@ -6,34 +6,46 @@ import { Badge } from "../components/common/Badge";
 import { useProgress } from "../context/ProgressContext";
 
 export function DictionaryPage() {
-  const { progress, toggleStarCard, allFlashcards } = useProgress();
-  const curriculumWords = useMemo(() => getAllWords(), []);
+  const { progress, toggleStarCard, allFlashcards, activeTargetLanguage, activeCurriculum } = useProgress();
+  const curriculumWords = useMemo(() => getAllWords(activeTargetLanguage), [activeTargetLanguage]);
 
-  // Merge curriculum words and all flashcards (avoiding duplicates by german word)
+  // Merge curriculum words and all flashcards (avoiding duplicates by headword)
   const combinedWords = useMemo(() => {
     const map = new Map();
 
     allFlashcards.forEach((card) => {
-      map.set(card.german.toLowerCase(), {
+      const headword = card.word || card.german || "";
+      if (!headword) return;
+      map.set(headword.toLowerCase(), {
         id: card.id,
-        german: card.german,
-        gender: card.article,
+        headword: headword,
+        translation: card.translation || card.english || "",
+        gender: card.gender || card.article,
         article: card.article,
-        english: card.english,
         plural: card.plural,
-        exampleDe: card.exampleDe,
-        exampleEn: card.exampleEn,
+        example: card.example || card.exampleDe,
+        exampleTranslation: card.englishSentence || card.exampleEn,
         level: card.level,
         unitTitle: card.unit
       });
     });
 
     curriculumWords.forEach((word) => {
-      const key = word.german.toLowerCase();
+      const headword = word.word || word.german || "";
+      if (!headword) return;
+      const key = headword.toLowerCase();
       if (!map.has(key)) {
         map.set(key, {
-          ...word,
-          article: word.gender
+          id: word.id,
+          headword: headword,
+          translation: word.translation || word.english || "",
+          gender: word.gender,
+          article: word.gender,
+          plural: word.plural,
+          example: word.example || word.exampleDe,
+          exampleTranslation: word.englishSentence || word.exampleEn,
+          level: word.level,
+          unitTitle: word.unitTitle
         });
       }
     });
@@ -50,9 +62,9 @@ export function DictionaryPage() {
       const q = searchQuery.toLowerCase().trim();
       const matchSearch =
         !q ||
-        w.german.toLowerCase().includes(q) ||
-        w.english.toLowerCase().includes(q) ||
-        (w.exampleDe && w.exampleDe.toLowerCase().includes(q));
+        (w.headword && w.headword.toLowerCase().includes(q)) ||
+        (w.translation && w.translation.toLowerCase().includes(q)) ||
+        (w.example && w.example.toLowerCase().includes(q));
 
       const matchLevel = selectedLevel === "all" || w.level === selectedLevel;
 
@@ -73,7 +85,7 @@ export function DictionaryPage() {
           Vocabulary Glossary
         </h1>
         <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-          Search, listen to, and review German vocabulary across A1 to B2 plus all your flashcards.
+          Search, listen to, and review {activeCurriculum?.languageName || "vocabulary"} across A1 to B2 plus all your flashcards.
         </p>
       </div>
 
@@ -86,7 +98,7 @@ export function DictionaryPage() {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search in German or English (e.g. 'Tisch', 'table', 'Bahnhof')..."
+            placeholder={`Search in ${activeCurriculum?.languageName || "vocabulary"} or English translation...`}
             className="w-full pl-11 pr-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
         </div>
@@ -181,7 +193,7 @@ export function DictionaryPage() {
                 </div>
 
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-                  {word.german}
+                  {word.headword}
                   {word.plural && word.plural !== "-" && (
                     <span className="text-xs font-normal text-slate-400 ml-1.5">
                       (pl: {word.plural})
@@ -190,12 +202,12 @@ export function DictionaryPage() {
                 </h3>
 
                 <p className="text-sm font-medium text-slate-600 dark:text-slate-300 mt-0.5">
-                  {word.english}
+                  {word.translation}
                 </p>
 
-                {word.exampleDe && (
+                {word.example && (
                   <p className="text-xs text-slate-400 mt-2 italic border-l-2 border-slate-200 dark:border-slate-800 pl-2">
-                    "{word.exampleDe}"
+                    "{word.example}"
                   </p>
                 )}
               </div>
@@ -205,7 +217,7 @@ export function DictionaryPage() {
                   {word.unitTitle || "Vocabulary"}
                 </span>
                 <AudioButton
-                  text={`${article ? article + " " : ""}${word.german}`}
+                  text={`${article ? article + " " : ""}${word.headword}`}
                   size="sm"
                 />
               </div>

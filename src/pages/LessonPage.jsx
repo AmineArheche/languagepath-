@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { ArrowLeft, BookOpen, Sparkles, CheckCircle2, HelpCircle } from "lucide-react";
 import { getLessonById } from "../data/curriculum";
 import { AudioButton } from "../components/common/AudioButton";
@@ -9,9 +9,42 @@ import { QuizEngine } from "../components/quiz/QuizEngine";
 import { useProgress } from "../context/ProgressContext";
 
 export function LessonPage({ lessonId, onBack, onCompleteLesson }) {
-  const lesson = getLessonById(lessonId);
-  const { progress, completeLesson } = useProgress();
+  const { progress, completeLesson, activeTargetLanguage } = useProgress();
+  const lesson = getLessonById(lessonId, activeTargetLanguage);
   const [activeTab, setActiveTab] = useState("learn"); // "learn" | "quiz"
+
+  const quizQuestions = useMemo(() => {
+    if (lesson?.quiz && lesson.quiz.length > 0) return lesson.quiz;
+    if (!lesson?.words || lesson.words.length === 0) return [];
+
+    const allWords = lesson.words;
+    return allWords.map((word, idx) => {
+      const headword = word.word || word.german;
+      const meaning = word.translation || word.english;
+      const otherMeanings = allWords
+        .filter((w) => (w.translation || w.english) !== meaning)
+        .map((w) => w.translation || w.english);
+
+      const defaultDistractors = ["Hello", "Goodbye", "Friend", "Thank you", "Please", "City", "Time", "House", "Day"];
+      const pool = Array.from(new Set([...otherMeanings, ...defaultDistractors]));
+      const options = [meaning];
+      for (const d of pool) {
+        if (!options.includes(d) && options.length < 4) {
+          options.push(d);
+        }
+      }
+      const shuffledOptions = [...options].sort((a, b) => (a.charCodeAt(0) % 3) - (b.charCodeAt(0) % 3));
+      const correctIndex = shuffledOptions.indexOf(meaning);
+
+      return {
+        id: `quiz-gen-${lesson.id}-${idx}`,
+        question: `What is the correct translation of "${headword}"?`,
+        options: shuffledOptions,
+        correctIndex: correctIndex >= 0 ? correctIndex : 0,
+        explanation: `"${headword}" means "${meaning}".`
+      };
+    });
+  }, [lesson]);
 
   if (!lesson) {
     return (
@@ -99,7 +132,7 @@ export function LessonPage({ lessonId, onBack, onCompleteLesson }) {
                 : "text-slate-400 hover:text-white"
             }`}
           >
-            Knowledge Check Quiz ({lesson.quiz?.length || 0} Qs)
+            Knowledge Check Quiz ({quizQuestions.length} Qs)
           </button>
         </div>
       </div>
@@ -132,40 +165,47 @@ export function LessonPage({ lessonId, onBack, onCompleteLesson }) {
             </h2>
 
             <div className="space-y-3">
-              {lesson.words.map((word) => (
-                <div
-                  key={word.id}
-                  className="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm hover:border-slate-700 transition-all"
-                >
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-2">
-                      {word.gender && <Badge gender={word.gender} size="sm" />}
-                      <span className="text-lg font-bold text-slate-900 dark:text-white">
-                        {word.german}
-                      </span>
-                      {word.plural && (
-                        <span className="text-xs text-slate-400 font-medium">({word.plural})</span>
-                      )}
-                    </div>
-                    <div className="text-sm font-medium text-slate-600 dark:text-slate-300">
-                      {word.english}
-                    </div>
+              {(lesson.words || []).map((word) => {
+                const headword = word.word || word.german;
+                const meaning = word.translation || word.english;
+                const sentence = word.example || word.exampleDe;
+                const sentenceTr = word.englishSentence || word.exampleEn;
 
-                    {word.exampleDe && (
-                      <div className="mt-2 text-xs text-slate-500 dark:text-slate-400 italic">
-                        "{word.exampleDe}"{" "}
-                        {word.exampleEn && (
-                          <span className="opacity-75">— {word.exampleEn}</span>
+                return (
+                  <div
+                    key={word.id}
+                    className="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm hover:border-slate-700 transition-all"
+                  >
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2">
+                        {word.gender && <Badge gender={word.gender} size="sm" />}
+                        <span className="text-lg font-bold text-slate-900 dark:text-white">
+                          {headword}
+                        </span>
+                        {word.plural && (
+                          <span className="text-xs text-slate-400 font-medium">({word.plural})</span>
                         )}
                       </div>
-                    )}
-                  </div>
+                      <div className="text-sm font-medium text-slate-600 dark:text-slate-300">
+                        {meaning}
+                      </div>
 
-                  <div className="flex items-center gap-2 self-end sm:self-center shrink-0">
-                    <AudioButton text={word.german} size="md" />
+                      {sentence && (
+                        <div className="mt-2 text-xs text-slate-500 dark:text-slate-400 italic">
+                          "{sentence}"{" "}
+                          {sentenceTr && (
+                            <span className="opacity-75">— {sentenceTr}</span>
+                          )}
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="flex items-center gap-2 self-end sm:self-center shrink-0">
+                      <AudioButton text={headword} size="md" />
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -184,7 +224,11 @@ export function LessonPage({ lessonId, onBack, onCompleteLesson }) {
       ) : (
         /* Quiz Engine */
         <QuizEngine
-          questions={lesson.quiz}
+          questions={quizQuestions}
+          xpReward={lesson.xp}
+          onComplete={handleQuizSuccess}
+        />
+      )}
           xpReward={lesson.xp}
           onComplete={handleQuizSuccess}
         />
