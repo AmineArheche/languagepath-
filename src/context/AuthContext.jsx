@@ -191,7 +191,8 @@ export function AuthProvider({ children }) {
           wordsLearned: 15,
           retentionRate: 100,
           studyMinutes: 15,
-          completedLessons: 1,
+          completedLessons: [],
+          completedLessonsCount: 1,
           lastActiveDate: new Date().toISOString().split("T")[0]
         }
       }));
@@ -272,7 +273,8 @@ export function AuthProvider({ children }) {
           wordsLearned: 0,
           retentionRate: 100,
           studyMinutes: 0,
-          completedLessons: 0,
+          completedLessons: [],
+          completedLessonsCount: 0,
           lastActiveDate: new Date().toISOString().split("T")[0]
         }
       };
@@ -292,12 +294,23 @@ export function AuthProvider({ children }) {
         wordsLearned: 0,
         retentionRate: 100,
         studyMinutes: 0,
-        completedLessons: 0,
+        completedLessons: [],
+        completedLessonsCount: 0,
         lastActiveDate: new Date().toISOString().split("T")[0]
       };
+
+      const safeUpdates = { ...progressUpdates };
+      if (safeUpdates.completedLessons !== undefined && !Array.isArray(safeUpdates.completedLessons)) {
+        safeUpdates.completedLessonsCount = safeUpdates.completedLessons;
+        delete safeUpdates.completedLessons;
+      }
+
       const merged = {
         ...current,
-        ...progressUpdates,
+        ...safeUpdates,
+        completedLessons: Array.isArray(safeUpdates.completedLessons)
+          ? safeUpdates.completedLessons
+          : (Array.isArray(current.completedLessons) ? current.completedLessons : []),
         lastActiveDate: new Date().toISOString().split("T")[0]
       };
 
@@ -332,7 +345,8 @@ export function AuthProvider({ children }) {
         wordsLearned: 0,
         retentionRate: 100,
         studyMinutes: 0,
-        completedLessons: 0,
+        completedLessons: [],
+        completedLessonsCount: 0,
         lastActiveDate: new Date().toISOString().split("T")[0]
       };
       return {

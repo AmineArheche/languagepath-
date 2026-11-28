@@ -695,7 +695,11 @@ export async function dbGetUserProgress(userId, languageId) {
   if (!userId || !languageId) return null;
   const db = await getDb();
   const key = `${userId}_${languageId}`;
-  return await db.get("userProgress", key);
+  const record = await db.get("userProgress", key);
+  if (record && !Array.isArray(record.completedLessons)) {
+    record.completedLessons = [];
+  }
+  return record;
 }
 
 /**
@@ -706,9 +710,18 @@ export async function dbSaveUserProgress(userId, languageId, progressData) {
   const db = await getDb();
   const key = `${userId}_${languageId}`;
   const existing = (await db.get("userProgress", key)) || {};
+
+  let safeCompleted = [];
+  if (Array.isArray(progressData?.completedLessons)) {
+    safeCompleted = progressData.completedLessons;
+  } else if (Array.isArray(existing?.completedLessons)) {
+    safeCompleted = existing.completedLessons;
+  }
+
   const merged = {
     ...existing,
     ...progressData,
+    completedLessons: safeCompleted,
     key,
     userId,
     languageId,

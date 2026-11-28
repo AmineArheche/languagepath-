@@ -105,7 +105,7 @@ function getStoredProgressSync(userId, lang) {
           },
           unlockedOverrides: parsed.unlockedOverrides || {},
           unitProgress: parsed.unitProgress || {},
-          completedLessons: parsed.completedLessons || []
+          completedLessons: Array.isArray(parsed.completedLessons) ? parsed.completedLessons : []
         };
       }
     }
@@ -172,6 +172,9 @@ export function ProgressProvider({ children }) {
       const mergedProgress = {
         ...INITIAL_PROGRESS,
         ...(storedProgress ? storedProgress : {}),
+        completedLessons: Array.isArray(storedProgress?.completedLessons)
+          ? storedProgress.completedLessons
+          : [],
         streakFreeze: {
           ...INITIAL_PROGRESS.streakFreeze,
           ...(storedProgress?.streakFreeze || {})
@@ -246,7 +249,8 @@ export function ProgressProvider({ children }) {
           xp: newProgress.xp || 0,
           streak: newProgress.streak || 1,
           wordsLearned: learnedWordsCount,
-          completedLessons: (newProgress.completedLessons || []).length
+          completedLessonsCount: (Array.isArray(newProgress.completedLessons) ? newProgress.completedLessons : []).length,
+          completedLessons: Array.isArray(newProgress.completedLessons) ? newProgress.completedLessons : []
         });
       }
 
@@ -660,8 +664,9 @@ export function ProgressProvider({ children }) {
     }
     const unit = orderedUnits.find((u) => u.id === unitId);
     if (!unit || !unit.lessons || unit.lessons.length === 0) return 0;
+    const completedList = Array.isArray(progress.completedLessons) ? progress.completedLessons : [];
     const completed = unit.lessons.filter((l) =>
-      progress.completedLessons?.includes(l.id)
+      completedList.includes(l.id)
     ).length;
     return Math.round((completed / unit.lessons.length) * 100);
   };
@@ -740,8 +745,9 @@ export function ProgressProvider({ children }) {
       const totalLessons = unit.lessons?.length || 0;
       let lessonCompletion = 0;
       if (totalLessons > 0) {
+        const completedList = Array.isArray(progress.completedLessons) ? progress.completedLessons : [];
         const completedCount = unit.lessons.filter((l) =>
-          progress.completedLessons?.includes(l.id)
+          completedList.includes(l.id)
         ).length;
         lessonCompletion = Math.round((completedCount / totalLessons) * 100);
       }
@@ -894,10 +900,11 @@ export function ProgressProvider({ children }) {
   const completeLesson = (lessonId, xpReward = 25) => {
     checkAndUpdateStreak();
     updateProgress((prev) => {
-      const isAlreadyCompleted = prev.completedLessons.includes(lessonId);
+      const currentCompleted = Array.isArray(prev.completedLessons) ? prev.completedLessons : [];
+      const isAlreadyCompleted = currentCompleted.includes(lessonId);
       const newCompleted = isAlreadyCompleted
-        ? prev.completedLessons
-        : [...prev.completedLessons, lessonId];
+        ? currentCompleted
+        : [...currentCompleted, lessonId];
 
       const lessonObj = getLessonById(lessonId);
       const unitId = lessonObj?.unitId;

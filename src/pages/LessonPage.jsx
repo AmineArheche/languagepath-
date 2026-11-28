@@ -57,7 +57,8 @@ export function LessonPage({ lessonId, onBack, onCompleteLesson }) {
     );
   }
 
-  const isCompleted = progress.completedLessons.includes(lesson.id);
+  const completedList = Array.isArray(progress.completedLessons) ? progress.completedLessons : [];
+  const isCompleted = completedList.includes(lesson.id);
 
   const handleQuizSuccess = (score, total) => {
     const passed = score / total >= 0.6;
@@ -116,21 +117,19 @@ export function LessonPage({ lessonId, onBack, onCompleteLesson }) {
         <div className="flex gap-2 mt-6 p-1 bg-slate-800 rounded-2xl">
           <button
             onClick={() => setActiveTab("learn")}
-            className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs transition-all ${
-              activeTab === "learn"
+            className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs transition-all ${activeTab === "learn"
                 ? "bg-slate-700 text-amber-400 shadow-sm"
                 : "text-slate-400 hover:text-white"
-            }`}
+              }`}
           >
             Vocabulary & Grammar ({lesson.words.length} items)
           </button>
           <button
             onClick={() => setActiveTab("quiz")}
-            className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs transition-all ${
-              activeTab === "quiz"
+            className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs transition-all ${activeTab === "quiz"
                 ? "bg-slate-700 text-amber-400 shadow-sm"
                 : "text-slate-400 hover:text-white"
-            }`}
+              }`}
           >
             Knowledge Check Quiz ({quizQuestions.length} Qs)
           </button>
