@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#090D16" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <!-- Glowing Pathway Gradient -->
+    <linearGradient id="path-grad" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="45%" stop-color="#EC4899" />
+      <stop offset="80%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <!-- Star / Beacon Glow -->
+    <radialGradient id="beacon-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="40%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </radialGradient>
+
+    <radialGradient id="ambient-radial" cx="30%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.25" />
+      <stop offset="60%" stop-color="#EC4899" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Squircle Base Container -->
+  <rect width="512" height="512" rx="128" fill="url(#bg-grad)" />
+  <rect width="512" height="512" rx="128" fill="url(#ambient-radial)" />
+  <rect x="8" y="8" width="496" height="496" rx="120" fill="none" stroke="#6366F1" stroke-width="6" stroke-opacity="0.35" />
+
+  <!-- Modern 'L' Pathway (Left stem & Bottom track) -->
+  <path
+    d="M 148 116 L 148 344 C 148 376 174 402 206 402 L 372 402"
+    fill="none"
+    stroke="url(#path-grad)"
+    stroke-width="44"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Modern 'P' Loop (Upper pathway loop) -->
+  <path
+    d="M 252 116 L 332 116 C 378 116 414 152 414 198 C 414 244 378 280 332 280 L 252 280 L 252 116 Z"
+    fill="none"
+    stroke="#38BDF8"
+    stroke-width="38"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Intersecting P Stem Pathway -->
+  <path
+    d="M 252 116 L 252 350"
+    fill="none"
+    stroke="url(#path-grad)"
+    stroke-width="38"
+    stroke-linecap="round"
+  />
+
+  <!-- Glowing Milestone Pathway Beacon -->
+  <circle cx="372" cy="402" r="28" fill="url(#beacon-glow)" />
+  <circle cx="372" cy="402" r="42" fill="none" stroke="#F59E0B" stroke-width="4" stroke-opacity="0.5" />
+</svg>
