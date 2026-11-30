@@ -1,0 +1,639 @@
+[
+  {
+    "queueId": "q-flashcard-a1-mwtekbj7-wvm2",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.659Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-wohnen-zimmer",
+      "level": "A1",
+      "topic": "Wohnen",
+      "tags": [
+        "wohnen",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Zimmer",
+      "article": "das",
+      "gender": "neuter",
+      "english": "room",
+      "plural": "die Zimmer",
+      "exampleDe": "Das Zimmer ist hell und ruhig.",
+      "exampleEn": "The room is bright and quiet."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbj8-jszm",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.660Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-wohnen-kche",
+      "level": "A1",
+      "topic": "Wohnen",
+      "tags": [
+        "wohnen",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Küche",
+      "article": "die",
+      "gender": "feminine",
+      "english": "kitchen",
+      "plural": "die Küchen",
+      "exampleDe": "In der Küche kochen wir zusammen.",
+      "exampleEn": "In the kitchen we cook together."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbj8-e3kc",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.660Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-wohnen-badezimmer",
+      "level": "A1",
+      "topic": "Wohnen",
+      "tags": [
+        "wohnen",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Badezimmer",
+      "article": "das",
+      "gender": "neuter",
+      "english": "bathroom",
+      "plural": "die Badezimmer",
+      "exampleDe": "Das Badezimmer hat eine moderne Dusche.",
+      "exampleEn": "The bathroom has a modern shower."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbj8-cv8n",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.660Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-wohnen-miete",
+      "level": "A1",
+      "topic": "Wohnen",
+      "tags": [
+        "wohnen",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Miete",
+      "article": "die",
+      "gender": "feminine",
+      "english": "rent",
+      "plural": "die Mieten",
+      "exampleDe": "Wie hoch ist die Miete im Monat?",
+      "exampleEn": "How high is the rent per month?"
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbj8-ljlu",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.660Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-wohnen-schlssel",
+      "level": "A1",
+      "topic": "Wohnen",
+      "tags": [
+        "wohnen",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Schlüssel",
+      "article": "der",
+      "gender": "masculine",
+      "english": "key",
+      "plural": "die Schlüssel",
+      "exampleDe": "Hier ist der Schlüssel für die Haustür.",
+      "exampleEn": "Here is the key to the front door."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbj8-odf2",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.660Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-wohnen-nachbar",
+      "level": "A1",
+      "topic": "Wohnen",
+      "tags": [
+        "wohnen",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Nachbar",
+      "article": "der",
+      "gender": "masculine",
+      "english": "neighbor (m)",
+      "plural": "die Nachbarn",
+      "exampleDe": "Mein Nachbar ist sehr freundlich und hilfsbereit.",
+      "exampleEn": "My neighbor is very friendly and helpful."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbj8-wi0i",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.660Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-wohnen-mbel",
+      "level": "A1",
+      "topic": "Wohnen",
+      "tags": [
+        "wohnen",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Möbel",
+      "article": "die",
+      "gender": "feminine",
+      "english": "furniture",
+      "plural": "die Möbel",
+      "exampleDe": "Wir kaufen neue Möbel für das Wohnzimmer.",
+      "exampleEn": "We are buying new furniture for the living room."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbj8-xg5c",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.660Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-wohnen-fenster",
+      "level": "A1",
+      "topic": "Wohnen",
+      "tags": [
+        "wohnen",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Fenster",
+      "article": "das",
+      "gender": "neuter",
+      "english": "window",
+      "plural": "die Fenster",
+      "exampleDe": "Bitte öffne das Fenster kurz zum Lüften.",
+      "exampleEn": "Please open the window briefly to air out."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbj9-7qml",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.661Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-wohnen-bett",
+      "level": "A1",
+      "topic": "Wohnen",
+      "tags": [
+        "wohnen",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Bett",
+      "article": "das",
+      "gender": "neuter",
+      "english": "bed",
+      "plural": "die Betten",
+      "exampleDe": "Das Bett im Schlafzimmer ist sehr bequem.",
+      "exampleEn": "The bed in the bedroom is very comfortable."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbqx-86o9",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.937Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-arbeit-beruf",
+      "level": "A1",
+      "topic": "Arbeit",
+      "tags": [
+        "arbeit",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Beruf",
+      "article": "der",
+      "gender": "masculine",
+      "english": "profession / occupation",
+      "plural": "die Berufe",
+      "exampleDe": "Was bist du von Beruf?",
+      "exampleEn": "What is your profession?"
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbqy-bzok",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.938Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-arbeit-arbeit",
+      "level": "A1",
+      "topic": "Arbeit",
+      "tags": [
+        "arbeit",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Arbeit",
+      "article": "die",
+      "gender": "feminine",
+      "english": "work / job",
+      "plural": "-",
+      "exampleDe": "Die Arbeit im Büro macht mir viel Spaß.",
+      "exampleEn": "Working in the office is a lot of fun for me."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbqy-g8qz",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.938Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-arbeit-chef",
+      "level": "A1",
+      "topic": "Arbeit",
+      "tags": [
+        "arbeit",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Chef",
+      "article": "der",
+      "gender": "masculine",
+      "english": "boss / manager (m)",
+      "plural": "die Chefs",
+      "exampleDe": "Mein Chef leitet die heutige Besprechung.",
+      "exampleEn": "My boss is leading today's meeting."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbqy-eo3y",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.938Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-arbeit-kollege",
+      "level": "A1",
+      "topic": "Arbeit",
+      "tags": [
+        "arbeit",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Kollege",
+      "article": "der",
+      "gender": "masculine",
+      "english": "colleague (m)",
+      "plural": "die Kollegen",
+      "exampleDe": "Ich spreche mit meinem Kollegen über das Projekt.",
+      "exampleEn": "I am speaking with my colleague about the project."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbqy-rw2m",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.938Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-arbeit-bro",
+      "level": "A1",
+      "topic": "Arbeit",
+      "tags": [
+        "arbeit",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Büro",
+      "article": "das",
+      "gender": "neuter",
+      "english": "office",
+      "plural": "die Büros",
+      "exampleDe": "Unser Büro liegt direkt am Marktplatz.",
+      "exampleEn": "Our office is located right by the marketplace."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbqy-kbam",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.938Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-arbeit-pause",
+      "level": "A1",
+      "topic": "Arbeit",
+      "tags": [
+        "arbeit",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Pause",
+      "article": "die",
+      "gender": "feminine",
+      "english": "break / recess",
+      "plural": "die Pausen",
+      "exampleDe": "Um 12 Uhr machen wir eine halbe Stunde Pause.",
+      "exampleEn": "At 12 o'clock we take a half-hour break."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbqy-5wy4",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.938Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-arbeit-gehalt",
+      "level": "A1",
+      "topic": "Arbeit",
+      "tags": [
+        "arbeit",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Gehalt",
+      "article": "das",
+      "gender": "neuter",
+      "english": "salary",
+      "plural": "die Gehälter",
+      "exampleDe": "Das Gehalt wird immer am Monatsende überwiesen.",
+      "exampleEn": "The salary is always transferred at the end of the month."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbqy-lw5o",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.938Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-arbeit-termin",
+      "level": "A1",
+      "topic": "Arbeit",
+      "tags": [
+        "arbeit",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Termin",
+      "article": "der",
+      "gender": "masculine",
+      "english": "appointment",
+      "plural": "die Termine",
+      "exampleDe": "Haben wir heute einen wichtigen Termin?",
+      "exampleEn": "Do we have an important appointment today?"
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbqz-lnnz",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.939Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-arbeit-email",
+      "level": "A1",
+      "topic": "Arbeit",
+      "tags": [
+        "arbeit",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "E-Mail",
+      "article": "die",
+      "gender": "feminine",
+      "english": "email",
+      "plural": "die E-Mails",
+      "exampleDe": "Ich habe Ihnen die E-Mail soeben geschickt.",
+      "exampleEn": "I have just sent you the email."
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekbqz-7y6v",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:26.939Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-arbeit-feierabend",
+      "level": "A1",
+      "topic": "Arbeit",
+      "tags": [
+        "arbeit",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Feierabend",
+      "article": "der",
+      "gender": "masculine",
+      "english": "end of workday",
+      "plural": "-",
+      "exampleDe": "Endlich Feierabend! Ich gehe jetzt nach Hause.",
+      "exampleEn": "Finally off work! I am going home now."
+    }
+  },
+  {
+    "queueId": "q-grammar-a1-mwtekbz2-2w8w",
+    "itemType": "grammar",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:27.230Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "gr-a1-wohnen-01",
+      "level": "A1",
+      "topic": "Wohnen",
+      "tags": [
+        "wohnen",
+        "grammar-drill"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "type": "fill-blank",
+      "topicLabel": "Wohnen Prepositions",
+      "prompt": "Ich wohne in _____ schönen Wohnung. (Dativ, feminine)",
+      "options": [
+        "einer",
+        "eine",
+        "einen",
+        "einem"
+      ],
+      "correctAnswer": "einer",
+      "explanation": "In Dative singular, feminine indefinite article changes to 'einer' ('in einer Wohnung')."
+    }
+  },
+  {
+    "queueId": "q-reading-a1-mwtekc6j-5pkp",
+    "itemType": "reading",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:27.499Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "read-a1-wohnen-01",
+      "level": "A1",
+      "topic": "Wohnen",
+      "tags": [
+        "wohnen",
+        "reading-comprehension"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "title": "Das Leben in der neuen Wohnung",
+      "englishTitle": "Life in the New Apartment",
+      "category": "Wohnen",
+      "estimatedReadTime": "2 min",
+      "content": "Hallo! Mein Name ist Sarah. Letzte Woche bin ich in eine neue Wohnung in Frankfurt gezogen. Die Wohnung hat zwei Zimmer, eine Küche und ein helles Bad. Vom Balkon aus kann ich einen schönen Park sehen. Mein Nachbar Herr Klein hat mir beim Tragen der Möbel geholfen. Ich fühle mich hier schon sehr wohl!",
+      "vocabulary": {
+        "Wohnung": {
+          "english": "apartment",
+          "article": "die",
+          "plural": "die Wohnungen"
+        },
+        "Balkon": {
+          "english": "balcony",
+          "article": "der",
+          "plural": "die Balkone"
+        },
+        "Möbel": {
+          "english": "furniture",
+          "article": "die",
+          "plural": "die Möbel"
+        }
+      },
+      "questions": [
+        {
+          "id": "q-a1-wohnen-1",
+          "question": "In welcher Stadt wohnt Sarah jetzt?",
+          "options": [
+            "In Berlin",
+            "In Frankfurt",
+            "In München",
+            "In Hamburg"
+          ],
+          "correctIndex": 1,
+          "explanation": "Der Text sagt: 'Letzte Woche bin ich in eine neue Wohnung in Frankfurt gezogen.'"
+        },
+        {
+          "id": "q-a1-wohnen-2",
+          "question": "Wer hat Sarah beim Möbeltragen geholfen?",
+          "options": [
+            "Ihr Bruder",
+            "Ihr Chef",
+            "Herr Klein",
+            "Die Vermieterin"
+          ],
+          "correctIndex": 2,
+          "explanation": "Der Text sagt: 'Mein Nachbar Herr Klein hat mir beim Tragen der Möbel geholfen.'"
+        }
+      ]
+    }
+  },
+  {
+    "queueId": "q-flashcard-a1-mwtekz5i-ze4l",
+    "itemType": "flashcard",
+    "status": "draft",
+    "draftedAt": "2026-11-23T15:10:57.270Z",
+    "reviewedAt": null,
+    "reviewerNotes": "",
+    "item": {
+      "id": "fc-a1-wohnen-wohnung",
+      "level": "A1",
+      "topic": "Wohnen",
+      "tags": [
+        "wohnen",
+        "core-vocabulary",
+        "cefr-a1"
+      ],
+      "source": "offline-pedagogical-matrix",
+      "reviewedBy": "ai",
+      "german": "Wohnung",
+      "article": "die",
+      "gender": "feminine",
+      "english": "apartment / flat",
+      "plural": "die Wohnungen",
+      "exampleDe": "Unsere neue Wohnung hat einen großen Balkon.",
+      "exampleEn": "Our new apartment has a large balcony."
+    }
+  }
+]

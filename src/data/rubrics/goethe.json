@@ -1,0 +1,149 @@
+{
+  "institution": "Goethe-Institut",
+  "name": "Goethe-Zertifikat Schreiben",
+  "verified": false,
+  "source": "https://www.goethe.de/pro/relaunch/prf/de/Pruefungsordnung.pdf",
+  "levels": {
+    "A1": {
+      "level": "A1",
+      "moduleName": "Start Deutsch 1 - Schreiben (Teil 2: Kurze Mitteilung)",
+      "maxPoints": 15,
+      "source": "https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_A1_SD1_Modellsatz.pdf",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "aufgabenerfuellung",
+          "name": "Aufgabenerfüllung (Inhaltspunkte)",
+          "weight": 0.40,
+          "maxPoints": 6,
+          "description": "Berücksichtigung aller drei vorgeschriebenen Leitpunkte (vollständig und verständlich)."
+        },
+        {
+          "id": "textsorte",
+          "name": "Kommunikative Gestaltung / Textsorte",
+          "weight": 0.20,
+          "maxPoints": 3,
+          "description": "Angemessene Anrede und Grußformel (formell vs. informell)."
+        },
+        {
+          "id": "strukturen",
+          "name": "Formale Richtigkeit (Grammatik & Orthografie)",
+          "weight": 0.40,
+          "maxPoints": 6,
+          "description": "Satzbau (V2), Verbkonjugation, einfache Wortwahl und elementare Rechtschreibung."
+        }
+      ]
+    },
+    "A2": {
+      "level": "A2",
+      "moduleName": "Goethe-Zertifikat A2 - Schreiben (Teil 1 & Teil 2)",
+      "maxPoints": 25,
+      "source": "https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_A2_Modellsatz.pdf",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "aufgabenerfuellung",
+          "name": "Aufgabenerfüllung (Inhaltliche Angemessenheit)",
+          "weight": 0.35,
+          "maxPoints": 9,
+          "description": "Bearbeitung aller Leitpunkte mit ausreichender Ausführlichkeit."
+        },
+        {
+          "id": "kohaerenz",
+          "name": "Kohärenz & Textverbindung",
+          "weight": 0.20,
+          "maxPoints": 5,
+          "description": "Sinnvoller Textfluss und Verknüpfung durch Konnektoren (und, aber, weil, deshalb)."
+        },
+        {
+          "id": "wortschatz",
+          "name": "Wortschatzspektrum & -beherrschung",
+          "weight": 0.25,
+          "maxPoints": 6,
+          "description": "Repertoire an Alltagswortschatz und korrekte Verwendungsweise."
+        },
+        {
+          "id": "strukturen",
+          "name": "Strukturen (Morphosyntax & Orthografie)",
+          "weight": 0.20,
+          "maxPoints": 5,
+          "description": "Kasusbeherrschung, Perfektformen, Satzstellung und Zeichensetzung."
+        }
+      ]
+    },
+    "B1": {
+      "level": "B1",
+      "moduleName": "Goethe-Zertifikat B1 - Modul Schreiben",
+      "maxPoints": 25,
+      "source": "https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_B1_Pruefungsordnung.pdf",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "aufgabenerfuellung",
+          "name": "Kriterium 1: Aufgabenerfüllung",
+          "weight": 0.30,
+          "maxPoints": 7.5,
+          "description": "Inhaltliche Angemessenheit, Ausführlichkeit der Leitpunkte, Textsortenmerkmale."
+        },
+        {
+          "id": "kohaerenz",
+          "name": "Kriterium 2: Kohärenz",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Logischer Aufbau, Absatzgliederung, kohärente Satzverbindungen."
+        },
+        {
+          "id": "wortschatz",
+          "name": "Kriterium 3: Wortschatz",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Spektrum und Präzision des B1-Wortschatzes, Idiomatik und Kollokationen."
+        },
+        {
+          "id": "strukturen",
+          "name": "Kriterium 4: Strukturen",
+          "weight": 0.20,
+          "maxPoints": 5.0,
+          "description": "Syntaktische Komplexität (Nebensätze, Passiv, Infinitiv mit zu) und morphologische Korrektheit."
+        }
+      ]
+    },
+    "B2": {
+      "level": "B2",
+      "moduleName": "Goethe-Zertifikat B2 - Modul Schreiben",
+      "maxPoints": 25,
+      "source": "https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_B2_Modellsatz.pdf",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "aufgabenerfuellung",
+          "name": "Kriterium 1: Aufgabenerfüllung",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Ausgewogene und überzeugende Argumentation, vollständige Umsetzung der Anforderungen."
+        },
+        {
+          "id": "kohaerenz",
+          "name": "Kriterium 2: Kohärenz",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Klarer roter Faden, geschickte gedankliche Verknüpfungen, abwechslungsreiche Konnektoren."
+        },
+        {
+          "id": "wortschatz",
+          "name": "Kriterium 3: Wortschatz",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Breites Spektrum, treffender Ausdruck, nuancierte Wortwahl, Registeradäquatheit."
+        },
+        {
+          "id": "strukturen",
+          "name": "Kriterium 4: Strukturen",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Hohe grammatische Korrektheit, Beherrschung komplexer Satzgefüge und Partizipialkonstruktionen."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1511 @@
+[
+  {
+    "id": "read-a1-1",
+    "level": "A1",
+    "title": "Mein Tag in Berlin",
+    "englishTitle": "My Day in Berlin",
+    "category": "Daily Routine & Travel",
+    "estimatedReadTime": "2 min",
+    "content": "Hallo! Mein Name ist Lukas und ich wohne seit einem Monat in Berlin. Mein Tag beginnt früh. Um sieben Uhr stehe ich auf und trinke einen heißen Kaffee in der Küche. Danach esse ich ein Brötchen mit Butter und Marmelade. Um acht Uhr nehme ich die U-Bahn zum Sprachkurs. In der U-Bahn lese ich ein deutsches Buch. Der Kurs beginnt um neun Uhr. Meine Lehrerin heißt Frau Wagner und sie ist sehr nett. Wir lernen neue Wörter und üben die Aussprache. Nach dem Kurs esse ich mit meinen Freunden im Park zu Mittag. Das Wetter ist heute sonnig und warm. Am Abend gehe ich im Supermarkt einkaufen und koche eine leckere Gemüsesuppe. Berlin ist eine wunderbare Stadt!",
+    "vocabulary": {
+      "wohne": {
+        "english": "live / reside",
+        "article": null,
+        "plural": null
+      },
+      "früh": {
+        "english": "early",
+        "article": null,
+        "plural": null
+      },
+      "Kaffee": {
+        "english": "coffee",
+        "article": "der",
+        "plural": "die Kaffees"
+      },
+      "Küche": {
+        "english": "kitchen",
+        "article": "die",
+        "plural": "die Küchen"
+      },
+      "Brötchen": {
+        "english": "bread roll",
+        "article": "das",
+        "plural": "die Brötchen"
+      },
+      "U-Bahn": {
+        "english": "subway / metro",
+        "article": "die",
+        "plural": "die U-Bahnen"
+      },
+      "Sprachkurs": {
+        "english": "language course",
+        "article": "der",
+        "plural": "die Sprachkurse"
+      },
+      "Lehrerin": {
+        "english": "teacher (female)",
+        "article": "die",
+        "plural": "die Lehrerinnen"
+      },
+      "Aussprache": {
+        "english": "pronunciation",
+        "article": "die",
+        "plural": "-"
+      },
+      "Supermarkt": {
+        "english": "supermarket",
+        "article": "der",
+        "plural": "die Supermärkte"
+      },
+      "Gemüsesuppe": {
+        "english": "vegetable soup",
+        "article": "die",
+        "plural": "die Gemüsesuppen"
+      }
+    },
+    "questions": [
+      {
+        "id": "q-a1-1-1",
+        "question": "Um wie viel Uhr steht Lukas morgens auf?",
+        "options": [
+          "Um sechs Uhr",
+          "Um sieben Uhr",
+          "Um acht Uhr",
+          "Um neun Uhr"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text states: 'Um sieben Uhr stehe ich auf'.",
+        "evidence": {
+          "start": 92,
+          "end": 119,
+          "text": "Um sieben Uhr stehe ich auf"
+        },
+        "distractorRationale": {
+          "0": "Im Text steht nichts von 6:00 Uhr; Lukas steht um 7:00 Uhr auf.",
+          "2": "Um 8:00 Uhr nimmt Lukas die U-Bahn zum Sprachkurs.",
+          "3": "Um 9:00 Uhr fängt der Unterricht an, nicht das Aufstehen."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-a1-1-2",
+        "question": "Was macht Lukas in der U-Bahn?",
+        "options": [
+          "Er schläft",
+          "Er hört Musik",
+          "Er liest ein deutsches Buch",
+          "Er telefoniert"
+        ],
+        "correctIndex": 2,
+        "explanation": "The text says: 'In der U-Bahn lese ich ein deutsches Buch'.",
+        "evidence": {
+          "start": 269,
+          "end": 310,
+          "text": "In der U-Bahn lese ich ein deutsches Buch"
+        },
+        "distractorRationale": {
+          "0": "Lukas schläft nicht in der Bahn, sondern nutzt die Fahrzeit zum Lesen.",
+          "1": "Musik hören wird im Text nicht erwähnt.",
+          "3": "Lukas telefoniert nicht in der U-Bahn, sondern liest ein Buch."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-a1-1-3",
+        "question": "Was kocht Lukas am Abend?",
+        "options": [
+          "Eine Gemüsesuppe",
+          "Eine Pizza",
+          "Nudeln mit Tomatensauce",
+          "Einen Kuchen"
+        ],
+        "correctIndex": 0,
+        "explanation": "The text mentions: 'Am Abend koche ich eine leckere Gemüsesuppe'.",
+        "evidence": {
+          "start": 592,
+          "end": 622,
+          "text": "koche eine leckere Gemüsesuppe"
+        },
+        "distractorRationale": {
+          "1": "Lukas kocht eine Gemüsesuppe, er bestellt oder isst keine Pizza.",
+          "2": "Nudeln mit Tomatensauce werden im Text nicht erwähnt.",
+          "3": "Kuchen backt Lukas nicht am Abend."
+        },
+        "errorCategory": "comprehension-detail"
+      }
+    ]
+  },
+  {
+    "id": "read-a1-2",
+    "level": "A1",
+    "title": "Im Supermarkt",
+    "englishTitle": "At the Supermarket",
+    "category": "Shopping & Food",
+    "estimatedReadTime": "2 min",
+    "content": "Heute ist Samstag und Maria geht in den Supermarkt. Sie braucht Lebensmittel für das Wochenende. Zuerst geht sie zur Obstabteilung. Sie kauft ein Kilo Äpfel und fünf Bananen. Die Äpfel kosten zwei Euro. Dann sucht sie das Brot. Maria nimmt ein frisches Vollkornbrot. An der Kasse wartet sie kurz. Der Kassierer grüßt freundlich: 'Guten Tag! Haben Sie eine Kundenkarte?' Maria antwortet: 'Nein, leider nicht.' Der Einkauf kostet insgesamt achtzehn Euro. Maria bezahlt mit ihrer Karte und packt die Lebensmittel in ihre Tasche.",
+    "vocabulary": {
+      "Lebensmittel": {
+        "english": "groceries / food",
+        "article": "die",
+        "plural": "die Lebensmittel"
+      },
+      "Wochenende": {
+        "english": "weekend",
+        "article": "das",
+        "plural": "die Wochenenden"
+      },
+      "Obstabteilung": {
+        "english": "fruit section",
+        "article": "die",
+        "plural": "die Obstabteilungen"
+      },
+      "Äpfel": {
+        "english": "apples",
+        "article": "die",
+        "plural": "die Äpfel"
+      },
+      "Vollkornbrot": {
+        "english": "whole grain bread",
+        "article": "das",
+        "plural": "die Vollkornbrote"
+      },
+      "Kasse": {
+        "english": "cash register / checkout",
+        "article": "die",
+        "plural": "die Kassen"
+      },
+      "Kassierer": {
+        "english": "cashier",
+        "article": "der",
+        "plural": "die Kassierer"
+      },
+      "Kundenkarte": {
+        "english": "loyalty card",
+        "article": "die",
+        "plural": "die Kundenkarten"
+      },
+      "Einkauf": {
+        "english": "purchase / groceries",
+        "article": "der",
+        "plural": "die Einkäufe"
+      }
+    },
+    "questions": [
+      {
+        "id": "q-a1-2-1",
+        "question": "Welcher Wochentag ist es im Text?",
+        "options": [
+          "Montag",
+          "Freitag",
+          "Samstag",
+          "Sonntag"
+        ],
+        "correctIndex": 2,
+        "explanation": "The text begins with: 'Heute ist Samstag'.",
+        "evidence": {
+          "start": 0,
+          "end": 17,
+          "text": "Heute ist Samstag"
+        },
+        "distractorRationale": {
+          "0": "Montag wird nicht genannt; Maria geht am Samstag einkaufen.",
+          "1": "Freitag ist nicht der Einkaufstag im Text.",
+          "3": "Sonntag sind die Supermärkte in Deutschland meist geschlossen."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-a1-2-2",
+        "question": "Wie viel kosten die Äpfel?",
+        "options": [
+          "Einen Euro",
+          "Zwei Euro",
+          "Fünf Euro",
+          "Achtzehn Euro"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text states: 'Die Äpfel kosten zwei Euro'.",
+        "evidence": {
+          "start": 175,
+          "end": 201,
+          "text": "Die Äpfel kosten zwei Euro"
+        },
+        "distractorRationale": {
+          "0": "Ein Euro ist zu wenig; im Text steht ausdrücklich zwei Euro.",
+          "2": "Fünf ist die Anzahl der Bananen, nicht der Preis der Äpfel.",
+          "3": "Achtzehn Euro ist der Gesamtpreis des gesamten Einkaufs."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-a1-2-3",
+        "question": "Wie bezahlt Maria ihren Einkauf?",
+        "options": [
+          "Mit Bargeld",
+          "Mit dem Smartphone",
+          "Mit ihrer Karte",
+          "Sie bezahlt nicht"
+        ],
+        "correctIndex": 2,
+        "explanation": "The text states: 'Maria bezahlt mit ihrer Karte'.",
+        "evidence": {
+          "start": 453,
+          "end": 482,
+          "text": "Maria bezahlt mit ihrer Karte"
+        },
+        "distractorRationale": {
+          "0": "Maria bezahlt nicht mit Bargeld, sondern bargeldlos mit Karte.",
+          "1": "Smartphone-Zahlung wird im Text nicht erwähnt.",
+          "3": "Maria bezahlt ihren Einkauf ordnungsgemäß an der Kasse."
+        },
+        "errorCategory": "comprehension-detail"
+      }
+    ]
+  },
+  {
+    "id": "read-a1-3",
+    "level": "A1",
+    "title": "Meine Familie und Hobbys",
+    "englishTitle": "My Family and Hobbies",
+    "category": "Family & Relationships",
+    "estimatedReadTime": "2 min",
+    "content": "Ich heiße Jonas und bin zwanzig Jahre alt. Meine Familie ist klein, aber sehr herzlich. Mein Vater heißt Thomas und arbeitet als Arzt im Krankenhaus. Meine Mutter heißt Julia und unterrichtet Musik an einer Schule. Ich habe einen jüngeren Bruder. Sein Name ist Felix und er ist fünfzehn Jahre alt. Wir verstehen uns sehr gut. An den Wochenenden haben wir viel Zeit für unsere Hobbys. Mein Vater spielt gern Tennis und meine Mutter singt im Chor. Felix spielt am liebsten Videospiele mit seinen Freunden. Ich schwimme gern im Hallenbad und fotografiere alte Gebäude. Am Sonntagabend essen wir alle zusammen zu Abend.",
+    "vocabulary": {
+      "herzlich": {
+        "english": "warm / cordial",
+        "article": null,
+        "plural": null
+      },
+      "Krankenhaus": {
+        "english": "hospital",
+        "article": "das",
+        "plural": "die Krankenhäuser"
+      },
+      "unterrichtet": {
+        "english": "teaches",
+        "article": null,
+        "plural": null
+      },
+      "Bruder": {
+        "english": "brother",
+        "article": "der",
+        "plural": "die Brüder"
+      },
+      "Chor": {
+        "english": "choir",
+        "article": "der",
+        "plural": "die Chöre"
+      },
+      "Hallenbad": {
+        "english": "indoor pool",
+        "article": "das",
+        "plural": "die Hallenbäder"
+      },
+      "Gebäude": {
+        "english": "building",
+        "article": "das",
+        "plural": "die Gebäude"
+      }
+    },
+    "questions": [
+      {
+        "id": "q-a1-3-1",
+        "question": "Was ist der Beruf von Jonas' Vater?",
+        "options": [
+          "Lehrer",
+          "Arzt",
+          "Verkäufer",
+          "Musiker"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text states: 'Mein Vater heißt Thomas und arbeitet als Arzt im Krankenhaus'.",
+        "evidence": {
+          "start": 116,
+          "end": 148,
+          "text": "arbeitet als Arzt im Krankenhaus"
+        },
+        "distractorRationale": {
+          "0": "Lehrerin ist die Mutter (sie unterrichtet Musik), nicht der Vater.",
+          "2": "Verkäufer wird im Text nicht erwähnt.",
+          "3": "Musiker ist kein Beruf der Eltern; die Mutter singt im Chor als Hobby."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-a1-3-2",
+        "question": "Wie alt ist Jonas' Bruder Felix?",
+        "options": [
+          "Zehn Jahre",
+          "Fünfzehn Jahre",
+          "Zwanzig Jahre",
+          "Achtzehn Jahre"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text states: 'Sein Name ist Felix und er ist fünfzehn Jahre alt'.",
+        "evidence": {
+          "start": 271,
+          "end": 296,
+          "text": "er ist fünfzehn Jahre alt"
+        },
+        "distractorRationale": {
+          "0": "Zehn Jahre ist falsch; Felix ist fünfzehn Jahre alt.",
+          "2": "Zwanzig Jahre alt ist Jonas selbst, nicht sein jüngerer Bruder.",
+          "3": "Achtzehn Jahre wird im Text nicht genannt."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-a1-3-3",
+        "question": "Was ist ein Hobby von Jonas?",
+        "options": [
+          "Tennis spielen",
+          "Im Chor singen",
+          "Videospiele spielen",
+          "Alte Gebäude fotografieren"
+        ],
+        "correctIndex": 3,
+        "explanation": "Jonas says: 'Ich schwimme gern im Hallenbad und fotografiere alte Gebäude'.",
+        "evidence": {
+          "start": 539,
+          "end": 564,
+          "text": "fotografiere alte Gebäude"
+        },
+        "distractorRationale": {
+          "0": "Tennis spielt der Vater in seiner Freizeit, nicht Jonas.",
+          "1": "Im Chor singt die Mutter, nicht Jonas.",
+          "2": "Videospiele spielt der Bruder Felix mit seinen Freunden."
+        },
+        "errorCategory": "comprehension-detail"
+      }
+    ]
+  },
+  {
+    "id": "read-a2-1",
+    "level": "A2",
+    "title": "Eine Reise nach München",
+    "englishTitle": "A Trip to Munich",
+    "category": "Travel & Holidays",
+    "estimatedReadTime": "3 min",
+    "content": "Letzten Monat bin ich mit dem ICE-Zug nach München gereist. Die Fahrt von Frankfurt hat nur drei Stunden gedauert. Während der Zugfahrt habe ich die grüne bayerische Landschaft bewundert und Kaffee getrunken. In München angekommen, habe ich zuerst in einem gemütlichen Hotel nahe dem Hauptbahnhof eingecheckt. Am Nachmittag bin ich zum Marienplatz spaziert. Dort habe ich das berühmte Glockenspiel am Neuen Rathaus gesehen. Hunderte von Touristen haben applaudiert und Fotos gemacht. Am Abend habe ich ein traditionelles bayerisches Wirtshaus besucht. Ich habe Brezeln und Bratwurst mit Sauerkraut probiert. Das Essen war köstlich und die Atmosphäre sehr gesellig. Am nächsten Tag habe ich das Deutsche Museum besichtigt. Es war ein unvergessliches Wochenende!",
+    "vocabulary": {
+      "gereist": {
+        "english": "traveled",
+        "article": null,
+        "plural": null
+      },
+      "Zugfahrt": {
+        "english": "train journey",
+        "article": "die",
+        "plural": "die Zugfahrten"
+      },
+      "Landschaft": {
+        "english": "landscape / countryside",
+        "article": "die",
+        "plural": "die Landschaften"
+      },
+      "bewundert": {
+        "english": "admired",
+        "article": null,
+        "plural": null
+      },
+      "Glockenspiel": {
+        "english": "carillon / clock bells",
+        "article": "das",
+        "plural": "die Glockenspiele"
+      },
+      "Rathaus": {
+        "english": "town hall",
+        "article": "das",
+        "plural": "die Rathäuser"
+      },
+      "Wirtshaus": {
+        "english": "tavern / inn",
+        "article": "das",
+        "plural": "die Wirtshäuser"
+      },
+      "Brezeln": {
+        "english": "pretzels",
+        "article": "die",
+        "plural": "die Brezeln"
+      },
+      "köstlich": {
+        "english": "delicious",
+        "article": null,
+        "plural": null
+      },
+      "gesellig": {
+        "english": "sociable / convivial",
+        "article": null,
+        "plural": null
+      },
+      "unvergesslich": {
+        "english": "unforgettable",
+        "article": null,
+        "plural": null
+      }
+    },
+    "questions": [
+      {
+        "id": "q-a2-1-1",
+        "question": "Wie lange hat die Zugfahrt von Frankfurt nach München gedauert?",
+        "options": [
+          "Eine Stunde",
+          "Zwei Stunden",
+          "Drei Stunden",
+          "Fünf Stunden"
+        ],
+        "correctIndex": 2,
+        "explanation": "The text notes: 'Die Fahrt von Frankfurt hat nur drei Stunden gedauert'.",
+        "evidence": {
+          "start": 84,
+          "end": 113,
+          "text": "hat nur drei Stunden gedauert"
+        },
+        "distractorRationale": {
+          "0": "Eine Stunde wäre selbst für den ICE zu kurz für Frankfurt-München.",
+          "1": "Zwei Stunden ist falsch; die Fahrt dauerte genau drei Stunden.",
+          "3": "Fünf Stunden ist zu lang für die genannte ICE-Verbindung."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-a2-1-2",
+        "question": "Was hat der Autor am Marienplatz gesehen?",
+        "options": [
+          "Ein Fußballspiel",
+          "Das Glockenspiel am Neuen Rathaus",
+          "Ein Rockkonzert",
+          "Einen Bauernmarkt"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text states: 'Dort habe ich das berühmte Glockenspiel am Neuen Rathaus gesehen'.",
+        "evidence": {
+          "start": 372,
+          "end": 422,
+          "text": "das berühmte Glockenspiel am Neuen Rathaus gesehen"
+        },
+        "distractorRationale": {
+          "0": "Ein Fußballspiel fand am Marienplatz nicht statt.",
+          "2": "Ein Rockkonzert wird im Text nicht erwähnt.",
+          "3": "Der Marienplatz ist bekannt für das Rathaus-Glockenspiel, nicht für einen Bauernmarkt."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-a2-1-3",
+        "question": "Was hat der Autor am nächsten Tag besucht?",
+        "options": [
+          "Das Deutsche Museum",
+          "Das Schloss Neuschwanstein",
+          "Den Olympiapark",
+          "Einen Zoo"
+        ],
+        "correctIndex": 0,
+        "explanation": "The text concludes: 'Am nächsten Tag habe ich das Deutsche Museum besichtigt'.",
+        "evidence": {
+          "start": 681,
+          "end": 720,
+          "text": "habe ich das Deutsche Museum besichtigt"
+        },
+        "distractorRationale": {
+          "1": "Neuschwanstein liegt im Allgäu, nicht direkt in München.",
+          "2": "Der Olympiapark wurde am nächsten Tag nicht besucht.",
+          "3": "Ein Zoo-Besuch wird im Text nicht erwähnt."
+        },
+        "errorCategory": "comprehension-detail"
+      }
+    ]
+  },
+  {
+    "id": "read-a2-2",
+    "level": "A2",
+    "title": "Ein neuer Mitbewohner",
+    "englishTitle": "A New Flatmate",
+    "category": "Living & Housing",
+    "estimatedReadTime": "3 min",
+    "content": "Seit zwei Wochen wohnt Simon in unserer Wohngemeinschaft (WG) in Köln. Vor seinem Einzug mussten wir viele Bewerbungen lesen, weil Wohnungen in Universitätsstädten sehr begehrt sind. Simon studiert Biologie und kocht leidenschaftlich gern italienische Gerichte. Am ersten Wochenende haben wir zusammen einen Putzplan erstellt. In einer WG ist Ordnung besonders wichtig, damit sich alle Mitbewohner wohlfühlen. Simon hat ein helles Zimmer zur Straßenseite bekommen. Er hat es mit bunten Pflanzen und einem großen Schreibtisch eingerichtet. Gestern haben wir gemeinsam Pizza gebacken und über unsere Studienfächer geredet. Wir sind sehr froh, dass er unser neuer Mitbewohner geworden ist.",
+    "vocabulary": {
+      "Wohngemeinschaft": {
+        "english": "shared flat / flatshare",
+        "article": "die",
+        "plural": "die Wohngemeinschaften"
+      },
+      "begehrt": {
+        "english": "sought after / in demand",
+        "article": null,
+        "plural": null
+      },
+      "leidenschaftlich": {
+        "english": "passionately",
+        "article": null,
+        "plural": null
+      },
+      "Putzplan": {
+        "english": "cleaning schedule",
+        "article": "der",
+        "plural": "die Putzpläne"
+      },
+      "Ordnung": {
+        "english": "order / tidiness",
+        "article": "die",
+        "plural": "-"
+      },
+      "Mitbewohner": {
+        "english": "flatmate / roommate",
+        "article": "der",
+        "plural": "die Mitbewohner"
+      },
+      "eingerichtet": {
+        "english": "furnished / decorated",
+        "article": null,
+        "plural": null
+      },
+      "froh": {
+        "english": "glad / happy",
+        "article": null,
+        "plural": null
+      }
+    },
+    "questions": [
+      {
+        "id": "q-a2-2-1",
+        "question": "Was studiert der neue Mitbewohner Simon?",
+        "options": [
+          "Medizin",
+          "Informatik",
+          "Biologie",
+          "Germanistik"
+        ],
+        "correctIndex": 2,
+        "explanation": "The text states: 'Simon studiert Biologie'.",
+        "evidence": {
+          "start": 183,
+          "end": 206,
+          "text": "Simon studiert Biologie"
+        },
+        "distractorRationale": {
+          "0": "Medizin wird im Text nicht erwähnt; Simon studiert Biologie.",
+          "1": "Informatik ist nicht das Studienfach des neuen Mitbewohners.",
+          "3": "Germanistik studiert Simon nicht."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-a2-2-2",
+        "question": "Warum haben die Mitbewohner einen Putzplan erstellt?",
+        "options": [
+          "Weil sie sich gestritten haben",
+          "Damit Ordnung herrscht und sich alle wohlfühlen",
+          "Weil der Vermieter es verlangt",
+          "Damit sie Geld sparen"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text explains: 'In einer WG ist Ordnung besonders wichtig, damit sich alle Mitbewohner wohlfühlen'.",
+        "evidence": {
+          "start": 370,
+          "end": 408,
+          "text": "damit sich alle Mitbewohner wohlfühlen"
+        },
+        "distractorRationale": {
+          "0": "Die WG-Bewohner haben sich nicht gestritten, sondern verstehen sich gut.",
+          "2": "Der Vermieter verlangt keinen privaten Putzplan der WG.",
+          "3": "Ein Putzplan dient der Sauberkeit und Harmonie, nicht dem Geldsparen."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-a2-2-3",
+        "question": "Was haben die Mitbewohner gestern zusammen gemacht?",
+        "options": [
+          "Sie sind ins Kino gegangen",
+          "Sie haben gemeinsam Pizza gebacken",
+          "Sie haben Möbel gekauft",
+          "Sie haben einen Ausflug gemacht"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text says: 'Gestern haben wir gemeinsam Pizza gebacken und über unsere Studienfächer geredet'.",
+        "evidence": {
+          "start": 539,
+          "end": 581,
+          "text": "Gestern haben wir gemeinsam Pizza gebacken"
+        },
+        "distractorRationale": {
+          "0": "Ein Kinobesuch fand gestern nicht statt.",
+          "2": "Möbel wurden gestern nicht gekauft; Simons Zimmer war bereits eingerichtet.",
+          "3": "Ein Ausflug wird für gestern nicht erwähnt."
+        },
+        "errorCategory": "comprehension-detail"
+      }
+    ]
+  },
+  {
+    "id": "read-a2-3",
+    "level": "A2",
+    "title": "Der Besuch beim Arzt",
+    "englishTitle": "Visiting the Doctor",
+    "category": "Health & Body",
+    "estimatedReadTime": "3 min",
+    "content": "Gestern Morgen bin ich mit starken Halsschmerzen und leichtem Fieber aufgewacht. Weil es mir nicht gut ging, habe ich sofort in der Arztpraxis von Dr. Weber angerufen. Die Sprechstundenhilfe hat mir gesagt, dass ich um elf Uhr vorbeikommen kann. Im Wartezimmer habe ich zwanzig Minuten gewartet. Dann hat mich der Arzt gründlich untersucht. Er hat in meinen Hals geschaut und meine Lunge abgehört. Die Diagnose lautete: eine Erkältung mit leichter Mandelentzündung. Dr. Weber hat mir Bettruhe verordnet und ein Rezept für Halstabletten und Hustensaft ausgestellt. Außerdem hat er gesagt, dass ich mindestens zwei Liter Kräutertee pro Tag trinken soll. Auf dem Rückweg bin ich direkt zur Apotheke gegangen, um die Medikamente abzuholen. Nach zwei Tagen Ruhe fühle ich mich schon viel besser.",
+    "vocabulary": {
+      "Halsschmerzen": {
+        "english": "sore throat",
+        "article": "die",
+        "plural": "die Halsschmerzen"
+      },
+      "Arztpraxis": {
+        "english": "doctor's surgery / practice",
+        "article": "die",
+        "plural": "die Arztpraxen"
+      },
+      "Sprechstundenhilfe": {
+        "english": "medical receptionist",
+        "article": "die",
+        "plural": "die Sprechstundenhilfen"
+      },
+      "Wartezimmer": {
+        "english": "waiting room",
+        "article": "das",
+        "plural": "die Wartezimmer"
+      },
+      "gründlich": {
+        "english": "thoroughly",
+        "article": null,
+        "plural": null
+      },
+      "abgehört": {
+        "english": "listened to with stethoscope",
+        "article": null,
+        "plural": null
+      },
+      "Bettruhe": {
+        "english": "bed rest",
+        "article": "die",
+        "plural": "-"
+      },
+      "Rezept": {
+        "english": "prescription",
+        "article": "das",
+        "plural": "die Rezepte"
+      },
+      "Hustensaft": {
+        "english": "cough syrup",
+        "article": "der",
+        "plural": "die Hustensäfte"
+      },
+      "Apotheke": {
+        "english": "pharmacy",
+        "article": "die",
+        "plural": "die Apotheken"
+      }
+    },
+    "questions": [
+      {
+        "id": "q-a2-3-1",
+        "question": "Mit welchen Symptomen ist der Patient aufgewacht?",
+        "options": [
+          "Bauchschmerzen und Zahnschmerzen",
+          "Starken Halsschmerzen und leichtem Fieber",
+          "Einem gebrochenen Arm",
+          "Rückenschmerzen"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text states: 'Gestern Morgen bin ich mit starken Halsschmerzen und leichtem Fieber aufgewacht'.",
+        "evidence": {
+          "start": 23,
+          "end": 79,
+          "text": "mit starken Halsschmerzen und leichtem Fieber aufgewacht"
+        },
+        "distractorRationale": {
+          "0": "Bauch- und Zahnschmerzen lagen laut Text nicht vor.",
+          "2": "Ein Knochenbruch wird nirgends erwähnt.",
+          "3": "Rückenschmerzen gehörten nicht zu den akuten Symptomen."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-a2-3-2",
+        "question": "Was hat der Arzt dem Patienten verordnet?",
+        "options": [
+          "Eine Operation",
+          "Bettruhe und Medikamente",
+          "Sofort wieder arbeiten zu gehen",
+          "Sport zu treiben"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text says: 'Dr. Weber hat mir Bettruhe verordnet und ein Rezept für Halstabletten und Hustensaft ausgestellt'.",
+        "evidence": {
+          "start": 484,
+          "end": 562,
+          "text": "Bettruhe verordnet und ein Rezept für Halstabletten und Hustensaft ausgestellt"
+        },
+        "distractorRationale": {
+          "0": "Eine Operation war bei dieser leichten Mandelentzündung keineswegs nötig.",
+          "2": "Der Arzt verordnete Ruhe, kein sofortiges Weiterarbeiten.",
+          "3": "Sport zu treiben wäre bei Fieber kontraproduktiv."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-a2-3-3",
+        "question": "Wohin ging der Patient auf dem Rückweg?",
+        "options": [
+          "Zum Supermarkt",
+          "Zur Apotheke",
+          "Ins Restaurant",
+          "Zur Universität"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text concludes: 'Auf dem Rückweg bin ich direkt zur Apotheke gegangen'.",
+        "evidence": {
+          "start": 676,
+          "end": 704,
+          "text": "direkt zur Apotheke gegangen"
+        },
+        "distractorRationale": {
+          "0": "Zum Supermarkt ging der Patient nicht direkt.",
+          "2": "Ein Restaurantbesuch passte nicht zur verordneten Bettruhe.",
+          "3": "Zur Universität ging er wegen Krankheit nicht."
+        },
+        "errorCategory": "comprehension-detail"
+      }
+    ]
+  },
+  {
+    "id": "read-b1-1",
+    "level": "B1",
+    "title": "Der erste Arbeitstag im Büro",
+    "englishTitle": "First Day at the Office",
+    "category": "Career & Professional Life",
+    "estimatedReadTime": "4 min",
+    "content": "Heute Morgen hatte Katharina ihren allerersten Arbeitstag als Junior-Marketingmanagerin bei einer internationalen Agentur in Frankfurt. Obwohl sie die Nacht zuvor vor lauter Aufregung kaum geschlafen hatte, kam sie pünktlich um Viertel vor neun im Büro an. Am Empfang wurde sie herzlich von ihrer Teamleiterin begrüßt, die ihr zunächst das gesamte Großraumbüro zeigte und sie den neuen Kollegen vorstellte. Jeder Kollege wirkte aufgeschlossen und hilfsbereit. An ihrem Arbeitsplatz stand bereits ein betriebsbereiter Laptop samt Willkommenspaket und einer Tasse mit Firmenlogo bereit. Am Vormittag nahm Katharina an einem kurzen Einführungsworkshop teil, in dem die internen Kommunikationssysteme und Sicherheitsrichtlinien erläutert wurden. Zur Mittagszeit luden ihre Kollegen sie in die Kantine ein. Bei einem Teller Pasta erfuhren sie mehr über Katharinas bisherige Praktika und ihre Hobbys. Am Nachmittag durfte sie bereits an einer Brainstorming-Sitzung für eine nachhaltige Werbekampagne teilnehmen. Katharina ist erleichtert, dass ihr Team so unterstützend ist, und blickt den kommenden Projekten voller Zuversicht entgegen.",
+    "vocabulary": {
+      "Aufregung": {
+        "english": "excitement / nervousness",
+        "article": "die",
+        "plural": "-"
+      },
+      "Teamleiterin": {
+        "english": "team lead (female)",
+        "article": "die",
+        "plural": "die Teamleiterinnen"
+      },
+      "Großraumbüro": {
+        "english": "open-plan office",
+        "article": "das",
+        "plural": "die Großraumbüros"
+      },
+      "aufgeschlossen": {
+        "english": "open-minded",
+        "article": null,
+        "plural": null
+      },
+      "betriebsbereit": {
+        "english": "ready to use / operational",
+        "article": null,
+        "plural": null
+      },
+      "Sicherheitsrichtlinien": {
+        "english": "security guidelines",
+        "article": "die",
+        "plural": "die Sicherheitsrichtlinien"
+      },
+      "Werbekampagne": {
+        "english": "advertising campaign",
+        "article": "die",
+        "plural": "die Werbekampagnen"
+      },
+      "Zuversicht": {
+        "english": "confidence / optimism",
+        "article": "die",
+        "plural": "-"
+      }
+    },
+    "questions": [
+      {
+        "id": "q-b1-1-1",
+        "question": "Als was arbeitet Katharina in der neuen Agentur?",
+        "options": [
+          "Grafikdesignerin",
+          "Junior-Marketingmanagerin",
+          "Buchhalterin",
+          "Softwareentwicklerin"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text states: '...ihren allerersten Arbeitstag als Junior-Marketingmanagerin'.",
+        "evidence": {
+          "start": 62,
+          "end": 121,
+          "text": "Junior-Marketingmanagerin bei einer internationalen Agentur"
+        },
+        "distractorRationale": {
+          "0": "Grafikdesignerin ist eine andere Stelle in einer Werbeagentur.",
+          "2": "Buchhalterin passt nicht zum Profil einer Marketingmanagerin.",
+          "3": "Softwareentwicklerin wird im Text nicht erwähnt."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-b1-1-2",
+        "question": "Was stand bereits an Katharinas Arbeitsplatz bereit?",
+        "options": [
+          "Ein Laptop samt Willkommenspaket und Tasse",
+          "Nur ein Notizblock",
+          "Ein Strauß Blumen",
+          "Ein altes Telefon"
+        ],
+        "correctIndex": 0,
+        "explanation": "The text notes: 'An ihrem Arbeitsplatz stand bereits ein betriebsbereiter Laptop samt Willkommenspaket und einer Tasse'.",
+        "evidence": {
+          "start": 500,
+          "end": 561,
+          "text": "betriebsbereiter Laptop samt Willkommenspaket und einer Tasse"
+        },
+        "distractorRationale": {
+          "1": "Nur ein Notizblock wäre unvollständig; es gab ein ganzes Paket inklusive Laptop.",
+          "2": "Blumen wurden Katharina nicht hingestellt.",
+          "3": "Ein altes Telefon stand dort nicht; der Arbeitsplatz war modern ausgestattet."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-b1-1-3",
+        "question": "Woran durfte Katharina am Nachmittag teilnehmen?",
+        "options": [
+          "An einem Vorstellungsgespräch",
+          "An einer Brainstorming-Sitzung",
+          "An einer Gehaltsverhandlung",
+          "An einer Betriebsfeier"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text says: 'Am Nachmittag durfte sie bereits an einer Brainstorming-Sitzung für eine nachhaltige Werbekampagne teilnehmen'.",
+        "evidence": {
+          "start": 937,
+          "end": 993,
+          "text": "Brainstorming-Sitzung für eine nachhaltige Werbekampagne"
+        },
+        "distractorRationale": {
+          "0": "Das Vorstellungsgespräch hatte Katharina bereits vor Dienstantritt absolviert.",
+          "2": "Gehaltsverhandlungen finden nicht am ersten Nachmittag statt.",
+          "3": "Eine Betriebsfeier wird für diesen Tag nicht beschrieben."
+        },
+        "errorCategory": "comprehension-detail"
+      }
+    ]
+  },
+  {
+    "id": "read-b1-2",
+    "level": "B1",
+    "title": "Nachhaltigkeit im Alltag",
+    "englishTitle": "Sustainability in Everyday Life",
+    "category": "Environment & Society",
+    "estimatedReadTime": "4 min",
+    "content": "In den letzten Jahren hat das Thema Umweltschutz im deutschsprachigen Raum enorm an Bedeutung gewonnen. Immer mehr Bürgerinnen und Bürger bemühen sich darum, ihren ökologischen Fußabdruck durch bewusste Entscheidungen zu verringern. Ein zentrales Element ist dabei die konsequente Mülltrennung: In fast jedem Haushalt werden Plastik, Papier, Biomüll und Restmüll in getrennten Behältern gesammelt. Durch dieses effiziente Recyclingsystem können wertvolle Rohstoffe wiederverwendet werden. Ein weiterer Trend ist das Einkaufen in Unverpackt-Läden, in denen Lebensmittel wie Reis, Nudeln und Müsli in mitgebrachte Gläser oder Stoffbeutel abgefüllt werden. Darüber hinaus verzichten viele Menschen in den Städten bewusst auf das eigene Auto. Sie nutzen stattdessen das gut ausgebaute Netz aus Straßenbahnen und Bussen oder fahren täglich mit dem Fahrrad. Kleine Veränderungen im Konsumverhalten summieren sich auf lange Sicht und tragen dazu bei, Ressourcen für künftige Generationen zu schonen.",
+    "vocabulary": {
+      "Bedeutung": {
+        "english": "importance / meaning",
+        "article": "die",
+        "plural": "die Bedeutungen"
+      },
+      "ökologischer Fußabdruck": {
+        "english": "ecological footprint",
+        "article": "der",
+        "plural": "-"
+      },
+      "konsequent": {
+        "english": "consistent",
+        "article": null,
+        "plural": null
+      },
+      "Mülltrennung": {
+        "english": "waste separation",
+        "article": "die",
+        "plural": "-"
+      },
+      "Rohstoffe": {
+        "english": "raw materials",
+        "article": "die",
+        "plural": "die Rohstoffe"
+      },
+      "Unverpackt-Laden": {
+        "english": "zero-waste package-free shop",
+        "article": "der",
+        "plural": "die Unverpackt-Läden"
+      },
+      "Konsumverhalten": {
+        "english": "consumer behavior",
+        "article": "das",
+        "plural": "-"
+      },
+      "schonen": {
+        "english": "to conserve / preserve",
+        "article": null,
+        "plural": null
+      }
+    },
+    "questions": [
+      {
+        "id": "q-b1-2-1",
+        "question": "Was gehört zum System der Mülltrennung in deutschen Haushalten?",
+        "options": [
+          "Alles in einen Sack werfen",
+          "Müll im Garten verbrennen",
+          "Plastik, Papier, Bio- und Restmüll getrennt sammeln",
+          "Müll nur am Monatsende entsorgen"
+        ],
+        "correctIndex": 2,
+        "explanation": "The text states: 'In fast jedem Haushalt werden Plastik, Papier, Biomüll und Restmüll in getrennten Behältern gesammelt'.",
+        "evidence": {
+          "start": 325,
+          "end": 396,
+          "text": "Plastik, Papier, Biomüll und Restmüll in getrennten Behältern gesammelt"
+        },
+        "distractorRationale": {
+          "0": "Alles in einen Sack zu werfen widerspricht der deutschen Mülltrennung komplett.",
+          "1": "Müll im Garten zu verbrennen ist in Deutschland gesetzlich verboten.",
+          "3": "Die Müllabfuhr erfolgt nach festem Plan, nicht nur am Monatsende."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-b1-2-2",
+        "question": "Wie kauft man in einem 'Unverpackt-Laden' ein?",
+        "options": [
+          "Man bestellt nur online",
+          "Man füllt Waren in mitgebrachte Gläser oder Stoffbeutel",
+          "Man kauft nur Tiefkühlprodukte",
+          "Man bekommt Plastiktüten geschenkt"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text explains: '...in denen Lebensmittel wie Reis, Nudeln und Müsli in mitgebrachte Gläser oder Stoffbeutel abgefüllt werden'.",
+        "evidence": {
+          "start": 556,
+          "end": 645,
+          "text": "Lebensmittel wie Reis, Nudeln und Müsli in mitgebrachte Gläser oder Stoffbeutel abgefüllt"
+        },
+        "distractorRationale": {
+          "0": "Ein Unverpackt-Laden ist ein physischer Vor-Ort-Laden, kein reiner Onlineshop.",
+          "2": "Tiefkühlprodukte sind typischerweise verpackt und nicht der Kern von Unverpackt-Läden.",
+          "3": "Plastiktüten gibt es in Unverpackt-Läden ganz bewusst nicht."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-b1-2-3",
+        "question": "Welche Alternative zum Auto wird im Text genannt?",
+        "options": [
+          "Privatjets",
+          "Straßenbahnen, Busse und Fahrräder",
+          "Taxis",
+          "Pferdekutschen"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text states: 'Sie nutzen stattdessen das gut ausgebaute Netz aus Straßenbahnen und Bussen oder fahren täglich mit dem Fahrrad'.",
+        "evidence": {
+          "start": 781,
+          "end": 850,
+          "text": "Netz aus Straßenbahnen und Bussen oder fahren täglich mit dem Fahrrad"
+        },
+        "distractorRationale": {
+          "0": "Privatjets sind kein urbanes nachhaltiges Nahverkehrsmittel.",
+          "2": "Taxis sind ebenfalls Autos und reduzieren den Autoverkehr nicht.",
+          "3": "Pferdekutschen sind historische Attraktionen, kein regulärer Stadtverkehr."
+        },
+        "errorCategory": "comprehension-detail"
+      }
+    ]
+  },
+  {
+    "id": "read-b1-3",
+    "level": "B1",
+    "title": "Typisch deutsch? Pünktlichkeit",
+    "englishTitle": "Typically German? Punctuality",
+    "category": "Culture & Customs",
+    "estimatedReadTime": "4 min",
+    "content": "Pünktlichkeit gilt weltweit als eine der markantesten deutschen Tugenden. Doch wie wird dieser Begriff im modernen Alltag tatsächlich gelebt? Im Berufsleben wird von Mitarbeitern erwartet, dass sie pünktlich zu Besprechungen erscheinen. Wer unangekündigt zehn Minuten zu spät zu einem Geschäftstermin kommt, riskiert einen unprofessionellen Eindruck, da unpünktliches Erscheinen als Respektlosigkeit gegenüber der Zeit des Geschäftspartners interpretiert werden kann. Sollte man sich unverschuldet verspäten, etwa wegen eines Staus oder Zugausfalls, gebietet es die Höflichkeit, den Gastgeber frühzeitig telefonisch oder per Kurznachricht zu informieren. Im privaten Bereich hingegen sind die Regeln etwas lockerer: Eine Verspätung von wenigen Minuten bei einer Party oder einem Abendessen unter engen Freunden wird meist nachsichtig toleriert. Allerdings gilt auch privat: Je offizieller der Anlass, desto wichtiger die Zuverlässigkeit. Pünktlichkeit ist somit weniger ein starrer Zwang, sondern vielmehr ein Zeichen gegenseitiger Wertschätzung.",
+    "vocabulary": {
+      "markant": {
+        "english": "prominent / distinctive",
+        "article": null,
+        "plural": null
+      },
+      "Tugenden": {
+        "english": "virtues",
+        "article": "die",
+        "plural": "die Tugenden"
+      },
+      "unangekündigt": {
+        "english": "unannounced",
+        "article": null,
+        "plural": null
+      },
+      "unverschuldet": {
+        "english": "through no fault of one's own",
+        "article": null,
+        "plural": null
+      },
+      "Höflichkeit": {
+        "english": "politeness / courtesy",
+        "article": "die",
+        "plural": "-"
+      },
+      "nachsichtig": {
+        "english": "leniently / indulgently",
+        "article": null,
+        "plural": null
+      },
+      "Wertschätzung": {
+        "english": "appreciation / esteem",
+        "article": "die",
+        "plural": "-"
+      }
+    },
+    "questions": [
+      {
+        "id": "q-b1-3-1",
+        "question": "Wie wird eine unangekündigte Verspätung im Berufsleben oft wahrgenommen?",
+        "options": [
+          "Als Beweis von Kreativität",
+          "Als Zeichen von Respektlosigkeit",
+          "Als völlig normal",
+          "Als Zeichen von Gelassenheit"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text states: '...da unpünktliches Erscheinen als Respektlosigkeit gegenüber der Zeit des Geschäftspartners interpretiert werden kann'.",
+        "evidence": {
+          "start": 379,
+          "end": 440,
+          "text": "als Respektlosigkeit gegenüber der Zeit des Geschäftspartners"
+        },
+        "distractorRationale": {
+          "0": "Unpünktlichkeit gilt im Berufsleben nicht als kreativ.",
+          "2": "Im deutschen Berufsleben wird Unpünktlichkeit keineswegs als normal betrachtet.",
+          "3": "Gelassenheit wird eher im Privaten toleriert, nicht bei geschäftlichen Terminen."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-b1-3-2",
+        "question": "Was sollte man tun, wenn man unverschuldet im Stau steht?",
+        "options": [
+          "Den Termin absagen und nach Hause fahren",
+          "Den Gastgeber frühzeitig informieren",
+          "Gar nichts tun",
+          "Schneller fahren"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text says: '...gebietet es die Höflichkeit, den Gastgeber frühzeitig telefonisch oder per Kurznachricht zu informieren'.",
+        "evidence": {
+          "start": 579,
+          "end": 653,
+          "text": "den Gastgeber frühzeitig telefonisch oder per Kurznachricht zu informieren"
+        },
+        "distractorRationale": {
+          "0": "Einfach abzusagen und umzukehren ist unhöflich und unprofessionell.",
+          "2": "Gar nichts zu tun verschärft den unprofessionellen Eindruck.",
+          "3": "Schnelleres Fahren im Stau ist physikalisch unmöglich und verkehrswidrig."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-b1-3-3",
+        "question": "Als was wird Pünktlichkeit am Ende des Textes zusammengefasst?",
+        "options": [
+          "Als veraltete Tradition",
+          "Als starrer Zwang",
+          "Als Zeichen gegenseitiger Wertschätzung",
+          "Als deutsches Gesetz"
+        ],
+        "correctIndex": 2,
+        "explanation": "The author concludes: 'Pünktlichkeit ist somit ... vielmehr ein Zeichen gegenseitiger Wertschätzung'.",
+        "evidence": {
+          "start": 997,
+          "end": 1045,
+          "text": "vielmehr ein Zeichen gegenseitiger Wertschätzung"
+        },
+        "distractorRationale": {
+          "0": "Der Text beschreibt Pünktlichkeit als lebendige, aktuelle Tugend, nicht veraltet.",
+          "1": "Der Text betont ausdrücklich: 'weniger ein starrer Zwang'.",
+          "3": "Pünktlichkeit ist eine kulturelle Norm/Tugend, kein formales Strafgesetz."
+        },
+        "errorCategory": "comprehension-detail"
+      }
+    ]
+  },
+  {
+    "id": "read-b2-1",
+    "level": "B2",
+    "title": "Künstliche Intelligenz und die Arbeitswelt",
+    "englishTitle": "Artificial Intelligence in the Workplace",
+    "category": "Technology & Debate",
+    "estimatedReadTime": "5 min",
+    "content": "Der rasant voranschreitende Siegeszug generativer künstlicher Intelligenz entfacht eine tiefgreifende Debatte über die Zukunft unserer Erwerbsarbeit. Während Optimisten betonen, dass repetitive bürokratische Routineaufgaben automatisiert werden und Fachkräften somit mehr Freiraum für kreative und strategische Denkprozesse eröffnet wird, warnen Kritiker vor drohendem Stellenabbau und epistemischer Abhängigkeit. Insbesondere im tertiären Sektor – von der Rechtsberatung über die Softwareentwicklung bis hin zum Journalismus – revolutionieren KI-basierte Sprachmodelle bestehende Arbeitsabläufe. Befürworter unterstreichen, dass KI den Menschen nicht ersetzen, sondern als kognitiver Assistent fungieren solle. Dennoch fordern Gewerkschaften und Bildungsexperten nachdrücklich eine umfassende Weiterbildungsoffensive sowie klare ethische Richtlinien. Ohne eine kritische Medienkompetenz und fundierte Kontrollmechanismen bestehe die Gefahr, dass algorithmische Verzerrungen ungeprüft in gesellschaftliche Entscheidungen einfließen. Letztlich hängt der erfolgreiche Wandel davon ab, inwiefern der technologische Fortschritt in den Dienst des menschlichen Gemeinwohls gestellt wird.",
+    "vocabulary": {
+      "Siegeszug": {
+        "english": "triumphal march / rapid ascent",
+        "article": "der",
+        "plural": "die Siegeszüge"
+      },
+      "tiefgreifend": {
+        "english": "profound / far-reaching",
+        "article": null,
+        "plural": null
+      },
+      "Erwerbsarbeit": {
+        "english": "gainful employment / labor",
+        "article": "die",
+        "plural": "-"
+      },
+      "epistemisch": {
+        "english": "epistemic / related to knowledge",
+        "article": null,
+        "plural": null
+      },
+      "tertiärer Sektor": {
+        "english": "tertiary sector (services)",
+        "article": "der",
+        "plural": "-"
+      },
+      "kognitiver Assistent": {
+        "english": "cognitive assistant",
+        "article": "der",
+        "plural": "die kognitiven Assistenten"
+      },
+      "Weiterbildungsoffensive": {
+        "english": "continuing education initiative",
+        "article": "die",
+        "plural": "die Weiterbildungsoffensiven"
+      },
+      "algorithmische Verzerrung": {
+        "english": "algorithmic bias",
+        "article": "die",
+        "plural": "die algorithmischen Verzerrungen"
+      },
+      "Gemeinwohl": {
+        "english": "common good / public welfare",
+        "article": "das",
+        "plural": "-"
+      }
+    },
+    "questions": [
+      {
+        "id": "q-b2-1-1",
+        "question": "Welche Chancen sehen Optimisten im Einsatz von künstlicher Intelligenz?",
+        "options": [
+          "Die Abschaffung jeglicher Arbeitsplätze",
+          "Die Automatisierung von Routineaufgaben für mehr strategischen Freiraum",
+          "Dass niemand mehr lernen muss",
+          "Dass Gehälter sinken"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text states: '...dass repetitive bürokratische Routineaufgaben automatisiert werden und Fachkräften somit mehr Freiraum für kreative und strategische Denkprozesse eröffnet wird'.",
+        "evidence": {
+          "start": 272,
+          "end": 337,
+          "text": "Freiraum für kreative und strategische Denkprozesse eröffnet wird"
+        },
+        "distractorRationale": {
+          "0": "Optimisten wollen keine Abschaffung jeglicher Arbeit, sondern Entlastung.",
+          "2": "Dass niemand mehr lernen muss, wird nirgends behauptet; im Gegenteil wird Weiterbildung gefordert.",
+          "3": "Sinkende Gehälter werden nicht als Chance gefeiert."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-b2-1-2",
+        "question": "Welche Branchen des tertiären Sektors werden im Text explizit erwähnt?",
+        "options": [
+          "Landwirtschaft und Bergbau",
+          "Rechtsberatung, Softwareentwicklung und Journalismus",
+          "Tourismus und Gastronomie",
+          "Bauwesen und Handwerk"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text explicitly names: '...von der Rechtsberatung über die Softwareentwicklung bis hin zum Journalismus'.",
+        "evidence": {
+          "start": 449,
+          "end": 525,
+          "text": "von der Rechtsberatung über die Softwareentwicklung bis hin zum Journalismus"
+        },
+        "distractorRationale": {
+          "0": "Landwirtschaft und Bergbau gehören zum primären/sekundären Sektor, nicht tertiär.",
+          "2": "Tourismus und Gastronomie werden im Text an dieser Stelle nicht genannt.",
+          "3": "Bauwesen gehört zum sekundären/produzierenden Gewerbe."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-b2-1-3",
+        "question": "Was fordern Gewerkschaften und Bildungsexperten?",
+        "options": [
+          "Ein weltweites Verbot von Computern",
+          "Eine umfassende Weiterbildungsoffensive und ethische Richtlinien",
+          "Die Senkung des Rentenalters",
+          "Mehr unbezahlte Überstunden"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text says: '...fordern Gewerkschaften und Bildungsexperten nachdrücklich eine umfassende Weiterbildungsoffensive sowie klare ethische Richtlinien'.",
+        "evidence": {
+          "start": 794,
+          "end": 850,
+          "text": "Weiterbildungsoffensive sowie klare ethische Richtlinien"
+        },
+        "distractorRationale": {
+          "0": "Ein Computerverbot fordert niemand; gefordert werden Kompetenz und Richtlinien.",
+          "2": "Die Rentenfrage ist nicht Gegenstand dieses Texts über KI-Arbeitswelten.",
+          "3": "Unbezahlte Überstunden werden von Gewerkschaften prinzipiell bekämpft."
+        },
+        "errorCategory": "comprehension-detail"
+      }
+    ]
+  },
+  {
+    "id": "read-b2-2",
+    "level": "B2",
+    "title": "Die Zukunft der Städte und Mobilität",
+    "englishTitle": "The Future of Cities and Mobility",
+    "category": "Urbanism & Society",
+    "estimatedReadTime": "5 min",
+    "content": "Die städtische Lebensqualität im 21. Jahrhundert entscheidet sich maßgeblich an der Frage, wie urbane Räume konzipiert und Verkehrsträger vernetzt werden. Jahrzehntelang war die Stadtplanung primär auf das Automobil ausgerichtet – mit gravierenden Folgen wie Staus, Lärmbelastung und versiegelten Flächen. Gegenwärtig vollzieht sich jedoch in zahlreichen europäischen Metropolen ein radikaler Paradigmenwechsel hin zur sogenannten '15-Minuten-Stadt'. Das Leitbild besagt, dass alle essenziellen Versorgungsangebote, Bildungsstätten und Arbeitsorte innerhalb einer Viertelstunde zu Fuß oder mit dem Fahrrad erreichbar sein sollten. Metropolen wie Paris, Wien und Freiburg fungieren hierbei als Vorreiter: Straßen werden verkehrsberuhigt, Parkplätze zu grünen Begegnungszonen umgewandelt und das öffentliche Nahverkehrsnetz massiv subventioniert. Zwar stößt die Einschränkung des motorisierten Individualverkehrs bisweilen auf den Widerstand von Einzelhändlern und Autofahrern, doch empirische Studien belegen, dass verkehrsberuhigte Flaniermeilen den Einzelhandel sogar beleben. Urbane Resilienz erfordert folglich den Mut zu zukunftsorientierten Reformen.",
+    "vocabulary": {
+      "maßgeblich": {
+        "english": "decisively / significantly",
+        "article": null,
+        "plural": null
+      },
+      "Verkehrsträger": {
+        "english": "mode of transport",
+        "article": "der",
+        "plural": "die Verkehrsträger"
+      },
+      "versiegelte Flächen": {
+        "english": "sealed / paved ground surfaces",
+        "article": "die",
+        "plural": "die versiegelten Flächen"
+      },
+      "Paradigmenwechsel": {
+        "english": "paradigm shift",
+        "article": "der",
+        "plural": "die Paradigmenwechsel"
+      },
+      "Leitbild": {
+        "english": "guiding principle / vision",
+        "article": "das",
+        "plural": "die Leitbilder"
+      },
+      "Vorreiter": {
+        "english": "pioneer / trailblazer",
+        "article": "der",
+        "plural": "die Vorreiter"
+      },
+      "motorisierter Individualverkehr": {
+        "english": "motorized private transport",
+        "article": "der",
+        "plural": "-"
+      },
+      "Flaniermeile": {
+        "english": "promenade / pedestrian street",
+        "article": "die",
+        "plural": "die Flaniermeilen"
+      },
+      "Resilienz": {
+        "english": "resilience",
+        "article": "die",
+        "plural": "-"
+      }
+    },
+    "questions": [
+      {
+        "id": "q-b2-2-1",
+        "question": "Worauf war die traditionelle Stadtplanung jahrzehntelang primär ausgerichtet?",
+        "options": [
+          "Auf Fußgänger",
+          "Auf das Automobil",
+          "Auf die Schifffahrt",
+          "Auf Pferdebahnen"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text states: 'Jahrzehntelang war die Stadtplanung primär auf das Automobil ausgerichtet'.",
+        "evidence": {
+          "start": 178,
+          "end": 228,
+          "text": "Stadtplanung primär auf das Automobil ausgerichtet"
+        },
+        "distractorRationale": {
+          "0": "Fußgänger wurden in der traditionellen autozentrierten Stadtplanung vernachlässigt.",
+          "2": "Schifffahrt betrifft nur Hafenstädte, nicht die allgemeine Stadtplanung.",
+          "3": "Pferdebahnen waren im 19. Jahrhundert relevant, nicht die Jahrzehnte vor heute."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-b2-2-2",
+        "question": "Was besagt das Konzept der '15-Minuten-Stadt'?",
+        "options": [
+          "Dass jeder Zug nur 15 Minuten braucht",
+          "Dass man nach 15 Minuten Pause machen muss",
+          "Dass alle essenziellen Orte in 15 Minuten zu Fuß oder per Rad erreichbar sind",
+          "Dass Autofahren nur 15 Minuten erlaubt ist"
+        ],
+        "correctIndex": 2,
+        "explanation": "The text explains: 'Das Leitbild besagt, dass alle essenziellen Versorgungsangebote... innerhalb einer Viertelstunde zu Fuß oder mit dem Fahrrad erreichbar sein sollten'.",
+        "evidence": {
+          "start": 548,
+          "end": 616,
+          "text": "innerhalb einer Viertelstunde zu Fuß oder mit dem Fahrrad erreichbar"
+        },
+        "distractorRationale": {
+          "0": "Die 15-Minuten-Stadt bezieht sich auf Wege im Alltag, nicht auf Zugreisen.",
+          "1": "Es geht um Wegezeiten zu Versorgungsorten, nicht um Arbeitspausen.",
+          "3": "Es bedeutet nicht, dass man nur 15 Minuten mit dem Auto fahren darf."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-b2-2-3",
+        "question": "Was zeigen empirische Studien bezüglich verkehrsberuhigter Flaniermeilen?",
+        "options": [
+          "Dass alle Geschäfte schließen müssen",
+          "Dass sie den Einzelhandel sogar beleben",
+          "Dass niemand mehr einkaufen geht",
+          "Dass sie zu teuer sind"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text concludes: '...empirische Studien belegen, dass verkehrsberuhigte Flaniermeilen den Einzelhandel sogar beleben'.",
+        "evidence": {
+          "start": 1014,
+          "end": 1076,
+          "text": "verkehrsberuhigte Flaniermeilen den Einzelhandel sogar beleben"
+        },
+        "distractorRationale": {
+          "0": "Das Gegenteil ist der Fall: Studien widerlegen das Schließen der Geschäfte.",
+          "2": "Flaniermeilen laden zum Bummeln ein und steigern Kundenfrequenzen.",
+          "3": "Der wirtschaftliche Nutzen überwiegt die anfänglichen Bedenken."
+        },
+        "errorCategory": "comprehension-detail"
+      }
+    ]
+  },
+  {
+    "id": "read-b2-3",
+    "level": "B2",
+    "title": "Kultur und Theater in Wien",
+    "englishTitle": "Culture and Theater in Vienna",
+    "category": "Art & Heritage",
+    "estimatedReadTime": "5 min",
+    "content": "Wien gilt unbestritten als eine der glanzvollsten Kulturmetropolen der Welt, deren historisches Erbe bis heute in jeder Gasse spürbar ist. Ein herausragendes Monument dieser kulturellen Identität ist das traditionsreiche Burgtheater an der Ringstraße, das von Theaterbegeisterten ehrfürchtig als 'die Burg' bezeichnet wird. Als bedeutendste deutschsprachige Sprechbühne blickt das Haus auf eine facettenreiche Historie zurück, die von kaiserlichen Hoftheatern bis hin zu modernen, gesellschaftskritischen Inszenierungen reicht. Wer einer Aufführung im Prunksaal beiwohnt, taucht in eine Symbiose aus architektonischer Monumentalität und schauspielerischer Brillanz ein. Nach der Vorstellung gehört der Besuch eines traditionellen Wiener Kaffeehauses zum obligatorischen Ritual. Bei einer 'Wiener Melange' und einem Stück Sachertorte debattieren Theaterbesucher leidenschaftlich über Regieeinfälle und schauspielerische Nuancen. Die Liaison zwischen darstellender Kunst und dem gemächlichen Kaffeehausflair verkörpert das Wiener Lebensgefühl par excellence.",
+    "vocabulary": {
+      "glanzvoll": {
+        "english": "splendid / glamorous",
+        "article": null,
+        "plural": null
+      },
+      "Sprechbühne": {
+        "english": "spoken drama theatre",
+        "article": "die",
+        "plural": "die Sprechbühnen"
+      },
+      "facettenreich": {
+        "english": "multi-faceted / diverse",
+        "article": null,
+        "plural": null
+      },
+      "Inszenierung": {
+        "english": "stage production / direction",
+        "article": "die",
+        "plural": "die Inszenierungen"
+      },
+      "Prunksaal": {
+        "english": "ceremonial hall / state room",
+        "article": "der",
+        "plural": "die Prunksäle"
+      },
+      "obligatorisch": {
+        "english": "obligatory / customary",
+        "article": null,
+        "plural": null
+      },
+      "gemächlich": {
+        "english": "leisurely / unhurried",
+        "article": null,
+        "plural": null
+      },
+      "verkörpert": {
+        "english": "embodies / personifies",
+        "article": null,
+        "plural": null
+      }
+    },
+    "questions": [
+      {
+        "id": "q-b2-3-1",
+        "question": "Wie wird das traditionsreiche Burgtheater von Theaterbegeisterten genannt?",
+        "options": [
+          "Die Oper",
+          "Die Burg",
+          "Der Palast",
+          "Das Schloss"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text notes: '...das von Theaterbegeisterten ehrfürchtig als \"die Burg\" bezeichnet wird'.",
+        "evidence": {
+          "start": 292,
+          "end": 317,
+          "text": "als 'die Burg' bezeichnet"
+        },
+        "distractorRationale": {
+          "0": "Die Wiener Staatsoper ist ein anderes berühmtes Haus an der Ringstraße.",
+          "2": "Der Begriff 'Palast' wird für das Burgtheater nicht verwendet.",
+          "3": "Das 'Schloss' bezieht sich typischerweise auf Schönbrunn oder Belvedere."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-b2-3-2",
+        "question": "Welches Ritual gehört in Wien typischerweise nach der Theatervorstellung dazu?",
+        "options": [
+          "Ein Spaziergang im Regen",
+          "Der Besuch eines traditionellen Wiener Kaffeehauses",
+          "Eine Bootsfahrt auf der Donau",
+          "Sofort nach Hause zu fahren"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text says: 'Nach der Vorstellung gehört der Besuch eines traditionellen Wiener Kaffeehauses zum obligatorischen Ritual'.",
+        "evidence": {
+          "start": 702,
+          "end": 776,
+          "text": "Besuch eines traditionellen Wiener Kaffeehauses zum obligatorischen Ritual"
+        },
+        "distractorRationale": {
+          "0": "Ein Spaziergang im Regen ist kein Wiener Theater-Kulturritual.",
+          "2": "Eine Donau-Bootsfahrt findet tagsüber oder touristisch statt, nicht nach dem Theater.",
+          "3": "Sofort heimzugehen verpasst die gesellschaftliche Nachbesprechung im Kaffeehaus."
+        },
+        "errorCategory": "comprehension-detail"
+      },
+      {
+        "id": "q-b2-3-3",
+        "question": "Was trinken und essen Theaterbesucher oft im Kaffeehaus?",
+        "options": [
+          "Bier und Brezeln",
+          "Wiener Melange und Sachertorte",
+          "Tee und Kekse",
+          "Wein und Käse"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text mentions: 'Bei einer \"Wiener Melange\" und einem Stück Sachertorte debattieren Theaterbesucher leidenschaftlich'.",
+        "distractorRationale": {
+          "0": "Bier und Brezeln sind typisch für bayerische Wirtshäuser, nicht für Wiener Kaffeehäuser.",
+          "2": "Tee und Kekse ist eine britische Tradition.",
+          "3": "Wein und Käse gehört in ein Heurigenlokal oder Bistro, nicht ins klassische Kaffeehaus."
+        },
+        "errorCategory": "comprehension-detail",
+        "evidence": {
+          "start": 778,
+          "end": 832,
+          "text": "Bei einer 'Wiener Melange' und einem Stück Sachertorte"
+        }
+      }
+    ]
+  }
+]

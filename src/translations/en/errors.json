@@ -1,0 +1,69 @@
+{
+  "categories": {
+    "article-gender": {
+      "label": "Article & Noun Gender",
+      "description": "Confusion between masculine (der), feminine (die), and neuter (das).",
+      "rationale": "Noun gender in German is grammatical and must be memorized with the definite article and plural form."
+    },
+    "case": {
+      "label": "Case Endings (Nom/Akk/Dat/Gen)",
+      "description": "Incorrect case form applied to articles, adjectives, or pronouns.",
+      "rationale": "Cases identify sentence roles: Nominative (subject), Accusative (direct object), Dative (indirect object), Genitive (possession)."
+    },
+    "verb-position": {
+      "label": "Verb Position (V2 / Verb-End)",
+      "description": "Placing the conjugated verb in an incorrect syntactic slot.",
+      "rationale": "Main clauses enforce verb in position 2 (V2). Subordinate clauses introduced by subordinating conjunctions force the verb to the clause end."
+    },
+    "conjugation": {
+      "label": "Verb Conjugation",
+      "description": "Mismatch between subject person/number and verb ending.",
+      "rationale": "Verbs must agree with their subject in person and number across irregular stem changes."
+    },
+    "tense": {
+      "label": "Tense (Perfekt / Präteritum)",
+      "description": "Incorrect auxiliary (haben vs sein) or wrong participle form.",
+      "rationale": "Spoken German relies heavily on Perfekt with 'haben' or 'sein' (for motion/change of state)."
+    },
+    "preposition": {
+      "label": "Prepositions & Cases",
+      "description": "Wrong preposition choice or incorrect governing case.",
+      "rationale": "Prepositions govern specific cases: fixed cases (akk/dat/gen) or two-way (Wechselpräpositionen: accusative for motion, dative for location)."
+    },
+    "word-order": {
+      "label": "Word Order (TeKaMoLo)",
+      "description": "Misordering adverbial phrases or sentence constituents.",
+      "rationale": "Standard adverbial sequencing follows Temporal (when), Causal (why), Modal (how), and Lokativ (where)."
+    },
+    "connector": {
+      "label": "Conjunctions & Connectors",
+      "description": "Improper connector choice or failure to apply correct word order following it.",
+      "rationale": "Coordinating conjunctions (ADUSO) take position 0; subordinating conjunctions push the verb to the end; adverbial connectors take position 1 and invert the subject."
+    },
+    "spelling": {
+      "label": "Orthography & Spelling",
+      "description": "Misspelled headwords, missing capital letters on nouns, or missed umlauts.",
+      "rationale": "All German nouns are capitalized; umlauts (ä, ö, ü) and ß alter pronunciation and meaning."
+    },
+    "vocabulary": {
+      "label": "Vocabulary Selection",
+      "description": "False friends or inexact word choice.",
+      "rationale": "Select exact register and idiomatic German expressions rather than literal native-language calques."
+    },
+    "comprehension-keyword-trap": {
+      "label": "Comprehension: Keyword Trap",
+      "description": "Selecting an option because a surface word matched without verifying sentence context.",
+      "rationale": "Exam distractors intentionally repeat passage keywords in contradictory statements."
+    },
+    "comprehension-negation": {
+      "label": "Comprehension: Negation Trap",
+      "description": "Overlooking 'nicht', 'kein', 'nie', or restrictive adverbs like 'kaum'.",
+      "rationale": "Pay careful attention to negation operators which invert the truth value of the statement."
+    },
+    "comprehension-detail": {
+      "label": "Comprehension: Detail Matching",
+      "description": "Failing to verify precise times, places, conditions, or quantities.",
+      "rationale": "Scan supporting evidence spans to confirm that details align with the question."
+    }
+  }
+}

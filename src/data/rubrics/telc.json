@@ -1,0 +1,128 @@
+{
+  "institution": "telc gGmbH",
+  "name": "telc Deutsch Schreiben",
+  "verified": false,
+  "source": "https://www.telc.net/pruefungen/zertifikatspruefungen/deutsch/",
+  "levels": {
+    "A1": {
+      "level": "A1",
+      "moduleName": "telc Deutsch A1 - Schriftlicher Ausdruck",
+      "maxPoints": 15,
+      "source": "https://www.telc.net/pruefungen/zertifikatspruefungen/deutsch/detail/telc-deutsch-a1.html",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "inhalt",
+          "name": "I. Inhaltliche Angemessenheit",
+          "weight": 0.40,
+          "maxPoints": 6,
+          "description": "Umsetzung der inhaltlichen Vorgaben (Leitpunkte)."
+        },
+        {
+          "id": "wortschatz",
+          "name": "II. Sprachliche Angemessenheit",
+          "weight": 0.30,
+          "maxPoints": 4.5,
+          "description": "Passende Wortwahl und situationsgerechter Sprachgebrauch."
+        },
+        {
+          "id": "korrektheit",
+          "name": "III. Sprachliche Richtigkeit",
+          "weight": 0.30,
+          "maxPoints": 4.5,
+          "description": "Verständlichkeit trotz syntaktischer und morphologischer Einzelfehler."
+        }
+      ]
+    },
+    "A2": {
+      "level": "A2",
+      "moduleName": "telc Deutsch A2 - Schriftlicher Ausdruck",
+      "maxPoints": 15,
+      "source": "https://www.telc.net/pruefungen/zertifikatspruefungen/deutsch/detail/telc-deutsch-a2.html",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "inhalt",
+          "name": "I. Inhaltliche Angemessenheit",
+          "weight": 0.40,
+          "maxPoints": 6,
+          "description": "Vollständige Bearbeitung der Leitpunkte."
+        },
+        {
+          "id": "wortschatz",
+          "name": "II. Sprachliche Angemessenheit",
+          "weight": 0.30,
+          "maxPoints": 4.5,
+          "description": "Varianz des A2-Wortschatzes und Verknüpfungselemente."
+        },
+        {
+          "id": "korrektheit",
+          "name": "III. Sprachliche Richtigkeit",
+          "weight": 0.30,
+          "maxPoints": 4.5,
+          "description": "Verbstellung, Personalformen und Orthografie."
+        }
+      ]
+    },
+    "B1": {
+      "level": "B1",
+      "moduleName": "telc Deutsch B1 (Zertifikat Deutsch) - Schriftlicher Ausdruck",
+      "maxPoints": 25,
+      "source": "https://www.telc.net/pruefungen/zertifikatspruefungen/deutsch/detail/zertifikat-deutsch-telc-deutsch-b1.html",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "inhalt",
+          "name": "Kriterium I: Inhaltliche Angemessenheit",
+          "weight": 0.35,
+          "maxPoints": 8.75,
+          "description": "Leitpunkte sinnvoll und ausreichend detailliert bearbeitet."
+        },
+        {
+          "id": "sprache",
+          "name": "Kriterium II: Sprachliche Angemessenheit",
+          "weight": 0.35,
+          "maxPoints": 8.75,
+          "description": "Wortschatzspektrum, Textorganisation, Adressatenbezug (Anrede/Gruß)."
+        },
+        {
+          "id": "korrektheit",
+          "name": "Kriterium III: Sprachliche Richtigkeit",
+          "weight": 0.30,
+          "maxPoints": 7.5,
+          "description": "Morphosyntax, Orthografie und Interpunktion."
+        }
+      ]
+    },
+    "B2": {
+      "level": "B2",
+      "moduleName": "telc Deutsch B2 - Schriftlicher Ausdruck",
+      "maxPoints": 25,
+      "source": "https://www.telc.net/pruefungen/zertifikatspruefungen/deutsch/detail/telc-deutsch-b2.html",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "inhalt",
+          "name": "Kriterium I: Inhaltliche Angemessenheit",
+          "weight": 0.35,
+          "maxPoints": 8.75,
+          "description": "Strukturierte Behandlung der Argumente bzw. formellen Aspekte."
+        },
+        {
+          "id": "sprache",
+          "name": "Kriterium II: Sprachliche Angemessenheit",
+          "weight": 0.35,
+          "maxPoints": 8.75,
+          "description": "B2-typische Ausdrucksweise, Registertreue, Konnektorenvielfalt."
+        },
+        {
+          "id": "korrektheit",
+          "name": "Kriterium III: Sprachliche Richtigkeit",
+          "weight": 0.30,
+          "maxPoints": 7.5,
+          "description": "Präzision in Syntax, Flexion und Rechtschreibung."
+        }
+      ]
+    }
+  }
+}

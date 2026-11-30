@@ -1,0 +1,149 @@
+{
+  "institution": "Österreichisches Sprachdiplom Deutsch (ÖSD)",
+  "name": "ÖSD Schreiben Bewertungskriterien",
+  "verified": false,
+  "source": "https://www.osd.at/die-pruefungen/",
+  "levels": {
+    "A1": {
+      "level": "A1",
+      "moduleName": "ÖSD Zertifikat A1 - Schreiben",
+      "maxPoints": 15,
+      "source": "https://www.osd.at/die-pruefungen/oesd-zertifikat-a1-za1/",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "aufgabenerfuellung",
+          "name": "Kriterium 1: Aufgabenerfüllung / Textsortenadäquatheit",
+          "weight": 0.40,
+          "maxPoints": 6,
+          "description": "Erfüllung der Schreibabsicht und Berücksichtigung der Situationsvorgaben."
+        },
+        {
+          "id": "kohaerenz",
+          "name": "Kriterium 2: Textstrukturierung",
+          "weight": 0.20,
+          "maxPoints": 3,
+          "description": "Nachvollziehbarer Aufbau und Grußkonventionen."
+        },
+        {
+          "id": "korrektheit",
+          "name": "Kriterium 3: Sprachliche Richtigkeit",
+          "weight": 0.40,
+          "maxPoints": 6,
+          "description": "Verständlichkeit auf Wort- und Satzebene."
+        }
+      ]
+    },
+    "A2": {
+      "level": "A2",
+      "moduleName": "ÖSD Zertifikat A2 - Schreiben",
+      "maxPoints": 15,
+      "source": "https://www.osd.at/die-pruefungen/oesd-zertifikat-a2-za2/",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "aufgabenerfuellung",
+          "name": "Kriterium 1: Aufgabenerfüllung",
+          "weight": 0.35,
+          "maxPoints": 5.25,
+          "description": "Vollständigkeit der geforderten Mitteilung."
+        },
+        {
+          "id": "kohaerenz",
+          "name": "Kriterium 2: Textstrukturierung & Kohärenz",
+          "weight": 0.25,
+          "maxPoints": 3.75,
+          "description": "Logische Verknüpfung der Sätze."
+        },
+        {
+          "id": "wortschatz",
+          "name": "Kriterium 3: Lexikalische Kompetenz",
+          "weight": 0.20,
+          "maxPoints": 3.0,
+          "description": "Passender situationsspezifischer Wortschatz."
+        },
+        {
+          "id": "strukturen",
+          "name": "Kriterium 4: Grammatische Korrektheit",
+          "weight": 0.20,
+          "maxPoints": 3.0,
+          "description": "Beherrschung elementarer Syntax und Morphologie."
+        }
+      ]
+    },
+    "B1": {
+      "level": "B1",
+      "moduleName": "ÖSD Zertifikat B1 - Modul Schreiben",
+      "maxPoints": 25,
+      "source": "https://www.osd.at/die-pruefungen/oesd-zertifikat-b1-zb1/",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "aufgabenerfuellung",
+          "name": "Kriterium 1: Aufgabenerfüllung / Textsorte",
+          "weight": 0.30,
+          "maxPoints": 7.5,
+          "description": "Inhaltliche Vollständigkeit und Textsortenkonventionen."
+        },
+        {
+          "id": "kohaerenz",
+          "name": "Kriterium 2: Textstrukturierung & Kohärenz",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Sinnvolle Textgliederung und Konnektorengebrauch."
+        },
+        {
+          "id": "wortschatz",
+          "name": "Kriterium 3: Lexikalische Kompetenz",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Wortschatzumfang und situationsadäquate Formulierungen."
+        },
+        {
+          "id": "strukturen",
+          "name": "Kriterium 4: Grammatische Korrektheit",
+          "weight": 0.20,
+          "maxPoints": 5.0,
+          "description": "Morphosyntax und Rechtschreibung."
+        }
+      ]
+    },
+    "B2": {
+      "level": "B2",
+      "moduleName": "ÖSD Zertifikat B2 - Modul Schreiben",
+      "maxPoints": 25,
+      "source": "https://www.osd.at/die-pruefungen/oesd-zertifikat-b2-zb2/",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "aufgabenerfuellung",
+          "name": "Kriterium 1: Aufgabenerfüllung",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Detaillierte Argumentation und Standpunktdarlegung."
+        },
+        {
+          "id": "kohaerenz",
+          "name": "Kriterium 2: Textstrukturierung",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Flüssige Absatzübergänge und formale Gliederung."
+        },
+        {
+          "id": "wortschatz",
+          "name": "Kriterium 3: Lexik",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Nuancierte Ausdrucksweise und Stilsicherheit."
+        },
+        {
+          "id": "strukturen",
+          "name": "Kriterium 4: Grammatische Korrektheit",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Syntaktische Bandbreite und morphologische Präzision."
+        }
+      ]
+    }
+  }
+}

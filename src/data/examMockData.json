@@ -1,0 +1,912 @@
+[
+  {
+    "id": "goethe-a1",
+    "level": "A1",
+    "title": "Goethe-Zertifikat A1: Start Deutsch 1",
+    "subtitle": "Offizielles Modellprüfungsformat",
+    "durationMinutes": 45,
+    "passScore": 60,
+    "maxScore": 100,
+    "description": "Evaluates foundational German for basic communication: introducing yourself, understanding simple public notices and dialogues, filling out forms, and writing brief emails.",
+    "modules": {
+      "lesen": {
+        "title": "Lesen (Reading)",
+        "points": 25,
+        "description": "Read short emails, notices, and public announcements to answer comprehension questions.",
+        "parts": [
+          {
+            "partNumber": 1,
+            "title": "Teil 1: Persönliche Mitteilungen",
+            "instructions": "Lesen Sie die E-Mail und entscheiden Sie: Ist die Aussage Richtig oder Falsch?",
+            "text": "Liebe Sandra,\nich bin gut in Hamburg angekommen! Mein Hotel 'Alsterblick' ist sehr schön und liegt direkt am See. Morgen um 10 Uhr habe ich meinen Sprachkurs. Nach dem Kurs, gegen 13:30 Uhr, möchte ich im Stadtzentrum zu Mittag essen. Hast du Zeit? Treffen wir uns vor dem Rathaus? Schreib mir bitte eine kurze SMS!\nViele Grüße,\nJonas",
+            "questions": [
+              {
+                "id": "a1-l-1",
+                "question": "Jonas schreibt Sandra aus einem Hotel in Hamburg.",
+                "type": "boolean",
+                "options": [
+                  "Richtig",
+                  "Falsch"
+                ],
+                "correctAnswer": 0,
+                "points": 5,
+                "explanation": "Jonas says: 'ich bin gut in Hamburg angekommen! Mein Hotel Alsterblick ist sehr schön'.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "1": "Option 'Falsch' stimmt nicht mit dem Lesetext überein."
+                }
+              },
+              {
+                "id": "a1-l-2",
+                "question": "Jonas möchte sich um 10 Uhr vor dem Rathaus treffen.",
+                "type": "boolean",
+                "options": [
+                  "Richtig",
+                  "Falsch"
+                ],
+                "correctAnswer": 1,
+                "points": 5,
+                "explanation": "Um 10 Uhr hat Jonas seinen Sprachkurs. Er möchte sich nach 13:30 Uhr zum Mittagessen treffen.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "0": "Option 'Richtig' stimmt nicht mit dem Lesetext überein."
+                }
+              }
+            ]
+          },
+          {
+            "partNumber": 2,
+            "title": "Teil 2: Websites und Kleinanzeigen",
+            "instructions": "Lesen Sie die Situation und wählen Sie die passende Option (A oder B).",
+            "situation": "Sie möchten am Sonntagabend in München ein deutsches Theaterstück sehen.",
+            "options": [
+              {
+                "letter": "A",
+                "text": "Münchner Kammerspiele: Sonntag, 19:30 Uhr: 'Faust' von Goethe. Großer Saal. Karten an der Abendkasse."
+              },
+              {
+                "letter": "B",
+                "text": "Cinema Royal: Sonntag, 20:00 Uhr: Neuer US-Blockbuster in englischer Originalfassung mit deutschen Untertiteln."
+              }
+            ],
+            "questions": [
+              {
+                "id": "a1-l-3",
+                "question": "Welche Anzeige passt für Sie?",
+                "type": "multiple-choice",
+                "options": [
+                  "Anzeige A",
+                  "Anzeige B"
+                ],
+                "correctAnswer": 0,
+                "points": 5,
+                "explanation": "Anzeige A offers a German theater play ('Faust' von Goethe im Theater), while B is a cinema film.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "1": "Option 'Anzeige B' stimmt nicht mit dem Lesetext überein."
+                }
+              }
+            ]
+          },
+          {
+            "partNumber": 3,
+            "title": "Teil 3: Schilder und Aushänge",
+            "instructions": "Lesen Sie die Schilder und entscheiden Sie: Richtig oder Falsch?",
+            "items": [
+              {
+                "id": "a1-l-4",
+                "sign": "Stadtbibliothek Berlin\nÖffnungszeiten:\nMo–Fr: 09:00 – 19:00 Uhr\nSamstag: 10:00 – 14:00 Uhr\nSonntags und feiertags geschlossen.",
+                "question": "Am Samstag um 16:00 Uhr können Sie Bücher in der Bibliothek ausleihen.",
+                "type": "boolean",
+                "options": [
+                  "Richtig",
+                  "Falsch"
+                ],
+                "correctAnswer": 1,
+                "points": 5,
+                "explanation": "Am Samstag schließt die Bibliothek bereits um 14:00 Uhr."
+              },
+              {
+                "id": "a1-l-5",
+                "sign": "Bäckerei Becker\nFrische Brötchen und Kaffee zum Mitnehmen!\nWegen Umbauarbeiten am Montag, 15. November geschlossen.",
+                "question": "Am 15. November kann man bei der Bäckerei Becker keinen Kaffee kaufen.",
+                "type": "boolean",
+                "options": [
+                  "Richtig",
+                  "Falsch"
+                ],
+                "correctAnswer": 0,
+                "points": 5,
+                "explanation": "Richtig, da die Bäckerei am Montag, 15. November wegen Umbau geschlossen ist."
+              }
+            ]
+          }
+        ]
+      },
+      "hoeren": {
+        "title": "Hören (Listening)",
+        "points": 25,
+        "description": "Listen to authentic announcements and voice messages in German, then choose the correct answers.",
+        "parts": [
+          {
+            "partNumber": 1,
+            "title": "Teil 1: Durchsagen am Bahnhof & Telefon",
+            "instructions": "Klicken Sie auf 'Audio abspielen' und hören Sie die Nachricht. Wählen Sie die richtige Antwort.",
+            "audioScript": "Guten Tag, Herr Schneider. Hier spricht Praxis Dr. Weber. Sie haben morgen am Dienstag um 14:30 Uhr einen Termin. Leider muss Frau Dr. Weber den Termin um eine Stunde verschieben. Bitte kommen Sie erst um 15:30 Uhr. Wenn das nicht passt, rufen Sie uns bitte unter 089 54231 zurück. Vielen Dank und auf Wiederhören.",
+            "questions": [
+              {
+                "id": "a1-h-1",
+                "question": "Wann soll Herr Schneider zur Praxis kommen?",
+                "options": [
+                  "Um 14:30 Uhr",
+                  "Um 15:30 Uhr",
+                  "Um 16:30 Uhr"
+                ],
+                "correctAnswer": 1,
+                "points": 8,
+                "explanation": "Die Praxis sagt: 'Bitte kommen Sie erst um 15:30 Uhr' (um eine Stunde verschoben).",
+                "errorCategory": "comprehension-keyword-trap",
+                "distractorRationale": {
+                  "0": "Die Option 'Um 14:30 Uhr' widerspricht den Angaben in der Audiodurchsage.",
+                  "2": "Die Option 'Um 16:30 Uhr' widerspricht den Angaben in der Audiodurchsage."
+                },
+                "evidence": {
+                  "start": 0,
+                  "end": 120,
+                  "text": "Guten Tag, Herr Schneider. Hier spricht Praxis Dr. Weber. Sie haben morgen am Dienstag um 14:30 Uhr einen Termin. Leider"
+                }
+              }
+            ],
+            "maxReplays": 2
+          },
+          {
+            "partNumber": 2,
+            "title": "Teil 2: Lautsprecherdurchsage am Bahnhof",
+            "instructions": "Hören Sie die Durchsage am Hauptbahnhof.",
+            "audioScript": "Achtung an Gleis 4. Der Intercity-Express ICE 582 nach Frankfurt über Göttingen, planmäßige Abfahrt 11 Uhr 15, fährt heute von Gleis 7 ab. Ich wiederhole: ICE 582 nach Frankfurt heute nicht von Gleis 4, sondern von Gleis 7.",
+            "questions": [
+              {
+                "id": "a1-h-2",
+                "question": "Von welchem Gleis fährt der ICE nach Frankfurt heute ab?",
+                "options": [
+                  "Gleis 4",
+                  "Gleis 7",
+                  "Gleis 11"
+                ],
+                "correctAnswer": 1,
+                "points": 8,
+                "explanation": "Die Durchsage informiert: 'fährt heute von Gleis 7 ab'.",
+                "errorCategory": "comprehension-keyword-trap",
+                "distractorRationale": {
+                  "0": "Die Option 'Gleis 4' widerspricht den Angaben in der Audiodurchsage.",
+                  "2": "Die Option 'Gleis 11' widerspricht den Angaben in der Audiodurchsage."
+                },
+                "evidence": {
+                  "start": 0,
+                  "end": 120,
+                  "text": "Achtung an Gleis 4. Der Intercity-Express ICE 582 nach Frankfurt über Göttingen, planmäßige Abfahrt 11 Uhr 15, fährt heu"
+                }
+              }
+            ],
+            "maxReplays": 2
+          },
+          {
+            "partNumber": 3,
+            "title": "Teil 3: Einkaufen im Kaufhaus",
+            "instructions": "Hören Sie die Mitteilung im Kaufhaus.",
+            "audioScript": "Liebe Kundinnen und Kunden! Willkommen im Kaufhaus Karstadt. Heute haben wir ein Sonderangebot im 2. Stock in der Sportabteilung: Alle Winterschuhe und Jacken sind heute um 30 Prozent reduziert! Besuchen Sie auch unser Café im 4. Stock.",
+            "questions": [
+              {
+                "id": "a1-h-3",
+                "question": "Wo finden Kunden die reduzierten Winterschuhe?",
+                "options": [
+                  "Im Erdgeschoss",
+                  "Im 2. Stock",
+                  "Im 4. Stock"
+                ],
+                "correctAnswer": 1,
+                "points": 9,
+                "explanation": "Die Sprecherin sagt: 'Heute haben wir ein Sonderangebot im 2. Stock in der Sportabteilung'.",
+                "errorCategory": "comprehension-keyword-trap",
+                "distractorRationale": {
+                  "0": "Die Option 'Im Erdgeschoss' widerspricht den Angaben in der Audiodurchsage.",
+                  "2": "Die Option 'Im 4. Stock' widerspricht den Angaben in der Audiodurchsage."
+                },
+                "evidence": {
+                  "start": 0,
+                  "end": 120,
+                  "text": "Liebe Kundinnen und Kunden! Willkommen im Kaufhaus Karstadt. Heute haben wir ein Sonderangebot im 2. Stock in der Sporta"
+                }
+              }
+            ],
+            "maxReplays": 2
+          }
+        ],
+        "maxReplays": 2
+      },
+      "schreiben": {
+        "title": "Schreiben (Writing)",
+        "points": 25,
+        "description": "Fill out a registration form and write a short German email.",
+        "tasks": [
+          {
+            "id": "a1-s-1",
+            "partNumber": 1,
+            "title": "Teil 1: Formular ausfüllen (10 Punkte)",
+            "instructions": "Ihre Freundin Eva Novak möchte sich für einen Deutschkurs anmelden. Helfen Sie ihr und tragen Sie die 2 fehlenden Angaben ein.",
+            "context": "Eva Novak, 28 Jahre alt, wohnt in der Schillerstraße 14 in 80336 München. Sie möchte einen Abendkurs (Stufe A1) buchen und zahlt mit Kreditkarte.",
+            "fields": [
+              {
+                "label": "Wohnort (Stadt & Postleitzahl):",
+                "placeholder": "z.B. 80336 München",
+                "sampleAnswer": "80336 München",
+                "key": "address"
+              },
+              {
+                "label": "Gewünschter Kurs:",
+                "placeholder": "z.B. Deutsch Abendkurs A1",
+                "sampleAnswer": "Abendkurs A1",
+                "key": "course"
+              }
+            ]
+          },
+          {
+            "id": "a1-s-2",
+            "partNumber": 2,
+            "title": "Teil 2: Kurze E-Mail schreiben (15 Punkte)",
+            "instructions": "Schreiben Sie eine E-Mail an Ihre Vermieterin, Frau Meier (ca. 30 Wörter).",
+            "promptBulletPoints": [
+              "Grund für Ihr Schreiben (Die Heizung im Wohnzimmer funktioniert nicht)",
+              "Wann Frau Meier oder ein Handwerker kommen kann",
+              "Bitten Sie um eine schnelle Antwort"
+            ],
+            "suggestedWordCount": 30,
+            "modelAnswer": "Sehr geehrte Frau Meier,\nich schreibe Ihnen, weil die Heizung im Wohnzimmer leider nicht funktioniert. Es ist sehr kalt in der Wohnung. Wann kann ein Handwerker kommen? Ich bin morgen ab 16 Uhr zu Hause. Bitte antworten Sie mir bald.\nMit freundlichen Grüßen,\nAlex"
+          }
+        ]
+      },
+      "sprechen": {
+        "title": "Sprechen (Speaking)",
+        "points": 25,
+        "description": "Simulated Goethe oral exam: Self-introduction, asking questions with theme cards, and making polite requests.",
+        "parts": [
+          {
+            "partNumber": 1,
+            "title": "Teil 1: Sich vorstellen (Name, Alter, Land, Beruf)",
+            "promptAudio": "Guten Tag! Willkommen zur mündlichen Prüfung. Bitte stellen Sie sich kurz vor.",
+            "guidelines": [
+              "Name: Mein Name ist...",
+              "Alter: Ich bin ... Jahre alt",
+              "Land / Herkunft: Ich komme aus...",
+              "Wohnort: Ich wohne jetzt in...",
+              "Beruf / Studium: Von Beruf bin ich... / Ich studiere...",
+              "Sprachen: Ich spreche Englisch und lerne Deutsch",
+              "Hobbys: In meiner Freizeit..."
+            ],
+            "modelAnswer": "Guten Tag! Mein Name ist Alex Martin. Ich bin 26 Jahre alt und komme aus Frankreich, aber ich wohne jetzt in Berlin. Ich arbeite als Softwareentwickler. In meiner Freizeit spiele ich gerne Gitarre und koche."
+          },
+          {
+            "partNumber": 2,
+            "title": "Teil 2: Um Informationen bitten (Thema: Einkaufen)",
+            "promptCard": "Wortkarte: 'Supermarkt / Öffnungszeiten'",
+            "promptAudio": "Bitte stellen Sie Ihrem Partner eine Frage zum Thema Einkaufen mit dem Wort Öffnungszeiten.",
+            "modelAnswer": "Entschuldigung, bis wie viel Uhr hat der Supermarkt heute geöffnet?",
+            "partnerResponse": "Der Supermarkt hat heute bis 20 Uhr geöffnet."
+          },
+          {
+            "partNumber": 3,
+            "title": "Teil 3: Eine Bitte formulieren und reagieren",
+            "promptCard": "Bildkarte: Ein Glas Wasser",
+            "promptAudio": "Bitte formulieren Sie eine höfliche Bitte mit dem Glas Wasser.",
+            "modelAnswer": "Könnten Sie mir bitte ein Glas Wasser bringen?",
+            "partnerResponse": "Ja natürlich, sehr gerne! Hier ist Ihr Wasser."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "goethe-a2",
+    "level": "A2",
+    "title": "Goethe-Zertifikat A2",
+    "subtitle": "Elementare Sprachverwendung",
+    "durationMinutes": 60,
+    "passScore": 60,
+    "maxScore": 100,
+    "description": "Tests your ability to understand sentences and frequently used expressions related to areas of most immediate relevance (e.g. personal information, shopping, local geography, employment).",
+    "modules": {
+      "lesen": {
+        "title": "Lesen (Reading)",
+        "points": 25,
+        "description": "Read newspaper articles, emails, and advertisements to extract important details.",
+        "parts": [
+          {
+            "partNumber": 1,
+            "title": "Teil 1: Zeitungsmeldung",
+            "text": "Fahrradstadt Freiburg: Immer mehr Menschen in Freiburg nutzen das Fahrrad für den täglichen Weg zur Arbeit. Laut einer aktuellen Studie der Universität fahren über 34 Prozent der Bürger regelmäßig mit dem Rad. Die Stadtverwaltung plant deshalb den Bau von zwei neuen Fahrrad-Schnellwegen. Für Pendler aus dem Umland soll das Radfahren dadurch noch schneller und sicherer werden. Der erste Abschnitt wird voraussichtlich im Frühling eröffnet.",
+            "questions": [
+              {
+                "id": "a2-l-1",
+                "question": "Mehr als ein Drittel der Bürger in Freiburg fährt regelmäßig mit dem Fahrrad.",
+                "type": "boolean",
+                "options": [
+                  "Richtig",
+                  "Falsch"
+                ],
+                "correctAnswer": 0,
+                "points": 6,
+                "explanation": "Im Text steht: 'über 34 Prozent der Bürger' (34% ist mehr als ein Drittel).",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "1": "Option 'Falsch' stimmt nicht mit dem Lesetext überein."
+                }
+              },
+              {
+                "id": "a2-l-2",
+                "question": "Die neuen Fahrradwege sind bereits vollständig fertiggestellt.",
+                "type": "boolean",
+                "options": [
+                  "Richtig",
+                  "Falsch"
+                ],
+                "correctAnswer": 1,
+                "points": 6,
+                "explanation": "Die Stadt plant den Bau und der erste Abschnitt wird erst im Frühling eröffnet.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "0": "Option 'Richtig' stimmt nicht mit dem Lesetext überein."
+                }
+              }
+            ]
+          },
+          {
+            "partNumber": 2,
+            "title": "Teil 2: E-Mail von Kollegen",
+            "text": "Hallo Patrick,\nunser Chef Herr Hoffmann hat das Team-Meeting am Freitag von 10:00 Uhr auf 15:30 Uhr verschoben, weil er vormittags einen Kundentermin in Stuttgart hat. Wir treffen uns wie gewohnt im Konferenzraum B. Bitte bring die ausgedruckten Quartalszahlen mit. Nach dem Meeting wollen einige noch zusammen einen Kaffee trinken gehen. Kommst du mit?\nViele Grüße, Lea",
+            "questions": [
+              {
+                "id": "a2-l-3",
+                "question": "Warum findet das Meeting später statt?",
+                "options": [
+                  "Weil der Konferenzraum belegt ist",
+                  "Weil Herr Hoffmann vormittags bei einem Kunden ist",
+                  "Weil Lea die Unterlagen noch drucken muss"
+                ],
+                "correctAnswer": 1,
+                "points": 7,
+                "explanation": "Lea schreibt: 'weil er vormittags einen Kundentermin in Stuttgart hat'.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "0": "Option 'Weil der Konferenzraum belegt ist' stimmt nicht mit dem Lesetext überein.",
+                  "2": "Option 'Weil Lea die Unterlagen noch drucken muss' stimmt nicht mit dem Lesetext überein."
+                }
+              },
+              {
+                "id": "a2-l-4",
+                "question": "Was soll Patrick zum Meeting mitbringen?",
+                "options": [
+                  "Kaffee und Kuchen",
+                  "Den Laptop des Chefs",
+                  "Die ausgedruckten Quartalszahlen"
+                ],
+                "correctAnswer": 2,
+                "points": 6,
+                "explanation": "Lea bittet: 'Bitte bring die ausgedruckten Quartalszahlen mit'.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "0": "Option 'Kaffee und Kuchen' stimmt nicht mit dem Lesetext überein.",
+                  "1": "Option 'Den Laptop des Chefs' stimmt nicht mit dem Lesetext überein."
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "hoeren": {
+        "title": "Hören (Listening)",
+        "points": 25,
+        "description": "Listen to conversations about travel, work, and daily plans.",
+        "parts": [
+          {
+            "partNumber": 1,
+            "title": "Teil 1: Radiomeldung über das Wetter",
+            "audioScript": "Und hier der Wetterbericht für Süddeutschland: Am Samstag bleibt es zunächst trocken und sonnig bei angenehmen 22 Grad. Ab Sonntagnachmittag zieht jedoch von Westen her eine Regenfront auf, und die Temperaturen fallen deutlich auf 14 Grad. Wer am Wochenende wandern möchte, sollte also den Samstag nutzen.",
+            "questions": [
+              {
+                "id": "a2-h-1",
+                "question": "Wann ist das Wetter am besten für Aktivitäten im Freien?",
+                "options": [
+                  "Am Samstag",
+                  "Am Sonntagnachmittag",
+                  "An beiden Tagen regnet es"
+                ],
+                "correctAnswer": 0,
+                "points": 12,
+                "explanation": "Der Sprecher empfiehlt: 'Wer am Wochenende wandern möchte, sollte also den Samstag nutzen' (trocken und sonnig).",
+                "errorCategory": "comprehension-keyword-trap",
+                "distractorRationale": {
+                  "1": "Die Option 'Am Sonntagnachmittag' widerspricht den Angaben in der Audiodurchsage.",
+                  "2": "Die Option 'An beiden Tagen regnet es' widerspricht den Angaben in der Audiodurchsage."
+                },
+                "evidence": {
+                  "start": 0,
+                  "end": 120,
+                  "text": "Und hier der Wetterbericht für Süddeutschland: Am Samstag bleibt es zunächst trocken und sonnig bei angenehmen 22 Grad. "
+                }
+              }
+            ],
+            "maxReplays": 2
+          },
+          {
+            "partNumber": 2,
+            "title": "Teil 2: Anrufbeantworter von der Autowerkstatt",
+            "audioScript": "Guten Tag, Frau Brandt. Hier ist die Autowerkstatt Müller. Wir haben Ihr Auto überprüft. Die Bremsen sind repariert und das Auto ist abholbereit. Die Gesamtkosten betragen 240 Euro. Unsere Werkstatt hat heute bis 18 Uhr geöffnet. Bitte bringen Sie den Fahrzeugschein mit.",
+            "questions": [
+              {
+                "id": "a2-h-2",
+                "question": "Was muss Frau Brandt zur Abholung mitbringen?",
+                "options": [
+                  "240 Euro in bar",
+                  "Den Fahrzeugschein",
+                  "Einen Termin am nächsten Tag"
+                ],
+                "correctAnswer": 1,
+                "points": 13,
+                "explanation": "Der Werkstattmitarbeiter sagt am Ende: 'Bitte bringen Sie den Fahrzeugschein mit'.",
+                "errorCategory": "comprehension-keyword-trap",
+                "distractorRationale": {
+                  "0": "Die Option '240 Euro in bar' widerspricht den Angaben in der Audiodurchsage.",
+                  "2": "Die Option 'Einen Termin am nächsten Tag' widerspricht den Angaben in der Audiodurchsage."
+                },
+                "evidence": {
+                  "start": 0,
+                  "end": 120,
+                  "text": "Guten Tag, Frau Brandt. Hier ist die Autowerkstatt Müller. Wir haben Ihr Auto überprüft. Die Bremsen sind repariert und "
+                }
+              }
+            ],
+            "maxReplays": 2
+          }
+        ],
+        "maxReplays": 2
+      },
+      "schreiben": {
+        "title": "Schreiben (Writing)",
+        "points": 25,
+        "description": "Write a message to a friend or colleague.",
+        "tasks": [
+          {
+            "id": "a2-s-1",
+            "partNumber": 1,
+            "title": "Mitteilung an einen Freund (ca. 40–50 Wörter)",
+            "instructions": "Ihr Freund Stefan hat Sie am Samstag zu seiner Geburtstagsfeier eingeladen. Schreiben Sie ihm eine Nachricht.",
+            "promptBulletPoints": [
+              "Bedanken Sie sich für die Einladung",
+              "Sagen Sie, dass Sie kommen können",
+              "Fragen Sie, was Sie mitbringen sollen (Essen/Getränke)"
+            ],
+            "suggestedWordCount": 45,
+            "modelAnswer": "Hallo Stefan,\nvielen Dank für die nette Einladung zu deiner Geburtstagsfeier! Ich habe mich sehr gefreut und komme am Samstag gerne vorbei. Soll ich etwas mitbringen, vielleicht einen Salat oder einen Kuchen? Gib mir einfach kurz Bescheid.\nBis Samstag und viele Grüße,\nMarco"
+          }
+        ]
+      },
+      "sprechen": {
+        "title": "Sprechen (Speaking)",
+        "points": 25,
+        "description": "Talk about personal experiences and plan an activity together.",
+        "parts": [
+          {
+            "partNumber": 1,
+            "title": "Von sich erzählen (Thema: Mein letztes Wochenende)",
+            "promptAudio": "Erzählen Sie bitte: Was haben Sie am vergangenen Wochenende gemacht?",
+            "guidelines": [
+              "Was haben Sie unternommen?",
+              "Mit wem waren Sie zusammen?",
+              "Wie war das Wetter und die Stimmung?"
+            ],
+            "modelAnswer": "Am letzten Wochenende habe ich meine Freunde in Köln besucht. Am Samstag sind wir am Rhein spazieren gegangen und haben abends in einem typischen Brauhaus gegessen. Das Wetter war sehr schön und sonnig."
+          },
+          {
+            "partNumber": 2,
+            "title": "Gemeinsam etwas planen (Ein Ausflug am Wochenende)",
+            "promptAudio": "Sie möchten zusammen mit Ihrem Partner einen Tagesausflug machen. Schlagen Sie ein Ziel und ein Verkehrsmittel vor.",
+            "modelAnswer": "Wie wäre es, wenn wir am Samstag mit dem Zug an den Bodensee fahren? Wir könnten dort ein Boot mieten und Fahrräder ausleihen. Was meinst du?",
+            "partnerResponse": "Das ist eine tolle Idee! Um wie viel Uhr wollen wir am Hauptbahnhof starten?"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "goethe-b1",
+    "level": "B1",
+    "title": "Goethe-Zertifikat B1",
+    "subtitle": "Selbstständige Sprachverwendung",
+    "durationMinutes": 75,
+    "passScore": 60,
+    "maxScore": 100,
+    "description": "Certifies that candidates are independent users of the German language and corresponds to the third level (B1) on the CEFR scale.",
+    "modules": {
+      "lesen": {
+        "title": "Lesen (Reading)",
+        "points": 25,
+        "description": "Read blog posts, opinion pieces, and formal guides.",
+        "parts": [
+          {
+            "partNumber": 1,
+            "title": "Teil 1: Blogbeitrag zum Thema 'Homeoffice'",
+            "text": "Seit zwei Jahren arbeitet die Journalistin Miriam Becker überwiegend von zu Hause aus. In ihrem Blog schreibt sie: 'Homeoffice bietet enorme Flexibilität. Ich spare täglich fast zwei Stunden Fahrtzeit und kann mir meine Pausen selbst einteilen. Doch es gibt auch Schattenseiten: Die Grenze zwischen Berufs- und Privatleben verschwimmt leicht. Häufig ertappe ich mich dabei, noch spät abends geschäftliche E-Mails zu beantworten. Um produktiv und gesund zu bleiben, braucht man eiserne Selbstdisziplin und einen festen Arbeitsplatz, an dem man nach Feierabend die Tür schließen kann.'",
+            "questions": [
+              {
+                "id": "b1-l-1",
+                "question": "Was sieht Miriam Becker als wesentlichen Vorteil des Homeoffice?",
+                "options": [
+                  "Sie muss überhaupt keine E-Mails mehr schreiben",
+                  "Sie gewinnt täglich etwa zwei Stunden Zeit, da sie nicht pendeln muss",
+                  "Ihr Arbeitgeber bezahlt ihr eine größere Wohnung"
+                ],
+                "correctAnswer": 1,
+                "points": 6,
+                "explanation": "Miriam schreibt: 'Ich spare täglich fast zwei Stunden Fahrtzeit'.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "0": "Option 'Sie muss überhaupt keine E-Mails mehr schreiben' stimmt nicht mit dem Lesetext überein.",
+                  "2": "Option 'Ihr Arbeitgeber bezahlt ihr eine größere Wohnung' stimmt nicht mit dem Lesetext überein."
+                }
+              },
+              {
+                "id": "b1-l-2",
+                "question": "Was empfiehlt die Autorin, um Überlastung zu vermeiden?",
+                "options": [
+                  "Nur noch am Wochenende zu arbeiten",
+                  "Einen klar abgegrenzten Arbeitsbereich und disziplinierte Arbeitszeiten",
+                  "Das Smartphone komplett abzuschaffen"
+                ],
+                "correctAnswer": 1,
+                "points": 6,
+                "explanation": "Sie empfiehlt 'eiserne Selbstdisziplin und einen festen Arbeitsplatz, an dem man nach Feierabend die Tür schließen kann'.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "0": "Option 'Nur noch am Wochenende zu arbeiten' stimmt nicht mit dem Lesetext überein.",
+                  "2": "Option 'Das Smartphone komplett abzuschaffen' stimmt nicht mit dem Lesetext überein."
+                }
+              }
+            ]
+          },
+          {
+            "partNumber": 2,
+            "title": "Teil 2: Öffentliche Bekanntmachung zu Recycling",
+            "text": "Die Stadtreinigung informiert: Ab dem 1. Januar führt unsere Stadt die neue Wertstofftonne für alle Haushalte ein. Neben Plastikverpackungen dürfen künftig auch Gegenstände aus Metall, wie Töpfe oder Werkzeuge, hineingeworfen werden. Altglas und Papier müssen jedoch weiterhin getrennt in den bekannten Sammelcontainern entsorgt werden. Haushalte, die die Tonne nicht sachgerecht befüllen, müssen mit Verwarnungsgeldern rechnen.",
+            "questions": [
+              {
+                "id": "b1-l-3",
+                "question": "Was darf ab Januar neu in die Wertstofftonne geworfen werden?",
+                "options": [
+                  "Altpapier und Zeitungen",
+                  "Gegenstände aus Metall",
+                  "Getränkeflaschen aus Glas"
+                ],
+                "correctAnswer": 1,
+                "points": 7,
+                "explanation": "Im Text: 'dürfen künftig auch Gegenstände aus Metall, wie Töpfe oder Werkzeuge, hineingeworfen werden'.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "0": "Option 'Altpapier und Zeitungen' stimmt nicht mit dem Lesetext überein.",
+                  "2": "Option 'Getränkeflaschen aus Glas' stimmt nicht mit dem Lesetext überein."
+                }
+              },
+              {
+                "id": "b1-l-4",
+                "question": "Altglas und Papier werden ebenfalls in der neuen Wertstofftonne entsorgt.",
+                "type": "boolean",
+                "options": [
+                  "Richtig",
+                  "Falsch"
+                ],
+                "correctAnswer": 1,
+                "points": 6,
+                "explanation": "Falsch: 'Altglas und Papier müssen jedoch weiterhin getrennt in den bekannten Sammelcontainern entsorgt werden'.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "0": "Option 'Richtig' stimmt nicht mit dem Lesetext überein."
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "hoeren": {
+        "title": "Hören (Listening)",
+        "points": 25,
+        "description": "Listen to radio features and interviews on current social topics.",
+        "parts": [
+          {
+            "partNumber": 1,
+            "title": "Radio-Interview über Sprachenlernen im Erwachsenenalter",
+            "audioScript": "Willkommen bei 'Campus & Wissen'. Heute sprechen wir mit Dr. Claudia Frank, Sprachforscherin an der Universität Heidelberg. Frau Dr. Frank, stimmt das Gerücht, dass Erwachsene keine Fremdsprachen mehr fließend lernen können? 'Nein, keineswegs', erklärt sie. 'Kinder lernen zwar intuitiver und haben oft weniger Hemmungen beim Sprechen. Aber Erwachsene besitzen kognitive Strategien und Vorwissen, die ihnen beim schnellen Verstehen von Grammatikstrukturen sehr helfen. Der Schlüssel zum Erfolg ist regelmäßiger Kontakt mit der Sprache, idealerweise 20 bis 30 Minuten täglich.'",
+            "questions": [
+              {
+                "id": "b1-h-1",
+                "question": "Welchen Vorteil haben Erwachsene laut Dr. Frank beim Sprachenlernen?",
+                "options": [
+                  "Sie haben mehr Freizeit als Kinder",
+                  "Sie verfügen über kognitive Strategien und Vorwissen",
+                  "Sie lernen ohne jegliche Grammatikregeln"
+                ],
+                "correctAnswer": 1,
+                "points": 12,
+                "explanation": "Dr. Frank betont: 'Erwachsene besitzen kognitive Strategien und Vorwissen, die ihnen beim Verstehen von Grammatik helfen'.",
+                "errorCategory": "comprehension-keyword-trap",
+                "distractorRationale": {
+                  "0": "Die Option 'Sie haben mehr Freizeit als Kinder' widerspricht den Angaben in der Audiodurchsage.",
+                  "2": "Die Option 'Sie lernen ohne jegliche Grammatikregeln' widerspricht den Angaben in der Audiodurchsage."
+                },
+                "evidence": {
+                  "start": 0,
+                  "end": 120,
+                  "text": "Willkommen bei 'Campus & Wissen'. Heute sprechen wir mit Dr. Claudia Frank, Sprachforscherin an der Universität Heidelbe"
+                }
+              },
+              {
+                "id": "b1-h-2",
+                "question": "Welche Lerndauer pro Tag wird im Interview empfohlen?",
+                "options": [
+                  "Mindestens drei Stunden",
+                  "20 bis 30 Minuten täglich",
+                  "Einmal wöchentlich zwei Stunden"
+                ],
+                "correctAnswer": 1,
+                "points": 13,
+                "explanation": "Die Forscherin nennt: 'idealerweise 20 bis 30 Minuten täglich'.",
+                "errorCategory": "comprehension-keyword-trap",
+                "distractorRationale": {
+                  "0": "Die Option 'Mindestens drei Stunden' widerspricht den Angaben in der Audiodurchsage.",
+                  "2": "Die Option 'Einmal wöchentlich zwei Stunden' widerspricht den Angaben in der Audiodurchsage."
+                },
+                "evidence": {
+                  "start": 0,
+                  "end": 120,
+                  "text": "Willkommen bei 'Campus & Wissen'. Heute sprechen wir mit Dr. Claudia Frank, Sprachforscherin an der Universität Heidelbe"
+                }
+              }
+            ],
+            "maxReplays": 2
+          }
+        ],
+        "maxReplays": 2
+      },
+      "schreiben": {
+        "title": "Schreiben (Writing)",
+        "points": 25,
+        "description": "Write a structured personal response to a forum post or letter.",
+        "tasks": [
+          {
+            "id": "b1-s-1",
+            "partNumber": 1,
+            "title": "Beitrag in einem Online-Forum (ca. 80 Wörter)",
+            "instructions": "In einem Internetforum lesen Sie die Diskussion: 'Brauchen wir ein Smartphone-Verbot an Schulen?' Schreiben Sie Ihre persönliche Meinung.",
+            "promptBulletPoints": [
+              "Äußern Sie Ihre Meinung zum Smartphone-Verbot an Schulen",
+              "Nennen Sie Vor- und Nachteile",
+              "Berichten Sie kurz von Ihren eigenen Schulerfahrungen"
+            ],
+            "suggestedWordCount": 80,
+            "modelAnswer": "Ich finde die Diskussion über ein Smartphone-Verbot an Schulen sehr wichtig. Meiner Meinung nach sollten Smartphones während des Unterrichts verboten sein, weil sie die Schüler stark ablenken. Auf der anderen Seite können Handys im Unterricht auch nützlich sein, um schnell Vokabeln nachzuschlagen oder an digitalen Quizzen teilzunehmen. In meiner Schulzeit gab es noch keine Smartphones im Klassenzimmer, und wir konnten uns dadurch viel besser auf die Lehrer konzentrieren. Ein Verbot in den Pausen halte ich jedoch für übertrieben."
+          }
+        ]
+      },
+      "sprechen": {
+        "title": "Sprechen (Speaking)",
+        "points": 25,
+        "description": "Deliver a brief presentation on a theme and express your stance.",
+        "parts": [
+          {
+            "partNumber": 1,
+            "title": "Präsentation halten: 'Urlaub im eigenen Land oder Fernreise?'",
+            "promptAudio": "Bitte halten Sie eine kurze Präsentation (ca. 2 Minuten) über das Thema: Urlaub im eigenen Land oder Fernreisen?",
+            "guidelines": [
+              "Einführung und persönliche Erfahrung",
+              "Situation in Ihrem Heimatland",
+              "Vor- und Nachteile beider Reisearten",
+              "Ihr persönliches Fazit"
+            ],
+            "modelAnswer": "Mein Thema heute ist: Urlaub im eigenen Land oder Fernreisen? Früher bin ich oft weit geflogen, aber in den letzten Jahren schätze ich Urlaube in der näheren Umgebung immer mehr. Der große Vorteil von Reisen im eigenen Land ist die Umweltfreundlichkeit und die geringere Reisezeit. Außerdem spart man oft Geld. Allerdings bieten Fernreisen die Möglichkeit, völlig fremde Kulturen und Sprachen kennenzulernen. Mein Fazit: Eine gesunde Mischung ist optimal."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "goethe-b2",
+    "level": "B2",
+    "title": "Goethe-Zertifikat B2",
+    "subtitle": "Kompetente Sprachverwendung",
+    "durationMinutes": 90,
+    "passScore": 60,
+    "maxScore": 100,
+    "description": "Validates advanced language proficiency: understanding complex texts on both concrete and abstract topics, fluent interaction with native speakers, and producing clear, detailed texts.",
+    "modules": {
+      "lesen": {
+        "title": "Lesen (Reading)",
+        "points": 25,
+        "description": "Analyze complex journalistic reports, commentary, and professional guidelines.",
+        "parts": [
+          {
+            "partNumber": 1,
+            "title": "Teil 1: Fachartikel über 'Künstliche Intelligenz im Gesundheitswesen'",
+            "text": "Der Einsatz von Algorithmen und Künstlicher Intelligenz (KI) revolutioniert die medizinische Diagnostik in atemberaubendem Tempo. Insbesondere bei der Früherkennung von Tumorerkrankungen in bildgebenden Verfahren übertreffen spezialisierte neuronale Netze mittlerweile in vielen Testreihen erfahrene Radiologen. Dennoch warnen Medizinethiker vor einer überstürzten Automatisierung: Die finale Therapieentscheidung müsse stets in den Händen qualifizierter Fachärzte verbleiben, da Maschinen weder über empathische Urteilskraft noch über ein ganzheitliches Verständnis der individuellen Lebensumstände eines Patienten verfügen. Zudem sind Fragen der rechtlichen Haftung bei fehlerhaften KI-Diagnosen bislang international kaum geklärt.",
+            "questions": [
+              {
+                "id": "b2-l-1",
+                "question": "In welchem Bereich erweisen sich KI-Systeme derzeit als besonders leistungsfähig?",
+                "options": [
+                  "Bei der psychologischen Betreuung von Traumapatienten",
+                  "Bei der Analyse radiologischer Bilder zur Früherkennung von Tumoren",
+                  "Bei der automatisierten Durchführung chirurgischer Notoperationen"
+                ],
+                "correctAnswer": 1,
+                "points": 6,
+                "explanation": "Der Artikel stellt fest: 'Insbesondere bei der Früherkennung von Tumorerkrankungen in bildgebenden Verfahren übertreffen spezialisierte neuronale Netze erfahrene Radiologen'.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "0": "Option 'Bei der psychologischen Betreuung von Traumapatienten' stimmt nicht mit dem Lesetext überein.",
+                  "2": "Option 'Bei der automatisierten Durchführung chirurgischer Notoperationen' stimmt nicht mit dem Lesetext überein."
+                }
+              },
+              {
+                "id": "b2-l-2",
+                "question": "Warum fordern Medizinethiker, dass die Therapieentscheidung beim Arzt bleibt?",
+                "options": [
+                  "Weil Ärzte weniger Gehalt fordern als moderne Computer",
+                  "Weil KI-Systeme über keine Empathie und kein ganzheitliches Urteilsvermögen verfügen",
+                  "Weil Patienten grundsätzlich keine Computermonitore in Praxen wünschen"
+                ],
+                "correctAnswer": 1,
+                "points": 6,
+                "explanation": "Im Text: 'da Maschinen weder über empathische Urteilskraft noch über ein ganzheitliches Verständnis der individuellen Lebensumstände verfügen'.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "0": "Option 'Weil Ärzte weniger Gehalt fordern als moderne Computer' stimmt nicht mit dem Lesetext überein.",
+                  "2": "Option 'Weil Patienten grundsätzlich keine Computermonitore in Praxen wünschen' stimmt nicht mit dem Lesetext überein."
+                }
+              },
+              {
+                "id": "b2-l-3",
+                "question": "Die Haftungsfragen bei Fehlentscheidungen durch KI sind weltweit bereits einheitlich geregelt.",
+                "type": "boolean",
+                "options": [
+                  "Richtig",
+                  "Falsch"
+                ],
+                "correctAnswer": 1,
+                "points": 6,
+                "explanation": "Falsch: Der Text betont: 'Zudem sind Fragen der rechtlichen Haftung bislang international kaum geklärt'.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "0": "Option 'Richtig' stimmt nicht mit dem Lesetext überein."
+                }
+              },
+              {
+                "id": "b2-l-4",
+                "question": "Welche Grundaussage trifft der Text in Bezug auf die Zukunft der KI in der Medizin?",
+                "options": [
+                  "KI wird Ärzte mittelfristig vollständig ersetzen",
+                  "KI dient als hochwirksames Werkzeug, erfordert aber ethische und rechtliche Grenzen",
+                  "KI hat sich in der Medizin als unzuverlässig erwiesen und wird wieder abgeschafft"
+                ],
+                "correctAnswer": 1,
+                "points": 7,
+                "explanation": "Der Text belegt das enorme diagnostische Potenzial, fordert jedoch strenge ärztliche Kontrolle und ethische Rahmenbedingungen.",
+                "errorCategory": "comprehension-detail",
+                "distractorRationale": {
+                  "0": "Option 'KI wird Ärzte mittelfristig vollständig ersetzen' stimmt nicht mit dem Lesetext überein.",
+                  "2": "Option 'KI hat sich in der Medizin als unzuverlässig erwiesen und wird wieder abgeschafft' stimmt nicht mit dem Lesetext überein."
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "hoeren": {
+        "title": "Hören (Listening)",
+        "points": 25,
+        "description": "Follow presentations, lectures, and expert panel debates.",
+        "parts": [
+          {
+            "partNumber": 1,
+            "title": "Podiumsdiskussion zur Zukunft der Arbeit",
+            "audioScript": "Herzlich willkommen zur Podiumsdiskussion 'Arbeit 4.0: Chance oder Risiko?'. Bei uns sitzt heute Soziologieprofessor Hans Eder. Professor Eder, wie beurteilen Sie die fortschreitende Digitalisierung auf dem Arbeitsmarkt? 'Wir beobachten eine tiefgreifende Polarisation', so Eder. 'Während monotone Routinejobs in der Verwaltung zunehmend wegfallen, steigt die Nachfrage nach hochqualifizierten Fachkräften, insbesondere in kreativen, analytischen und zwischenmenschlichen Berufen. Lebenslanges Lernen ist daher keine leere Phrase mehr, sondern eine zwingende Voraussetzung für berufliche Stabilität.'",
+            "questions": [
+              {
+                "id": "b2-h-1",
+                "question": "Welche Arbeitsplätze sind durch die Digitalisierung besonders gefährdet?",
+                "options": [
+                  "Kreative Berufe in Kunst und Design",
+                  "Monotone Routineaufgaben in der Verwaltung",
+                  "Führungspositionen mit hoher Verantwortung"
+                ],
+                "correctAnswer": 1,
+                "points": 12,
+                "explanation": "Prof. Eder betont: 'Während monotone Routinejobs in der Verwaltung zunehmend wegfallen'.",
+                "errorCategory": "comprehension-keyword-trap",
+                "distractorRationale": {
+                  "0": "Die Option 'Kreative Berufe in Kunst und Design' widerspricht den Angaben in der Audiodurchsage.",
+                  "2": "Die Option 'Führungspositionen mit hoher Verantwortung' widerspricht den Angaben in der Audiodurchsage."
+                },
+                "evidence": {
+                  "start": 0,
+                  "end": 120,
+                  "text": "Herzlich willkommen zur Podiumsdiskussion 'Arbeit 4.0: Chance oder Risiko?'. Bei uns sitzt heute Soziologieprofessor Han"
+                }
+              },
+              {
+                "id": "b2-h-2",
+                "question": "Was bezeichnet Prof. Eder als zwingende Voraussetzung für die Zukunft?",
+                "options": [
+                  "Früher Eintritt in den Ruhestand",
+                  "Kontinuierliches lebenslanges Lernen und Weiterbildung",
+                  "Eine Spezialisierung auf nur eine einzige Programmiersprache"
+                ],
+                "correctAnswer": 1,
+                "points": 13,
+                "explanation": "Eder schließt ab: 'Lebenslanges Lernen ist daher keine leere Phrase mehr, sondern eine zwingende Voraussetzung'.",
+                "errorCategory": "comprehension-keyword-trap",
+                "distractorRationale": {
+                  "0": "Die Option 'Früher Eintritt in den Ruhestand' widerspricht den Angaben in der Audiodurchsage.",
+                  "2": "Die Option 'Eine Spezialisierung auf nur eine einzige Programmiersprache' widerspricht den Angaben in der Audiodurchsage."
+                },
+                "evidence": {
+                  "start": 0,
+                  "end": 120,
+                  "text": "Herzlich willkommen zur Podiumsdiskussion 'Arbeit 4.0: Chance oder Risiko?'. Bei uns sitzt heute Soziologieprofessor Han"
+                }
+              }
+            ],
+            "maxReplays": 2
+          }
+        ],
+        "maxReplays": 2
+      },
+      "schreiben": {
+        "title": "Schreiben (Writing)",
+        "points": 25,
+        "description": "Compose an elaborate commentary or formal letter (120-150 words).",
+        "tasks": [
+          {
+            "id": "b2-s-1",
+            "partNumber": 1,
+            "title": "Formeller Kommentar: 'Nachhaltiger Konsum im Alltag' (ca. 120–150 Wörter)",
+            "instructions": "Verfassen Sie einen zusammenhängenden Kommentar für eine deutsche Zeitung über nachhaltigen Konsum.",
+            "promptBulletPoints": [
+              "Bedeutung nachhaltigen Konsums in der heutigen Gesellschaft",
+              "Konkrete Möglichkeiten im Alltag (z.B. Ernährung, Kleidung, Mobilität)",
+              "Grenzen und Herausforderungen für Verbraucher",
+              "Ihre Zukunftsperspektive"
+            ],
+            "suggestedWordCount": 130,
+            "modelAnswer": "Nachhaltiger Konsum ist längst kein Nischenthema mehr, sondern ein zentraler Pfeiler für den globalen Klimaschutz. Im Alltag gibt es zahlreiche Möglichkeiten, den eigenen ökologischen Fußabdruck zu verkleinern: der Verzicht auf Einwegplastik, der bewusste Kauf regionaler Bio-Lebensmittel sowie die Nutzung des öffentlichen Nahverkehrs anstelle des Autos. Allerdings stehen viele Verbraucher vor finanziellen Hürden, da nachhaltig produzierte Waren oft spürbar teurer sind als konventionelle Massenprodukte. Meines Erachtens reicht bloße Konsumentenverantwortung daher nicht aus; vielmehr muss die Politik durch gezielte Subventionen umweltfreundliche Alternativen bezahlbar machen. Nur wenn Nachhaltigkeit für alle Bevölkerungsschichten erschwinglich ist, kann eine echte gesellschaftliche Transformation gelingen."
+          }
+        ]
+      },
+      "sprechen": {
+        "title": "Sprechen (Speaking)",
+        "points": 25,
+        "description": "Deliver a detailed monologue on an abstract topic and engage in an analytical discussion.",
+        "parts": [
+          {
+            "partNumber": 1,
+            "title": "Vortrag halten: 'Bedeutung von Fremdsprachenkenntnissen in der globalisierten Wirtschaft'",
+            "promptAudio": "Bitte halten Sie einen Vortrag (ca. 3 Minuten) über die Relevanz mehrsprachiger Kompetenzen im internationalen Geschäftsleben.",
+            "guidelines": [
+              "Stellen Sie verschiedene Aspekte dar (Karrierechancen, kulturelles Verständnis)",
+              "Nennen Sie Beispiele aus der Arbeitswelt",
+              "Gehen Sie auf digitale Übersetzungstools ein",
+              "Ziehen Sie eine fundierte Schlussfolgerung"
+            ],
+            "modelAnswer": "In einer zunehmend vernetzten Weltwirtschaft stellen fundierte Fremdsprachenkenntnisse einen unschätzbaren Wettbewerbsvorteil dar. Auch wenn moderne KI-Übersetzungstools enorme Fortschritte erzielen, können sie zwischenmenschliche Nuancen, kulturelle Kontexte und nonverbale Kommunikation in Verhandlungen nicht ersetzen. Mehrsprachige Mitarbeiter fungieren als Brückenbauer zwischen verschiedenen Unternehmenskulturen und tragen maßgeblich zum Vertrauensaufbau bei internationalen Kooperationen bei."
+          }
+        ]
+      }
+    }
+  }
+]

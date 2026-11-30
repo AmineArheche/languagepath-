@@ -1,0 +1,45 @@
+{
+  "institution": "TestDaF-Institut",
+  "name": "TestDaF Schriftlicher Ausdruck",
+  "verified": false,
+  "source": "https://www.testdaf.de/de/teilnehmende/der-papierbasierte-testdaf/vorbereitung-auf-den-papierbasierten-testdaf/",
+  "levels": {
+    "B2": {
+      "level": "B2",
+      "moduleName": "TestDaF Schriftlicher Ausdruck (Niveaustufe TDN 3/4)",
+      "maxPoints": 25,
+      "source": "https://www.testdaf.de/de/teilnehmende/der-digitale-testdaf/vorbereitung-auf-den-digitalen-testdaf/",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "gesamteindruck",
+          "name": "Kriterium 1: Gesamteindruck & Aufgabenerfüllung",
+          "weight": 0.30,
+          "maxPoints": 7.5,
+          "description": "Grafikbeschreibung bzw. Argumentation zum wissenschaftsorientierten Thema vollständig erfasst."
+        },
+        {
+          "id": "textaufbau",
+          "name": "Kriterium 2: Textaufbau & Argumentationsgang",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Strukturierte Einleitung, Überleitungen, schlüssige Argumentation und Fazit."
+        },
+        {
+          "id": "strukturen",
+          "name": "Kriterium 3: Sprachliche Realisierung (Grammatik & Syntax)",
+          "weight": 0.25,
+          "maxPoints": 6.25,
+          "description": "Komplexe Satzgefüge, Passivformen, Nominalisierung und syntaktische Korrektheit."
+        },
+        {
+          "id": "fachwortschatz",
+          "name": "Kriterium 4: Wortschatz & Wissenschaftssprache",
+          "weight": 0.20,
+          "maxPoints": 5.0,
+          "description": "Wissenschaftsorientierter Wortschatz, treffende Verben und idiomatische Wendungen."
+        }
+      ]
+    }
+  }
+}

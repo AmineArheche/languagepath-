@@ -1,0 +1,23 @@
+{
+  "articles": {
+    "title": "Articles and Genders",
+    "rule": "German has three grammatical genders: masculine (der), feminine (die), and neuter (das). Plural nouns always use 'die' in the nominative.",
+    "accusativeRule": "In the accusative case, only masculine articles change: 'der' becomes 'den', 'ein' becomes 'einen'.",
+    "dativeRule": "In the dative case: 'der'/'das' become 'dem', 'die' becomes 'der', and plural 'die' becomes 'den' (+n)."
+  },
+  "verbs": {
+    "v2Rule": "In a German main clause, the conjugated finite verb is strictly placed in position 2 (V2 rule).",
+    "verbEndRule": "In subordinate clauses (introduced by weil, dass, wenn, ob, etc.), the conjugated verb moves to the very end."
+  },
+  "cases": {
+    "nominativ": "Subject of the sentence or predicate noun following 'sein' / 'werden'.",
+    "akkusativ": "Direct object or following accusative prepositions (durch, für, gegen, ohne, um).",
+    "dativ": "Indirect object (beneficiary) or following dative prepositions (aus, bei, mit, nach, seit, von, zu).",
+    "genitiv": "Possession or following genitive prepositions (während, wegen, trotz, anstatt)."
+  },
+  "exercises": {
+    "gram-1": "In Nominative case, 'Tisch' is masculine, requiring 'der'.",
+    "gram-2": "Masculine direct object of 'haben' takes the Accusative case, transforming 'ein' into 'einen'.",
+    "gram-3": "In Nominative case, 'Katze' is feminine, requiring 'die'."
+  }
+}

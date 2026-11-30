@@ -1,0 +1,23 @@
+{
+  "articles": {
+    "title": "Articles et genres",
+    "rule": "L'allemand possède trois genres grammaticaux : masculin (der), féminin (die) et neutre (das). Les noms au pluriel prennent toujours 'die' au nominatif.",
+    "accusativeRule": "À l'accusatif, seul l'article masculin change : 'der' devient 'den', 'ein' devient 'einen'.",
+    "dativeRule": "Au datif : 'der'/'das' deviennent 'dem', 'die' devient 'der', et le pluriel 'die' devient 'den' (+n)."
+  },
+  "verbs": {
+    "v2Rule": "Dans une proposition principale allemande, le verbe conjugué se place strictement en 2e position (règle V2).",
+    "verbEndRule": "Dans les propositions subordonnées (introduites par weil, dass, wenn, ob, etc.), le verbe conjugué est rejeté à la fin."
+  },
+  "cases": {
+    "nominativ": "Sujet de la phrase ou attribut du sujet après 'sein' / 'werden'.",
+    "akkusativ": "Complément d'objet direct ou après prépositions à l'accusatif (durch, für, gegen, ohne, um).",
+    "dativ": "Complément d'objet indirect (bénéficiaire) ou après prépositions au datif (aus, bei, mit, nach, seit, von, zu).",
+    "genitiv": "Possession ou après prépositions au génitif (während, wegen, trotz, anstatt)."
+  },
+  "exercises": {
+    "gram-1": "Au nominatif, 'Tisch' est masculin et prend l'article 'der'.",
+    "gram-2": "Objet direct masculin de 'haben', donc accusatif : 'ein' devient 'einen'.",
+    "gram-3": "Au nominatif, 'Katze' est féminin et prend l'article 'die'."
+  }
+}

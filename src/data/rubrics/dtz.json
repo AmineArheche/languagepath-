@@ -1,0 +1,82 @@
+{
+  "institution": "BAMF / telc",
+  "name": "Deutsch-Test für Zuwanderer (DTZ) Schreiben",
+  "verified": false,
+  "source": "https://www.bamf.de/DE/Themen/Integration/ZugewanderteTeilnehmende/Integrationskurse/Abschlusspruefung/abschlusspruefung-node.html",
+  "levels": {
+    "A2": {
+      "level": "A2",
+      "moduleName": "DTZ - Schreiben (Bewertung nach A2-Standard)",
+      "maxPoints": 20,
+      "source": "https://www.telc.net/pruefungen/zertifikatspruefungen/deutsch/detail/deutsch-test-fuer-zuwanderer-a2-b1.html",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "vorgaben",
+          "name": "I. Vorgaben (Inhaltspunkte)",
+          "weight": 0.35,
+          "maxPoints": 7.0,
+          "description": "Erfüllung der geforderten Leitpunkte im Alltagskontext (Arbeit, Behörde, Wohnung)."
+        },
+        {
+          "id": "kommunikation",
+          "name": "II. Kommunikative Gestaltung",
+          "weight": 0.25,
+          "maxPoints": 5.0,
+          "description": "Passende Anrede, Grußformel und Textorganisation."
+        },
+        {
+          "id": "korrektheit",
+          "name": "III. Korrektheit",
+          "weight": 0.20,
+          "maxPoints": 4.0,
+          "description": "Satzstellung (V2), Verbformen und Rechtschreibung auf A2-Niveau."
+        },
+        {
+          "id": "wortschatz",
+          "name": "IV. Wortschatz",
+          "weight": 0.20,
+          "maxPoints": 4.0,
+          "description": "Alltagsnahe Wortwahl ohne Missverständnisse."
+        }
+      ]
+    },
+    "B1": {
+      "level": "B1",
+      "moduleName": "DTZ - Schreiben (Bewertung nach B1-Standard)",
+      "maxPoints": 20,
+      "source": "https://www.telc.net/pruefungen/zertifikatspruefungen/deutsch/detail/deutsch-test-fuer-zuwanderer-a2-b1.html",
+      "verified": false,
+      "criteria": [
+        {
+          "id": "vorgaben",
+          "name": "I. Vorgaben (Inhaltspunkte)",
+          "weight": 0.35,
+          "maxPoints": 7.0,
+          "description": "Detaillierte und vollständige Behandlung aller Leitpunkte."
+        },
+        {
+          "id": "kommunikation",
+          "name": "II. Kommunikative Gestaltung",
+          "weight": 0.25,
+          "maxPoints": 5.0,
+          "description": "Sehr gute Adressatenbezogenheit, Höflichkeitskonventionen und Textfluss."
+        },
+        {
+          "id": "korrektheit",
+          "name": "III. Korrektheit",
+          "weight": 0.20,
+          "maxPoints": 4.0,
+          "description": "Grammatische Richtigkeit in Haupt- und Nebensätzen (weil, dass, wenn)."
+        },
+        {
+          "id": "wortschatz",
+          "name": "IV. Wortschatz",
+          "weight": 0.20,
+          "maxPoints": 4.0,
+          "description": "Differenzierter Wortschatz für Alltags- und Berufskommunikation."
+        }
+      ]
+    }
+  }
+}

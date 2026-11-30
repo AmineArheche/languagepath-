@@ -1,0 +1,69 @@
+{
+  "categories": {
+    "article-gender": {
+      "label": "Article et genre du nom",
+      "description": "Confusion entre masculin (der), féminin (die) et neutre (das).",
+      "rationale": "Le genre en allemand est grammatical et doit être mémorisé avec l'article défini et le pluriel."
+    },
+    "case": {
+      "label": "Déclinaisons des cas (Nom/Acc/Dat/Gén)",
+      "description": "Forme incorrecte appliquée aux articles, adjectifs ou pronoms.",
+      "rationale": "Les cas indiquent le rôle syntaxique : Nominatif (sujet), Accusatif (COD), Datif (COI), Génitif (possession)."
+    },
+    "verb-position": {
+      "label": "Position du verbe (V2 / Verbe en fin)",
+      "description": "Mauvais placement du verbe conjugué dans la proposition.",
+      "rationale": "La principale impose le verbe en position 2 (V2). La subordonnée le rejette à la fin."
+    },
+    "conjugation": {
+      "label": "Conjugaison verbale",
+      "description": "Désaccord entre la personne/nombre du sujet et la terminaison verbale.",
+      "rationale": "Le verbe s'accorde en personne et en nombre, y compris pour les bases verbales irrégulières."
+    },
+    "tense": {
+      "label": "Temps (Perfekt / Präteritum)",
+      "description": "Auxiliaire incorrect (haben vs sein) ou participe passé erroné.",
+      "rationale": "L'allemand parlé privilégie le Perfekt avec 'haben' ou 'sein' (pour les verbes de mouvement/changement d'état)."
+    },
+    "preposition": {
+      "label": "Prépositions & Cas régis",
+      "description": "Choix erroné de préposition ou mauvais cas associé.",
+      "rationale": "Les prépositions régissent des cas précis : fixes (acc/dat/gén) ou mixtes (Wechselpräpositionen : accusatif pour le déplacement, datif pour la position)."
+    },
+    "word-order": {
+      "label": "Ordre des mots (TeKaMoLo)",
+      "description": "Mauvais agencement des compléments circonstanciels.",
+      "rationale": "La séquence standard suit l'ordre Temporel (quand), Causal (pourquoi), Modal (comment) et Lieu (où)."
+    },
+    "connector": {
+      "label": "Conjonctions & Connecteurs",
+      "description": "Choix erroné du connecteur ou mauvaise position du verbe qui s'ensuit.",
+      "rationale": "Les conjonctions de coordination (ADUSO) occupent la position 0, les subordonnants rejettent le verbe en fin de proposition, et les adverbes de liaison occupent la position 1 avec inversion."
+    },
+    "spelling": {
+      "label": "Orthographe & Majuscules",
+      "description": "Fautes d'orthographe, majuscule manquante sur un nom ou omission d'Umlaut.",
+      "rationale": "Tous les noms communs allemands prennent une majuscule ; les trémas (ä, ö, ü) et l'eszett (ß) changent le sens et la phonétique."
+    },
+    "vocabulary": {
+      "label": "Choix de vocabulaire",
+      "description": "Faux amis ou terme inapproprié au contexte.",
+      "rationale": "Privilégiez les expressions idiomatiques allemandes précises plutôt que des calques littéraux de votre langue maternelle."
+    },
+    "comprehension-keyword-trap": {
+      "label": "Compréhension : Piège du mot-clé",
+      "description": "Sélection d'une option basée sur un mot présent dans le texte sans vérifier le sens global.",
+      "rationale": "Les pièges d'examen réutilisent sciemment des mots du texte dans des affirmations fausses."
+    },
+    "comprehension-negation": {
+      "label": "Compréhension : Piège de la négation",
+      "description": "Omission de 'nicht', 'kein', 'nie' ou d'adverbes restrictifs comme 'kaum'.",
+      "rationale": "Faites attention aux négations qui inversent la validité de l'énoncé."
+    },
+    "comprehension-detail": {
+      "label": "Compréhension : Vérification des détails",
+      "description": "Erreur d'analyse sur les dates, heures, conditions ou quantités.",
+      "rationale": "Examinez les passages justificatifs pour confirmer que chaque détail concorde avec la question."
+    }
+  }
+}
